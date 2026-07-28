@@ -109,7 +109,7 @@ const DM_ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you
 
 // Sent as the last line of every clinic-facing DM, right before the 6-image
 // bundle carousel gets attached as a follow-up in the same conversation.
-const DM_IMAGES_NOTE = `I'll also send over a few images below that break down exactly how it works 👇`
+const DM_IMAGES_NOTE = `We're also running a free bundle offer right now, see the post below. Take all of it, or just what's useful, keep whatever's already working (like your booking system) and we'll plug in around it 👇`
 
 // One-off, not part of the 5-trigger system: mutual follow already in place,
 // send from personal account, includes the end-of-July bonus offer.

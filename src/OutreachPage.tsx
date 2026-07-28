@@ -107,6 +107,10 @@ const DM_ANSWER_AND_PROOF = `We built WARC for that. It replies in about 13 seco
 
 const DM_ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍`
 
+// Sent as the last line of every clinic-facing DM, right before the 6-image
+// bundle carousel gets attached as a follow-up in the same conversation.
+const DM_IMAGES_NOTE = `I'll also send over a few images below that break down exactly how it works 👇`
+
 // One-off, not part of the 5-trigger system: mutual follow already in place,
 // send from personal account, includes the end-of-July bonus offer.
 const BARLAS_CO_DM = `Hey Dr Abdullah & Dr Shafay 👋 love the before/after transformations you're posting, thought I'd reach out.
@@ -117,7 +121,9 @@ We built WARC for that. It replies in about 13 seconds, 24/7. One clinic generat
 
 If you sign up before the end of July, we'll also include the booking system and appointment reminder add-ons at no extra cost.
 
-Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍`
+Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍
+
+${DM_IMAGES_NOTE}`
 
 // Bio and content are landing-page style (Same Day Implants/Bonding/Veneers,
 // "Book Now", phone number front and center). Reads as an active,
@@ -128,7 +134,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`
 
 // Not a cold sales DM: he's a verified educator with 177K followers who
 // teaches other dentists (Limitless On Demand), so this is a professional
@@ -136,7 +144,7 @@ ${DM_ASK}`
 // shared as a separate follow-up message underneath this one.
 const NICK_C_MESSAGE = `Hi Nick,
 
-I'm Valentin, part of the team behind WARC, an AI system that replies to WhatsApp enquiries within seconds, 24/7. One clinic we work with generated over €6,000 in their first 3 months with WARC, including 32 bookings that would otherwise have been missed.
+I'm Valentin, part of the team behind WARC, which replies to WhatsApp enquiries within seconds, 24/7. One clinic we work with generated over €6,000 in their first 3 months with WARC, including 32 bookings that would otherwise have been missed.
 
 Given the platform you've built with Limitless On Demand, I wanted to introduce WARC directly, in case there are a few clinic owners you know personally who'd genuinely benefit and you'd be comfortable mentioning it to them.
 
@@ -152,6 +160,7 @@ type ReadyToSend = {
   handle: string
   note: string
   message: string
+  followUpWithImages?: boolean
 }
 
 const READY_TO_SEND: ReadyToSend[] = [
@@ -160,12 +169,14 @@ const READY_TO_SEND: ReadyToSend[] = [
     handle: "@barlasandco.dentistry",
     note: "Mutual follow already in place, so this'll land straight in their inbox. Includes the end-of-July booking + reminder system bonus.",
     message: BARLAS_CO_DM,
+    followUpWithImages: true,
   },
   {
     label: "DM to Synergy Dental Clinic Specialist",
     handle: "@synergydentalspecialist",
     note: "Bio and content are built around same-day implant/veneer bookings, a high-enquiry-volume marketing angle.",
     message: SYNERGY_DENTAL_DM,
+    followUpWithImages: true,
   },
   {
     label: "Message to Dr Nick Ciardiello",
@@ -185,7 +196,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`,
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`,
   },
   {
     trigger: "Trigger: reviews mention slow replies or missed messages",
@@ -196,7 +209,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`,
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`,
   },
   {
     trigger: "Trigger: team or practice is growing",
@@ -207,7 +222,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`,
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`,
   },
   {
     trigger: "Trigger: running ads, promotions, or visibly high enquiry volume",
@@ -218,7 +235,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`,
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`,
   },
   {
     trigger: "Fallback: no specific trigger found, use sparingly",
@@ -229,7 +248,9 @@ ${DM_PROBLEM}
 
 ${DM_ANSWER_AND_PROOF}
 
-${DM_ASK}`,
+${DM_ASK}
+
+${DM_IMAGES_NOTE}`,
   },
 ]
 
@@ -329,6 +350,19 @@ export function OutreachPage() {
             like an email gets ignored, so every line here is shorter than its
             email equivalent.
           </p>
+          <a
+            href="/posts#bundle-carousel"
+            className="mb-6 flex items-center justify-between gap-4 rounded-xl border border-[#0a5f33]/20 bg-[#0a5f33]/8 px-5 py-4 text-left transition hover:bg-[#0a5f33]/12"
+          >
+            <span className="text-[13.5px] leading-relaxed text-[#0a5f33]">
+              <strong>Send the 6-image bundle carousel right after this message.</strong>{" "}
+              Every DM below ends with a line that sets it up, download the
+              images and attach them as your next message in the same chat.
+            </span>
+            <span className="shrink-0 text-[13px] font-semibold whitespace-nowrap text-[#0a5f33]">
+              Get images →
+            </span>
+          </a>
           <div className="flex flex-col gap-5">
             {DM_TEMPLATES.map((t, i) => (
               <DmCard key={i} t={t} index={i} />
@@ -350,6 +384,14 @@ export function OutreachPage() {
                 <div className="mb-4">
                   <p className="text-[15px] font-semibold text-[#0b0b0f]">{r.handle}</p>
                   <p className="mt-1 text-[13px] leading-relaxed text-black/55">{r.note}</p>
+                  {r.followUpWithImages && (
+                    <a
+                      href="/posts#bundle-carousel"
+                      className="mt-2 inline-block text-[12.5px] font-semibold text-[#0a5f33] hover:underline"
+                    >
+                      📎 Follow up with the 6-image bundle carousel →
+                    </a>
+                  )}
                 </div>
                 <CopyField label={r.label} value={r.message} />
               </div>

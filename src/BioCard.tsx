@@ -2,7 +2,7 @@ import { CopyField } from "@/components/CopyField"
 
 const NAME = "WARC | WhatsApp Receptionist"
 const BIO =
-  "🦷 24/7 AI receptionist for clinics\n⚡ Real replies in ~13 seconds\n📊 Real case studies, zero fluff\n👇 Book a free demo"
+  "🦷 24/7 WhatsApp receptionist for clinics\n⚡ Real replies in ~13 seconds\n📊 Real case studies, zero fluff\n👇 Book a free demo"
 const LINK = "warc.akroslab.com"
 const CATEGORY = "Software company"
 

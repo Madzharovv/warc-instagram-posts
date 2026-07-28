@@ -7,30 +7,31 @@ export function BundleSlide4Reminders() {
     <SlideShell step={4}>
       <ProductHeader
         icon={BellRing}
-        step="3 of 4 · Protects the bookings you just won"
-        name="No-Show Killer Reminders"
-        value="€300 value (€100/mo × 3) → included free"
+        step="3 of 4 · Stops patients from forgetting their appointment"
+        name="Automatic Text Reminders"
+        price="€180"
+        priceCaption="€180 value over 3 months. Then it's included in your €199/mo."
       />
 
       <StatRow
         stats={[
-          { value: "100%", label: "of bookings covered" },
-          { value: "Auto", label: "synced to booking system" },
-          { value: "0", label: "manual work for staff" },
+          { value: "100%", label: "of bookings reminded" },
+          { value: "SMS", label: "synced to your calendar" },
+          { value: "0", label: "staff hours spent chasing" },
         ]}
       />
 
       <BenefitList
         items={[
-          "Automatic reminder sent before every single booked appointment",
-          "Fully synced to your booking system, nothing to set up by hand",
-          "Fewer empty chairs, fewer wasted slots on the schedule",
+          "Sends a text before every appointment, with the date, time and a reschedule link",
+          "Works with the booking system, calendar and patient records you already use",
+          "Fewer no-shows means fewer empty chairs and more revenue",
         ]}
       />
 
       <ProofCallout>
-        WARC and the booking system fill your calendar. This is what makes
-        sure the patient actually shows up to the chair.
+        A missed appointment is money you already earned, walking out the
+        door. This tool stops it, and it's free for 3 months.
       </ProofCallout>
     </SlideShell>
   )

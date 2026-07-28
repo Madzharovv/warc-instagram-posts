@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Routes, Route, NavLink } from "react-router-dom"
 import { PostFrame } from "@/components/PostFrame"
 import { Post0Launch } from "@/posts/Post0Launch"
@@ -49,11 +50,19 @@ const BUNDLE_CAROUSEL = {
     { id: "p10-3", filename: "warc-10-3-bundle-booking", label: "3 · Booking system", render: () => <BundleSlide3Booking /> },
     { id: "p10-4", filename: "warc-10-4-bundle-reminders", label: "4 · No-show reminders", render: () => <BundleSlide4Reminders /> },
     { id: "p10-5", filename: "warc-10-5-bundle-landing-page", label: "5 · Landing page", render: () => <BundleSlide5LandingPage /> },
-    { id: "p10-6", filename: "warc-10-6-bundle-recap", label: "6 · Recap + offer", render: () => <BundleSlide6Recap /> },
+    { id: "p10-6", filename: "warc-10-6-bundle-recap", label: "6 · Recap + offer & CTA", render: () => <BundleSlide6Recap /> },
   ],
 }
 
 function PostsPage() {
+  // Client-rendered content isn't in the DOM yet when the browser tries its
+  // native scroll-to-hash on load, so deep links like #bundle-carousel need
+  // a manual nudge once everything's actually mounted.
+  useEffect(() => {
+    if (!window.location.hash) return
+    document.getElementById(window.location.hash.slice(1))?.scrollIntoView({ behavior: "smooth", block: "start" })
+  }, [])
+
   return (
     <div className="min-h-screen bg-[#f5f5f4]">
       <header className="border-b border-black/10 bg-white px-8 py-10 text-center">
@@ -71,7 +80,7 @@ function PostsPage() {
         <BioCard />
       </header>
 
-      <section className="mx-auto max-w-[1400px] px-8 pt-14">
+      <section id="bundle-carousel" className="mx-auto max-w-[1400px] px-8 pt-14">
         <p className="mb-1 text-[15px] font-semibold text-black/70">{BUNDLE_CAROUSEL.title}</p>
         <p className="mb-6 max-w-[640px] text-[13.5px] leading-relaxed text-black/50">
           Upload all 6 images as one Instagram carousel, in this order.

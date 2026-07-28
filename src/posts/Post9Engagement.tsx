@@ -12,13 +12,13 @@ export function Post9Engagement() {
         </Badge>
 
         <p className="max-w-[820px] text-[50px] leading-[1.25] font-extrabold tracking-tight text-[var(--warc-ink)]">
-          A patient once told our AI receptionist:
+          A patient once told our WhatsApp receptionist:
         </p>
 
         <div className="mt-8 max-w-[720px] rounded-[28px] border border-[var(--warc-card-border)] bg-[var(--warc-card)] px-10 py-9 shadow-sm">
           <Quote className="mx-auto mb-5 size-10 fill-[var(--warc-green)] text-[var(--warc-green)]" />
           <p className="text-[34px] leading-[1.4] font-semibold text-[var(--warc-ink)]">
-            "Your AI is pretty funny, it skillfully dodges my personal
+            "Your assistant is pretty funny, it skillfully dodges my personal
             questions. We still had a laugh about it, so no problem at all."
           </p>
         </div>

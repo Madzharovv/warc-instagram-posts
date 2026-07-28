@@ -9,7 +9,8 @@ export function BundleSlide5LandingPage() {
         icon={LayoutTemplate}
         step="4 of 4 · Where every click lands"
         name="Brand-New Clinic Landing Page"
-        value="€400 value, one-time build → included free"
+        price="€400"
+        priceCaption="€400 value, one-time build. Yours to keep, no recurring fee"
       />
 
       <StatRow

@@ -1,20 +1,23 @@
 import type { ComponentType } from "react"
-import { Check } from "lucide-react"
+import { Check, ChevronRight } from "lucide-react"
 
 // Shared building blocks for the per-product carousel slides: a header with
-// icon + name + value tag, a row of 3 quick numeric callouts, and a
+// icon + name + a scratched-price tag (matching the cover slide's
+// €1,327 → €0 treatment), a row of 3 quick numeric callouts, and a
 // checkmark benefit list. Keeps slides 2-5 visually identical.
 
 export function ProductHeader({
   icon: Icon,
   step,
   name,
-  value,
+  price,
+  priceCaption,
 }: {
   icon: ComponentType<{ className?: string }>
   step: string
   name: string
-  value: string
+  price: string
+  priceCaption: string
 }) {
   return (
     <div className="flex flex-col items-center text-center">
@@ -27,9 +30,19 @@ export function ProductHeader({
       <h1 className="mt-2 max-w-[720px] text-[42px] leading-[1.1] font-extrabold tracking-tight text-[var(--warc-ink)]">
         {name}
       </h1>
-      <div className="mt-5 rounded-full border border-[var(--warc-green)]/25 bg-[var(--warc-mint)]/50 px-5 py-1.5 text-[17px] font-bold text-[var(--warc-green-dark)]">
-        {value}
+
+      <div className="mt-5 flex items-center justify-center gap-3">
+        <p className="text-[30px] leading-none font-extrabold tracking-tight text-[var(--warc-ink)]/30 line-through decoration-3">
+          {price}
+        </p>
+        <ChevronRight className="size-6 text-[var(--warc-ink)]/25" strokeWidth={3} />
+        <p className="text-[44px] leading-none font-extrabold tracking-tighter text-[var(--warc-green)]">
+          €0
+        </p>
       </div>
+      <p className="mt-2 max-w-[560px] text-[16px] font-semibold text-[var(--warc-ink)]/50">
+        {priceCaption}
+      </p>
     </div>
   )
 }

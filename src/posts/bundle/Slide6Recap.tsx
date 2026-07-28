@@ -1,11 +1,10 @@
-import { Badge } from "@/components/ui/badge"
 import { SlideShell } from "./SlideShell"
-import { MessageCircle, CalendarCheck, BellRing, LayoutTemplate } from "lucide-react"
+import { MessageCircle, CalendarCheck, BellRing, LayoutTemplate, ArrowRight } from "lucide-react"
 
 const ITEMS = [
   {
     icon: MessageCircle,
-    name: "WARC — AI WhatsApp receptionist",
+    name: "WARC 24/7 WhatsApp receptionist",
     detail: "€199/mo × 3 months",
     value: "€597",
   },
@@ -17,9 +16,9 @@ const ITEMS = [
   },
   {
     icon: BellRing,
-    name: "No-show killer reminders",
-    detail: "€100/mo × 3, synced to your booking system",
-    value: "€300",
+    name: "Automatic text reminders",
+    detail: "€60/mo × 3, synced to your booking system",
+    value: "€180",
   },
   {
     icon: LayoutTemplate,
@@ -32,59 +31,71 @@ const ITEMS = [
 export function BundleSlide6Recap() {
   return (
     <SlideShell step={6}>
-      <h1 className="text-center text-[44px] leading-[1.1] font-extrabold tracking-tight text-[var(--warc-ink)]">
+      <h1 className="text-center text-[40px] leading-[1.1] font-extrabold tracking-tight text-[var(--warc-ink)]">
         Add it up.
       </h1>
 
-      <div className="mt-8 overflow-hidden rounded-[26px] border border-[var(--warc-card-border)] bg-[var(--warc-card)] shadow-xl">
+      <div className="mt-6 overflow-hidden rounded-[24px] border border-[var(--warc-card-border)] bg-[var(--warc-card)] shadow-xl">
         {ITEMS.map((item, i) => (
           <div
             key={item.name}
-            className={`flex items-center gap-5 px-7 py-5 ${
+            className={`flex items-center gap-4 px-6 py-4 ${
               i > 0 ? "border-t border-[var(--warc-card-border)]" : ""
             }`}
           >
-            <div className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-[var(--warc-mint)]/60">
-              <item.icon className="size-6 text-[var(--warc-green-dark)]" />
+            <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-[var(--warc-mint)]/60">
+              <item.icon className="size-5 text-[var(--warc-green-dark)]" />
             </div>
             <div className="min-w-0 flex-1">
-              <p className="text-[20px] leading-tight font-bold text-[var(--warc-ink)]">
+              <p className="text-[18px] leading-tight font-bold text-[var(--warc-ink)]">
                 {item.name}
               </p>
-              <p className="mt-1 text-[15px] leading-snug text-[var(--warc-ink)]/50">
+              <p className="mt-0.5 text-[13px] leading-snug text-[var(--warc-ink)]/50">
                 {item.detail}
               </p>
             </div>
-            <p className="shrink-0 text-[22px] font-bold text-[var(--warc-ink)]/35 line-through decoration-2">
+            <p className="shrink-0 text-[19px] font-bold text-[var(--warc-ink)]/35 line-through decoration-2">
               {item.value}
             </p>
           </div>
         ))}
       </div>
 
-      <div className="mt-5 flex items-center justify-between px-2">
-        <p className="text-[22px] font-semibold text-[var(--warc-ink)]/55">
+      <div className="mt-4 flex items-center justify-between px-2">
+        <p className="text-[19px] font-semibold text-[var(--warc-ink)]/55">
           Total value over 3 months
         </p>
-        <p className="text-[28px] font-extrabold text-[var(--warc-ink)]/40 line-through decoration-2">
-          €1,447
+        <p className="text-[24px] font-extrabold text-[var(--warc-ink)]/40 line-through decoration-2">
+          €1,327
         </p>
       </div>
 
-      <div className="mt-4 flex items-center justify-between rounded-[22px] bg-gradient-to-br from-[var(--warc-green)] to-[var(--warc-green-dark)] px-8 py-6 shadow-lg">
-        <p className="text-[26px] font-bold text-white">Your price today</p>
-        <p className="text-[54px] leading-none font-extrabold text-white">€0</p>
+      <div className="mt-3 flex items-center justify-between rounded-[20px] bg-gradient-to-br from-[var(--warc-green)] to-[var(--warc-green-dark)] px-7 py-5 shadow-lg">
+        <p className="text-[22px] font-bold text-white">Your price today</p>
+        <p className="text-[46px] leading-none font-extrabold text-white">€0</p>
       </div>
 
-      <p className="mx-auto mt-6 max-w-[780px] text-center text-[18px] leading-snug text-[var(--warc-ink)]/55">
-        After 3 months, you only pay for WARC, €199/mo. The booking system,
-        reminders, and landing page are yours to keep, free, for as long as
-        you're a WARC clinic.
+      <p className="mx-auto mt-5 max-w-[800px] text-center text-[16px] leading-snug text-[var(--warc-ink)]/55">
+        After 3 months, only WARC is billed at €199/mo. Booking and text
+        reminders stay free as long as you're a WARC clinic, and the landing
+        page is yours to keep either way, no strings attached.
       </p>
 
-      <Badge className="mx-auto mt-6 border border-[var(--warc-card-border)] bg-[var(--warc-card)] px-5 py-2.5 text-[17px] tracking-wide text-[var(--warc-ink)]/70 shadow-sm">
-        OFFER ENDS AUGUST 31 · DM US TO LOCK IT IN
-      </Badge>
+      <p className="mx-auto mt-5 max-w-[760px] text-center text-[20px] leading-snug font-bold text-[var(--warc-ink)]">
+        Saying yes costs you nothing today. Saying no costs you every patient
+        who messages after hours and never hears back.
+      </p>
+
+      <div className="mt-6 flex items-center justify-center gap-3 rounded-[20px] bg-gradient-to-br from-[var(--warc-green)] to-[var(--warc-green-dark)] px-7 py-5 shadow-lg">
+        <p className="text-center text-[22px] font-extrabold text-white">
+          DM us "START" before €0 turns back into €1,327
+        </p>
+        <ArrowRight className="size-6 shrink-0 text-white" strokeWidth={3} />
+      </div>
+
+      <p className="mx-auto mt-4 text-center text-[15px] font-semibold text-[var(--warc-ink)]/45">
+        Offer ends August 31 · miss it, and this exact price is gone for good
+      </p>
     </SlideShell>
   )
 }

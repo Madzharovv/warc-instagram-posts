@@ -14,8 +14,8 @@ export function Post3Quote() {
 
         <Quote className="mb-10 size-20 fill-[var(--warc-green)] text-[var(--warc-green)]" />
         <p className="text-[58px] leading-[1.35] font-semibold tracking-tight text-[var(--warc-ink)]">
-          "Your AI is pretty funny, it skillfully dodges my personal questions. We
-          still had a laugh about it, so no problem at all."
+          "Your assistant is pretty funny, it skillfully dodges my personal
+          questions. We still had a laugh about it, so no problem at all."
         </p>
 
         <div className="mt-16 flex items-center gap-4">

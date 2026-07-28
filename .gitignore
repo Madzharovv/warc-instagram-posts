@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Office lock files (e.g. left behind while warc-outreach-tracker.xlsx is open)
+~$*

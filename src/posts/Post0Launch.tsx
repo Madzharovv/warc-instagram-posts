@@ -21,7 +21,7 @@ export function Post0Launch() {
         <LogoLockupStacked size={110} variant="green" />
 
         <p className="mt-10 max-w-[760px] text-[52px] leading-[1.25] font-extrabold tracking-tight text-[var(--warc-ink)]">
-          We're the AI receptionist your clinic's WhatsApp has been missing.
+          We're the 24/7 receptionist your clinic's WhatsApp has been missing.
         </p>
 
         <p className="mt-7 max-w-[640px] text-[26px] leading-snug text-[var(--warc-ink)]/60">

@@ -8,8 +8,9 @@ export function BundleSlide2Warc() {
       <ProductHeader
         icon={MessageCircle}
         step="1 of 4 · The core"
-        name="WARC — AI WhatsApp Receptionist"
-        value="€597 value (€199/mo × 3) → included free"
+        name="WARC 24/7 WhatsApp Receptionist"
+        price="€597"
+        priceCaption="€597 value over 3 months. Then €199/mo, ongoing"
       />
 
       <StatRow

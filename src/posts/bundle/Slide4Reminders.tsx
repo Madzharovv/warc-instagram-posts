@@ -7,10 +7,10 @@ export function BundleSlide4Reminders() {
     <SlideShell step={4}>
       <ProductHeader
         icon={BellRing}
-        step="3 of 4 · Stops patients from forgetting their appointment"
+        step="3 of 4 · The result: fewer empty chairs, more revenue kept"
         name="Automatic Text Reminders"
         price="€180"
-        priceCaption="€180 value over 3 months. Then it's included in your €199/mo."
+        priceCaption="€180 value over 3 months. Free, then included in your €199/mo"
       />
 
       <StatRow
@@ -25,13 +25,14 @@ export function BundleSlide4Reminders() {
         items={[
           "Sends a text before every appointment, with the date, time and a reschedule link",
           "Works with the booking system, calendar and patient records you already use",
-          "Fewer no-shows means fewer empty chairs and more revenue",
+          "Fewer no-shows means fewer empty chairs and more revenue kept",
         ]}
       />
 
       <ProofCallout>
         A missed appointment is money you already earned, walking out the
-        door. This tool stops it, and it's free for 3 months.
+        door. This tool stops it. Worth <strong>€180</strong>. Free for 3
+        months.
       </ProofCallout>
     </SlideShell>
   )

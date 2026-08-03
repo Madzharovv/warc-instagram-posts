@@ -7,10 +7,10 @@ export function BundleSlide5LandingPage() {
     <SlideShell step={5}>
       <ProductHeader
         icon={LayoutTemplate}
-        step="4 of 4 · Where every click lands"
+        step="4 of 4 · The result: every ad click becomes a conversation"
         name="Brand-New Clinic Landing Page"
         price="€400"
-        priceCaption="€400 value, one-time build. Yours to keep, no recurring fee"
+        priceCaption="€400 value, one-time build. Free, yours to keep forever"
       />
 
       <StatRow
@@ -23,15 +23,16 @@ export function BundleSlide5LandingPage() {
 
       <BenefitList
         items={[
-          "Built specifically for your clinic, ready for your bio, ads, and Google",
-          "Designed to send every visitor straight into a WhatsApp chat with WARC",
+          "Built specifically for your clinic, ready to run ads and Google traffic to today",
+          "Every visitor is one tap from a WhatsApp chat with WARC, not a dead end",
           "Yours forever, no recurring fee, even after this offer ends",
         ]}
       />
 
       <ProofCallout>
-        Clinics normally pay €400 for this alone. It's the first thing a new
-        patient sees, so it's built to convert, not just to look nice.
+        Clinics normally pay <strong>€400</strong> for this alone. It's the
+        first thing a new patient sees, built to convert, not just to look
+        nice. Yours, free, no strings attached.
       </ProofCallout>
     </SlideShell>
   )

@@ -12,6 +12,7 @@ import { Post7Testimonial } from "@/posts/Post7Testimonial"
 import { Post8CTA } from "@/posts/Post8CTA"
 import { Post9Engagement } from "@/posts/Post9Engagement"
 import { Post11Revenue } from "@/posts/Post11Revenue"
+import { Post12WhatItHelpsWith } from "@/posts/Post12WhatItHelpsWith"
 import { BundleSlide1Cover } from "@/posts/bundle/Slide1Cover"
 import { BundleSlide2Warc } from "@/posts/bundle/Slide2Warc"
 import { BundleSlide3Booking } from "@/posts/bundle/Slide3Booking"
@@ -37,6 +38,7 @@ const POSTS: { id: string; filename: string; title: string; render: () => React.
   { id: "p8", filename: "warc-08-cta", title: "8 · Closing CTA", render: () => <Post8CTA /> },
   { id: "p9", filename: "warc-09-engagement", title: "9 · High engagement (drives comments)", render: () => <Post9Engagement /> },
   { id: "p11", filename: "warc-11-revenue-proof", title: "11 · Revenue proof (lead with this)", render: () => <Post11Revenue /> },
+  { id: "p12", filename: "warc-12-what-it-helps-with", title: "12 · What WARC does + results", render: () => <Post12WhatItHelpsWith /> },
 ]
 
 // Instagram carousels take one caption for the whole post, not one per

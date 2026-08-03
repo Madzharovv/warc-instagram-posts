@@ -106,4 +106,17 @@ DM us to lock it in before August 31.
 Real case study, real clinic, real revenue.
 
 #DentalClinic #ClinicGrowth #WhatsAppBusiness #ROI`,
+
+  p12: `What does WARC actually do? Here's the short version:
+
+✅ Answers every WhatsApp message in about 13 seconds, so enquiries turn into booked patients
+✅ Covers nights, weekends and holidays automatically, no after-hours patient goes unanswered
+✅ Hands off to your team the moment a patient needs a human, nothing falls through the cracks
+✅ Replies in 100+ languages, so no patient is lost to a language barrier
+
+The result, from one real clinic: €6,000+ generated in 3 months, including 32 bookings that would've otherwise been missed.
+
+Contact us today to see it on your own number.
+
+#DentalClinic #WhatsAppReceptionist #WhatsAppBusiness #ClinicGrowth`,
 }

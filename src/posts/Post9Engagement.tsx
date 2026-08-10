@@ -36,6 +36,10 @@ export function Post9Engagement() {
         <p className="mt-6 text-[24px] font-medium text-[var(--warc-ink)]/55">
           👇 Tell us below, and tag a clinic owner who needs a laugh today.
         </p>
+
+        <Badge className="mt-10 border border-[var(--warc-card-border)] bg-[var(--warc-card)] px-5 py-2.5 text-[16px] tracking-wide text-[var(--warc-ink)]/60 shadow-sm">
+          FROM A CLINIC THAT'S RECOVERED 32 PATIENTS WITH WARC
+        </Badge>
       </div>
 
       <div className="relative">

@@ -19,6 +19,12 @@ import { BundleSlide3Booking } from "@/posts/bundle/Slide3Booking"
 import { BundleSlide4Reminders } from "@/posts/bundle/Slide4Reminders"
 import { BundleSlide5LandingPage } from "@/posts/bundle/Slide5LandingPage"
 import { BundleSlide6Recap } from "@/posts/bundle/Slide6Recap"
+import { Story1Slide1Before } from "@/posts/stories/Story1Slide1Before"
+import { Story1Slide2After } from "@/posts/stories/Story1Slide2After"
+import { Story1Slide3Results } from "@/posts/stories/Story1Slide3Results"
+import { Story2Slide1Before } from "@/posts/stories/Story2Slide1Before"
+import { Story2Slide2After } from "@/posts/stories/Story2Slide2After"
+import { Story2Slide3Results } from "@/posts/stories/Story2Slide3Results"
 import { LogoPage } from "@/LogoPage"
 import { HomePage } from "@/HomePage"
 import { OutreachPage } from "@/OutreachPage"
@@ -41,11 +47,38 @@ const POSTS: { id: string; filename: string; title: string; render: () => React.
   { id: "p12", filename: "warc-12-what-it-helps-with", title: "12 · What WARC does + results", render: () => <Post12WhatItHelpsWith /> },
 ]
 
+// Before/After/Results carousels: the highest-performing post in the pack
+// (the real 6:58am conversation, p4) is a single-slide compression of a
+// story that has more room to work as 3 full slides. These are the new
+// content pillar, built the same way, going forward, one story per
+// carousel: the problem beat, the WARC-catches-it beat, then the real
+// case-study numbers tying it back to proof.
+const STORY_CAROUSEL_1 = {
+  title: "13 · The 06:58 toothache (carousel, 3 slides)",
+  captionKey: "p13",
+  slides: [
+    { id: "p13-1", filename: "warc-13-1-story-toothache-before", label: "1 · Before", render: () => <Story1Slide1Before /> },
+    { id: "p13-2", filename: "warc-13-2-story-toothache-after", label: "2 · After", render: () => <Story1Slide2After /> },
+    { id: "p13-3", filename: "warc-13-3-story-toothache-results", label: "3 · Results", render: () => <Story1Slide3Results /> },
+  ],
+}
+
+const STORY_CAROUSEL_2 = {
+  title: "14 · Same message, two outcomes (carousel, 3 slides)",
+  captionKey: "p14",
+  slides: [
+    { id: "p14-1", filename: "warc-14-1-story-outcomes-before", label: "1 · Before", render: () => <Story2Slide1Before /> },
+    { id: "p14-2", filename: "warc-14-2-story-outcomes-after", label: "2 · After", render: () => <Story2Slide2After /> },
+    { id: "p14-3", filename: "warc-14-3-story-outcomes-results", label: "3 · Results", render: () => <Story2Slide3Results /> },
+  ],
+}
+
 // Instagram carousels take one caption for the whole post, not one per
 // slide, so this is a separate structure from POSTS above rather than 6
 // more entries in it.
 const BUNDLE_CAROUSEL = {
   title: "10 · Limited-time bundle (carousel, 6 slides)",
+  captionKey: "p10" as const,
   slides: [
     { id: "p10-1", filename: "warc-10-1-bundle-cover", label: "1 · Cover", render: () => <BundleSlide1Cover /> },
     { id: "p10-2", filename: "warc-10-2-bundle-warc", label: "2 · WARC", render: () => <BundleSlide2Warc /> },
@@ -54,6 +87,34 @@ const BUNDLE_CAROUSEL = {
     { id: "p10-5", filename: "warc-10-5-bundle-landing-page", label: "5 · Landing page", render: () => <BundleSlide5LandingPage /> },
     { id: "p10-6", filename: "warc-10-6-bundle-recap", label: "6 · Recap + offer & CTA", render: () => <BundleSlide6Recap /> },
   ],
+}
+
+type Carousel = {
+  title: string
+  captionKey: keyof typeof POST_CAPTIONS
+  slides: { id: string; filename: string; label: string; render: () => React.ReactNode }[]
+}
+
+function CarouselSection({ id, carousel, note }: { id: string; carousel: Carousel; note: string }) {
+  return (
+    <section id={id} className="mx-auto max-w-[1400px] px-8 pt-14">
+      <p className="mb-1 text-[15px] font-semibold text-black/70">{carousel.title}</p>
+      <p className="mb-6 max-w-[640px] text-[13.5px] leading-relaxed text-black/50">{note}</p>
+      <div className="flex flex-wrap gap-8">
+        {carousel.slides.map((s) => (
+          <div key={s.id} className="flex flex-col items-center gap-3">
+            <p className="text-[13px] font-semibold text-black/55">{s.label}</p>
+            <PostFrame id={s.id} filename={s.filename} displayWidth={220}>
+              {s.render()}
+            </PostFrame>
+          </div>
+        ))}
+      </div>
+      <div className="mx-auto mt-8 max-w-[640px]">
+        <CopyField label="Carousel caption (use once, for the whole post)" value={POST_CAPTIONS[carousel.captionKey]} />
+      </div>
+    </section>
+  )
 }
 
 function PostsPage() {
@@ -72,7 +133,7 @@ function PostsPage() {
           WARC · Instagram content pack
         </p>
         <h1 className="text-[32px] font-bold tracking-tight text-[#0b0b0f]">
-          11 single posts + 1 six-slide carousel
+          12 single posts + 3 carousels
         </h1>
         <p className="mx-auto mt-3 max-w-[560px] text-[15px] leading-relaxed text-black/55">
           Each card renders at native 1080×1350px (Instagram's standard portrait
@@ -82,27 +143,37 @@ function PostsPage() {
         <BioCard />
       </header>
 
-      <section id="bundle-carousel" className="mx-auto max-w-[1400px] px-8 pt-14">
-        <p className="mb-1 text-[15px] font-semibold text-black/70">{BUNDLE_CAROUSEL.title}</p>
-        <p className="mb-6 max-w-[640px] text-[13.5px] leading-relaxed text-black/50">
-          Upload all 6 images as one Instagram carousel, in this order.
-          Instagram uses a single caption for the whole post, so copy it once
-          below and use it for the carousel, not per-slide.
-        </p>
-        <div className="flex flex-wrap gap-8">
-          {BUNDLE_CAROUSEL.slides.map((s) => (
-            <div key={s.id} className="flex flex-col items-center gap-3">
-              <p className="text-[13px] font-semibold text-black/55">{s.label}</p>
-              <PostFrame id={s.id} filename={s.filename} displayWidth={220}>
-                {s.render()}
-              </PostFrame>
-            </div>
-          ))}
+      <div className="mx-auto max-w-[1400px] px-8 pt-14">
+        <div className="rounded-2xl border border-[#0a5f33]/25 bg-[#0a5f33]/6 px-6 py-5">
+          <p className="text-[13px] font-bold tracking-wide text-[#0a5f33] uppercase">
+            Content pillar
+          </p>
+          <p className="mt-1.5 max-w-[820px] text-[14.5px] leading-relaxed text-black/70">
+            The two carousels below are the format to lean into going forward: a
+            real Before, a real After, then the case-study Results tying it
+            back to proof. It's the same shape as the highest-performing post
+            in the pack (post 4), just given the full 3 slides it needs.
+          </p>
         </div>
-        <div className="mx-auto mt-8 max-w-[640px]">
-          <CopyField label="Carousel caption (use once, for the whole post)" value={POST_CAPTIONS.p10} />
-        </div>
-      </section>
+      </div>
+
+      <CarouselSection
+        id="story-1-carousel"
+        carousel={STORY_CAROUSEL_1}
+        note="Upload all 3 images as one Instagram carousel, in this order. Built from the exact real conversation in post 4, the pack's best performer, given room to breathe across a full Before → After → Results arc."
+      />
+
+      <CarouselSection
+        id="story-2-carousel"
+        carousel={STORY_CAROUSEL_2}
+        note="Same before/after logic as post 5, expanded into 3 full slides plus a case-study results slide tying it back to the 32-patient proof point."
+      />
+
+      <CarouselSection
+        id="bundle-carousel"
+        carousel={BUNDLE_CAROUSEL}
+        note="Upload all 6 images as one Instagram carousel, in this order. Instagram uses a single caption for the whole post, so copy it once below and use it for the carousel, not per-slide."
+      />
 
       <main className="mx-auto grid max-w-[1400px] grid-cols-1 gap-x-10 gap-y-14 px-8 py-14 sm:grid-cols-2 lg:grid-cols-3">
         {POSTS.map((p) => (

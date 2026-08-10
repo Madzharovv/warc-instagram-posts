@@ -4,8 +4,8 @@ import { BrandFooter } from "./Brand"
 
 const MINI_STATS = [
   { value: "135", label: "patients messaged in" },
-  { value: "60%", label: "sent after hours" },
-  { value: "32", label: "bookings rescued" },
+  { value: "13s", label: "avg. reply time" },
+  { value: "60%", label: "messaged after hours" },
 ]
 
 export function Post1HeroStat() {
@@ -18,15 +18,15 @@ export function Post1HeroStat() {
 
         <div className="flex items-end gap-5">
           <span className="text-[360px] leading-none font-extrabold tracking-tighter text-[var(--warc-ink)]">
-            13
+            32
           </span>
-          <span className="mb-11 text-[68px] font-bold tracking-tight text-[var(--warc-green)]">
-            sec
+          <span className="mb-11 text-[42px] font-bold tracking-tight text-[var(--warc-green)]">
+            patients
           </span>
         </div>
 
         <p className="mt-12 max-w-[760px] text-[40px] leading-[1.3] font-medium text-[var(--warc-ink)]/75">
-          Average time WARC takes to answer a patient's WhatsApp, day or night.
+          Booked by this clinic in 13 weeks who would've gone to a competitor instead.
         </p>
 
         <Separator className="my-14 max-w-[600px] bg-[var(--warc-card-border)]" />

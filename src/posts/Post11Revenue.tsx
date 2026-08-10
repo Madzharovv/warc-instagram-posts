@@ -3,9 +3,9 @@ import { Separator } from "@/components/ui/separator"
 import { BrandFooter } from "./Brand"
 
 const MINI_STATS = [
-  { value: "3", label: "months of data" },
-  { value: "32", label: "bookings that would've been missed" },
+  { value: "32", label: "patients who'd have been lost" },
   { value: "13s", label: "avg. reply time" },
+  { value: "3", label: "months of data" },
 ]
 
 export function Post11Revenue() {
@@ -29,7 +29,8 @@ export function Post11Revenue() {
         </div>
 
         <p className="mt-12 max-w-[760px] text-[40px] leading-[1.3] font-medium text-[var(--warc-ink)]/75">
-          Generated in the first 3 months after this clinic turned on WARC.
+          Generated in 3 months, from 32 patients this clinic would've
+          otherwise lost.
         </p>
 
         <Separator className="my-14 max-w-[600px] bg-[var(--warc-card-border)]" />

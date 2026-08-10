@@ -1,8 +1,8 @@
 import { CopyField } from "@/components/CopyField"
 
-const NAME = "WARC | WhatsApp Receptionist"
+const NAME = "WARC | Patients Recovered"
 const BIO =
-  "🦷 24/7 WhatsApp receptionist for clinics\n⚡ Real replies in ~13 seconds\n📊 Real case studies, zero fluff\n👇 Book a free demo"
+  "🦷 Get the patients your clinic is missing\n📊 32 booked in 13 weeks, real case study\n👇 See how"
 const LINK = "warc.akroslab.com"
 const CATEGORY = "Software company"
 

@@ -7,7 +7,7 @@ export function BundleSlide2Warc() {
     <SlideShell step={2}>
       <ProductHeader
         icon={MessageCircle}
-        step="1 of 4 · The result: no patient goes unanswered again"
+        step="1 of 4 · The result: 32 patients who didn't get missed"
         name="WARC 24/7 WhatsApp Receptionist"
         price="€597"
         priceCaption="€597 value over 3 months. Free, then €199/mo for everything"
@@ -15,8 +15,8 @@ export function BundleSlide2Warc() {
 
       <StatRow
         stats={[
+          { value: "32", label: "patients recovered" },
           { value: "13s", label: "avg. reply time" },
-          { value: "24/7", label: "always on" },
           { value: "100+", label: "languages" },
         ]}
       />
@@ -30,9 +30,9 @@ export function BundleSlide2Warc() {
       />
 
       <ProofCallout>
-        One clinic made <strong>€6,000+</strong> in 3 months on this exact
-        system, including <strong>32 bookings</strong> that would've been
-        missed. It's the engine of the bundle, and it's free.
+        One clinic recovered <strong>32 patients</strong> in 3 months on this
+        exact system, worth over <strong>€6,000</strong>. It's the engine of
+        the bundle, and it's free.
       </ProofCallout>
     </SlideShell>
   )

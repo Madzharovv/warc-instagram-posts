@@ -37,7 +37,7 @@ export function Post2AfterHours() {
         </div>
 
         <Badge className="mx-auto mt-14 border border-[var(--warc-card-border)] bg-[var(--warc-card)] px-5 py-2.5 text-[18px] tracking-wide text-[var(--warc-ink)]/70 shadow-sm">
-          NO ONE ON STAFF HAD TO BE AWAKE FOR IT
+          THAT'S 81 PATIENTS WHO DIDN'T GO ELSEWHERE
         </Badge>
       </div>
 

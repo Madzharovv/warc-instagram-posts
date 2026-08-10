@@ -23,9 +23,9 @@ const HELPS_WITH = [
 ]
 
 const RESULTS = [
-  { value: "13s", label: "avg. reply time" },
+  { value: "32", label: "patients booked who'd have been lost" },
   { value: "€6k+", label: "generated in 3 months" },
-  { value: "32", label: "bookings rescued" },
+  { value: "13s", label: "avg. reply time" },
 ]
 
 export function Post12WhatItHelpsWith() {
@@ -37,7 +37,7 @@ export function Post12WhatItHelpsWith() {
         </Badge>
 
         <h1 className="text-center text-[46px] leading-[1.15] font-extrabold tracking-tight text-[var(--warc-ink)]">
-          One tool. Every patient message answered, every time.
+          One tool. Every patient recovered, every time.
         </h1>
 
         <div className="mt-12 flex flex-col gap-6">

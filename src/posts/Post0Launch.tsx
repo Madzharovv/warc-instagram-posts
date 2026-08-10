@@ -5,8 +5,8 @@ import { BrandFooter } from "./Brand"
 import { TrendingUp, Zap, MessageCircle, ArrowRight } from "lucide-react"
 
 const EXPECT = [
-  { icon: TrendingUp, label: "€6,000+ generated in 3 months, one real clinic" },
-  { icon: Zap, label: "Every WhatsApp answered in ~13 seconds, even at 3am" },
+  { icon: TrendingUp, label: "32 patients booked in 13 weeks who'd have gone elsewhere" },
+  { icon: Zap, label: "Every enquiry answered in ~13 seconds, even at 3am" },
   { icon: MessageCircle, label: "Curious what this could look like for your clinic? Ask us." },
 ]
 
@@ -21,12 +21,12 @@ export function Post0Launch() {
         <LogoLockupStacked size={110} variant="green" />
 
         <p className="mt-10 max-w-[760px] text-[52px] leading-[1.25] font-extrabold tracking-tight text-[var(--warc-ink)]">
-          We're the 24/7 receptionist your clinic's WhatsApp has been missing.
+          We get your clinic the patients it's currently missing.
         </p>
 
         <p className="mt-7 max-w-[640px] text-[26px] leading-snug text-[var(--warc-ink)]/60">
-          WARC answers every WhatsApp message in seconds, 24/7, in 100+
-          languages, without replacing your team.
+          WARC catches every WhatsApp enquiry, 24/7, in 100+ languages, and
+          turns it into a booked patient before a competitor does.
         </p>
 
         <Separator className="my-12 max-w-[600px] bg-[var(--warc-card-border)]" />

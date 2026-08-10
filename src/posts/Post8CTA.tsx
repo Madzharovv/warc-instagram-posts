@@ -4,8 +4,8 @@ import { LogoLockupHorizontal } from "@/logo/LogoLockup"
 import { ArrowRight } from "lucide-react"
 
 const MINI_STATS = [
+  { value: "32", label: "patients booked who'd have been lost" },
   { value: "13s", label: "avg. reply time" },
-  { value: "60%", label: "handled after hours" },
   { value: "€6k+", label: "generated in 3 months" },
 ]
 
@@ -18,11 +18,11 @@ export function Post8CTA() {
         </div>
 
         <p className="max-w-[780px] text-[74px] leading-[1.15] font-extrabold tracking-tight text-white">
-          Never miss a patient message again.
+          Get the patients your clinic is currently missing.
         </p>
         <p className="mt-9 max-w-[640px] text-[32px] leading-snug text-white/70">
-          WARC replies in seconds, 24/7, in 100+ languages, and hands off to your
-          team the moment they jump in.
+          WARC catches every WhatsApp enquiry, 24/7, in 100+ languages, and turns
+          it into a booked patient before someone else does.
         </p>
 
         <div className="mt-16 flex flex-col items-center gap-6">

@@ -40,13 +40,13 @@ export function Post3Quote() {
         <div className="flex items-center gap-16">
           <div>
             <div className="text-[52px] leading-none font-extrabold tracking-tight text-[var(--warc-ink)]">
-              13s
+              32
             </div>
-            <p className="mt-2 text-[19px] text-[var(--warc-ink)]/55">avg. reply time</p>
+            <p className="mt-2 text-[19px] text-[var(--warc-ink)]/55">patients recovered</p>
           </div>
           <div>
             <div className="text-[52px] leading-none font-extrabold tracking-tight text-[var(--warc-ink)]">
-              3+
+              100+
             </div>
             <p className="mt-2 text-[19px] text-[var(--warc-ink)]/55">languages, zero setup</p>
           </div>

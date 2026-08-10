@@ -22,9 +22,9 @@ const PROBLEM = `It got me wondering, what happens when someone messages your cl
 
 If the patient is still waiting for a reply the next morning, there's a good chance they've already contacted another practice.`
 
-const ANSWER_AND_PROOF = `That's exactly why we built WARC. It replies to WhatsApp enquiries within seconds, 24/7, so even outside of business hours every patient gets an immediate response.
+const ANSWER_AND_PROOF = `That's exactly why we built WARC. It answers WhatsApp enquiries within seconds, 24/7, and turns them into booked patients before they ever reach a competitor.
 
-One clinic we work with, D2 Clínica Dental in Mallorca, generated over €6,000 in their first 3 months with WARC, including 32 bookings that would otherwise have been missed. Now it's simply part of their front desk.`
+One clinic we work with, D2 Clínica Dental in Mallorca, booked 32 patients in their first 3 months with WARC who would otherwise have been missed entirely, worth over €6,000. Now it's simply part of their front desk.`
 
 const ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp.`
 
@@ -103,7 +103,7 @@ ${ASK}`,
 // cut to one line each.
 const DM_PROBLEM = `Quick one: how fast do patients hear back after hours on WhatsApp? If they're still waiting the next morning, they've probably messaged someone else.`
 
-const DM_ANSWER_AND_PROOF = `We built WARC for that. It replies in about 13 seconds, 24/7. One clinic generated over €6,000 in 3 months, including 32 bookings that would've otherwise been missed.`
+const DM_ANSWER_AND_PROOF = `We built WARC for that. It replies in seconds, 24/7, and gets those patients booked before they message a competitor. One clinic recovered 32 patients in 3 months who would've otherwise been missed, worth over €6,000.`
 
 const DM_ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍`
 
@@ -115,13 +115,13 @@ const DM_IMAGES_NOTE = `We're also running a free bundle offer right now, see th
 // send from personal account, includes the end-of-July bonus offer.
 const BARLAS_CO_DM = `Hey Dr Abdullah & Dr Shafay 👋 love the before/after transformations you're posting, thought I'd reach out.
 
-Quick one: how fast do patients hear back after hours on WhatsApp? If they're still waiting the next morning, they've probably messaged someone else.
+${DM_PROBLEM}
 
-We built WARC for that. It replies in about 13 seconds, 24/7. One clinic generated over €6,000 in 3 months, including 32 bookings that would've otherwise been missed.
+${DM_ANSWER_AND_PROOF}
 
 If you sign up before the end of July, we'll also include the booking system and appointment reminder add-ons at no extra cost.
 
-Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍
+${DM_ASK}
 
 ${DM_IMAGES_NOTE}`
 
@@ -144,7 +144,7 @@ ${DM_IMAGES_NOTE}`
 // shared as a separate follow-up message underneath this one.
 const NICK_C_MESSAGE = `Hi Nick,
 
-I'm Valentin, part of the team behind WARC, which replies to WhatsApp enquiries within seconds, 24/7. One clinic we work with generated over €6,000 in their first 3 months with WARC, including 32 bookings that would otherwise have been missed.
+I'm Valentin, part of the team behind WARC, which gets dental clinics the patients they're currently missing by answering WhatsApp enquiries within seconds, 24/7. One clinic we work with booked 32 patients in their first 3 months with WARC who would otherwise have been missed, worth over €6,000.
 
 Given the platform you've built with Limitless On Demand, I wanted to introduce WARC directly, in case there are a few clinic owners you know personally who'd genuinely benefit and you'd be comfortable mentioning it to them.
 
@@ -401,10 +401,9 @@ export function OutreachPage() {
       </main>
 
       <footer className="border-t border-black/10 px-8 py-8 text-center text-[12.5px] text-black/40">
-        Every stat here (13s reply time, €6,000+ generated, 32 rescued
-        bookings) is real, from the D2 Clínica Dental case study. Edit
-        directly in{" "}
-        <code>src/OutreachPage.tsx</code>.
+        Every stat here (32 patients recovered, €6,000+ generated, 13s reply
+        time) is real, from the D2 Clínica Dental case study. Edit directly
+        in <code>src/OutreachPage.tsx</code>.
       </footer>
     </div>
   )

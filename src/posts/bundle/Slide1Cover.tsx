@@ -10,7 +10,7 @@ export function BundleSlide1Cover() {
       </Badge>
 
       <p className="text-center text-[21px] font-extrabold tracking-wide text-[var(--warc-green)] uppercase">
-        Proven to generate €6,000+ in 3 months
+        Proven to recover 32 patients clinics were about to lose
       </p>
 
       <div className="mt-7 flex items-center justify-center gap-6">

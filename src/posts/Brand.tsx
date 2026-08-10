@@ -19,7 +19,7 @@ export function BrandFooter({ light = false }: { light?: boolean }) {
           warc.akroslab.com
         </p>
         <p className={`text-[15px] ${light ? "text-white/50" : "text-[var(--warc-ink)]/45"}`}>
-          24/7 WhatsApp receptionist for clinics
+          Gets clinics the patients they're missing
         </p>
       </div>
     </div>

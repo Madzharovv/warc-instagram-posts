@@ -1,65 +1,12 @@
 import { Link } from "react-router-dom"
+import { ArrowRight, ArrowUpRight, Images, MessageSquareText, ShieldCheck } from "lucide-react"
 import { LogoMark } from "@/logo/LogoMark"
-import { ArrowRight, Image, Sparkles, Send } from "lucide-react"
 
-const PAGES = [
-  {
-    to: "/logo",
-    icon: Sparkles,
-    title: "Logo",
-    description:
-      "The brand mark: color variants, real-size legibility check, and SVG/PNG exports at every size from favicon to app icon.",
-  },
-  {
-    to: "/posts",
-    icon: Image,
-    title: "Instagram Posts",
-    description:
-      "10 ready-to-post graphics built from the real D2 Clínica Dental case study, plus the profile bio, each exportable as a full-resolution PNG.",
-  },
-  {
-    to: "/outreach",
-    icon: Send,
-    title: "Outreach",
-    description:
-      "Cold email and Instagram DM templates for reaching out to clinics, with a personalized trigger, real proof, and a strong CTA.",
-  },
+const tools = [
+  { to: "/posts", title: "New-clinic Instagram series", description: "Eight complete, ready-to-post carousels. Preview six slides, download original PNGs, captions and accessibility alt text.", meta: "8 carousels · 48 images", icon: Images, action: "Open content library" },
+  { to: "/outreach", title: "Dental outreach workspace", description: "Personalised DM and email drafts with channel-specific eligibility checks, dated prospect research and founder-first guidance.", meta: "8 templates · 11 research entries", icon: MessageSquareText, action: "Open outreach library" },
 ]
 
 export function HomePage() {
-  return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-[var(--warc-cream-1)] via-[var(--warc-bg)] to-[var(--warc-cream-2)] px-8 py-20">
-      <LogoMark size={72} variant="green" />
-      <h1 className="mt-6 text-[34px] font-bold tracking-tight text-[var(--warc-ink)]">
-        WARC brand assets
-      </h1>
-      <p className="mx-auto mt-3 max-w-[480px] text-center text-[15px] leading-relaxed text-[var(--warc-ink)]/60">
-        Pick a page to review, edit, and export from.
-      </p>
-
-      <div className="mt-12 grid w-full max-w-[940px] grid-cols-1 gap-5 sm:grid-cols-3">
-        {PAGES.map((p) => (
-          <Link
-            key={p.to}
-            to={p.to}
-            className="group flex flex-col items-start gap-4 rounded-2xl border border-[var(--warc-card-border)] bg-[var(--warc-card)] p-7 text-left shadow-sm transition-shadow hover:shadow-md"
-          >
-            <div className="flex size-11 items-center justify-center rounded-xl bg-[var(--warc-green)]">
-              <p.icon className="size-5 text-white" />
-            </div>
-            <div>
-              <p className="text-[17px] font-semibold text-[var(--warc-ink)]">{p.title}</p>
-              <p className="mt-1.5 text-[13.5px] leading-relaxed text-[var(--warc-ink)]/55">
-                {p.description}
-              </p>
-            </div>
-            <div className="mt-auto flex items-center gap-1.5 text-[13.5px] font-semibold text-[var(--warc-green)]">
-              Open
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
+  return <div className="min-h-screen bg-[#f3f0e6] text-[#17170f]"><section className="relative overflow-hidden bg-[#073d21] px-5 pt-14 pb-24 text-white sm:px-8 sm:pt-20"><div className="pointer-events-none absolute -top-52 -right-36 size-[620px] rounded-full border border-[#bae6bc]/10" /><div className="pointer-events-none absolute -top-44 -right-32 size-[480px] rounded-full border border-[#bae6bc]/10" /><div className="relative mx-auto max-w-[1100px]"><div className="flex items-center gap-3"><LogoMark size={38} variant="white" /><span className="text-[13px] font-bold tracking-[0.08em]">WARC <span className="font-normal text-white/45">by Akros Lab</span></span></div><div className="mt-16 max-w-[780px] sm:mt-24"><p className="text-[11px] font-bold tracking-[0.18em] text-[#bae6bc] uppercase">Clinic growth, without the guesswork</p><h1 className="mt-5 text-[45px] leading-[1.02] font-semibold tracking-[-0.045em] sm:text-[68px]">From first enquiry.<br />To the right conversation.</h1><p className="mt-6 max-w-[650px] text-[16px] leading-7 text-white/70 sm:text-[18px]">The WARC content and outreach workspace: polished Instagram assets for new dental clinics and practical message drafts that put value before volume.</p><Link to="/posts" className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-lg bg-[#bae6bc] px-5 py-3 text-[14px] font-semibold text-[#073d21] transition hover:bg-white">Start with the new content <ArrowRight className="size-4" /></Link></div></div></section><main className="relative mx-auto max-w-[1100px] px-5 pb-16 sm:px-8"><div className="-mt-10 grid gap-5 lg:grid-cols-2">{tools.map(({ to, title, description, meta, icon: Icon, action }) => <Link key={to} to={to} className="group flex flex-col rounded-2xl border border-[#17170f]/10 bg-[#fdfbf3] p-6 shadow-[0_12px_35px_rgba(7,61,33,0.08)] transition hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(7,61,33,0.14)] sm:p-8"><div className="flex items-center justify-between gap-4"><div className="grid size-12 place-items-center rounded-xl bg-[#dceed4] text-[#0a5f33]"><Icon className="size-6" /></div><span className="text-[11px] font-semibold text-[#0a5f33]">{meta}</span></div><h2 className="mt-7 text-2xl font-semibold tracking-[-0.025em]">{title}</h2><p className="mt-3 text-[14px] leading-6 text-[#17170f]/65">{description}</p><span className="mt-7 inline-flex items-center gap-2 text-[13px] font-semibold text-[#0a5f33]">{action}<ArrowRight className="size-4 transition group-hover:translate-x-1" /></span></Link>)}</div><section className="mt-14 grid gap-7 border-t border-[#17170f]/10 pt-10 md:grid-cols-[1.2fr_1fr]"><div><p className="text-[11px] font-bold tracking-[0.15em] text-[#0a5f33] uppercase">A clearer promise</p><h2 className="mt-3 text-3xl leading-tight font-semibold tracking-[-0.03em]">Help existing WhatsApp enquiries find a clear booking path.</h2><p className="mt-4 max-w-[600px] text-[14px] leading-6 text-[#17170f]/65">No guaranteed patient acquisition. No fabricated clinic outcomes. WARC leads with a demonstrable sample flow and an honest scope: 24/7 WhatsApp reception, with online booking, automatic text reminders and a new-clinic landing page alongside it.</p></div><div className="rounded-xl bg-[#dceed4] p-6"><ShieldCheck className="size-5 text-[#0a5f33]" /><h3 className="mt-3 font-semibold">Founder-led. Evidence-aware.</h3><ul className="mt-4 space-y-2.5 text-[13px] leading-5 text-[#17170f]/70"><li>Personal founder first for relationship-led outreach.</li><li>WARC’s profile as the product and proof hub.</li><li>Expired offers and unsupported metrics retired.</li><li>Channel eligibility locked until checks are recorded.</li></ul></div></section><section className="mt-12 flex flex-col justify-between gap-5 rounded-2xl bg-[#073d21] p-6 text-white sm:flex-row sm:items-center sm:p-8"><div><p className="text-[11px] font-bold tracking-[0.15em] text-[#bae6bc] uppercase">See the product, not a slide deck</p><h2 className="mt-3 text-2xl font-semibold tracking-tight">Book a 30-minute WARC walkthrough.</h2><p className="mt-2 text-[13px] text-white/60">Google Meet · sample enquiry · bookings require confirmation</p></div><a href="https://cal.com/akroslab-uatcyn/whatsapp24-7receptionistmeeting" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 shrink-0 items-center gap-2 rounded-lg bg-[#bae6bc] px-4 py-3 text-[13px] font-semibold text-[#073d21]">Open Cal.com <ArrowUpRight className="size-4" /></a></section></main><footer className="border-t border-[#17170f]/10 px-5 py-7 text-center text-[12px] text-[#17170f]/55">Akros Lab · WARC content workspace · nothing is posted or sent automatically</footer></div>
 }

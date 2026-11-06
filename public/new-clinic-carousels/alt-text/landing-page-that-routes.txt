@@ -1,0 +1,17 @@
+1. 01-cover.png
+A page with no next step is only a brochure.
+
+2. 02-problem.png
+Trust, services, location — then one obvious action.
+
+3. 03-mechanism.png
+Start WhatsApp or book online in one tap.
+
+4. 04-benefit.png
+Hours and treatments on the page match WhatsApp reception.
+
+5. 05-boundary.png
+WARC on WhatsApp. Page and booking beside it.
+
+6. 06-cta.png
+See a sample new-clinic page path.

@@ -1,0 +1,13 @@
+A new dental clinic needs a patient path:
+
+1) WhatsApp first reply (WARC)
+2) Online booking
+3) Text reminders for the diary
+4) A landing page that routes into that path
+
+WARC is the WhatsApp piece. Booking, text reminders, and the page sit beside it — not as Instagram DMs, phone, or clinical advice.
+
+See the New Clinic Launch Stack on a sample setup:
+warc.akroslab.com
+
+#DentalClinic #ClinicLaunch #WhatsAppBusiness #OnlineBooking #NoShows

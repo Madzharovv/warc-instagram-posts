@@ -1,0 +1,426 @@
+{
+  "product": "WARC New Clinic Launch Stack — Instagram carousels",
+  "revision": "visual-qa-2-full-canvas",
+  "carouselCount": 8,
+  "slideCount": 48,
+  "width": 1080,
+  "height": 1350,
+  "carousels": [
+    {
+      "id": "c1",
+      "slug": "opening-week-empty-desk",
+      "number": 1,
+      "title": "Opening week, empty desk",
+      "folder": "01-opening-week-empty-desk",
+      "caption": "New clinic. New WhatsApp. Desk not fully staffed yet.\n\nWARC is designed to cover clinic WhatsApp around the clock using your treatments, hours, and booking path — so launch enquiries still get a clear next step.\n\nYour team confirms appointments. Your clinicians keep clinical control, including approved urgent pathways and local emergency instructions.\n\nSee how a sample opening-week enquiry would be handled:\nwarc.akroslab.com\n\n#DentalClinic #NewClinic #WhatsAppBusiness #ClinicLaunch #ClinicOps",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Your doors are new. WhatsApp is already open.",
+          "alt": "Your doors are new. WhatsApp is already open.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Nights and weekends arrive before the desk is fully hired.",
+          "alt": "Nights and weekends arrive before the desk is fully hired.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed as a 24/7 WhatsApp receptionist for dental clinics.",
+          "alt": "Designed as a 24/7 WhatsApp receptionist for dental clinics.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Patients get a clear next step. Your team keeps confirmation.",
+          "alt": "Patients get a clear next step. Your team keeps confirmation.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Clinical judgement stays with your clinicians.",
+          "alt": "Clinical judgement stays with your clinicians.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample opening-week enquiry.",
+          "alt": "See a sample opening-week enquiry.",
+          "path": "new-clinic-carousels/slides/01-opening-week-empty-desk/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "slug": "one-patient-path-four-pieces",
+      "number": 2,
+      "title": "One patient path, four pieces",
+      "folder": "02-one-patient-path-four-pieces",
+      "caption": "A new dental clinic needs a patient path:\n\n1) WhatsApp first reply (WARC)\n2) Online booking\n3) Text reminders for the diary\n4) A landing page that routes into that path\n\nWARC is the WhatsApp piece. Booking, text reminders, and the page sit beside it — not as Instagram DMs, phone, or clinical advice.\n\nSee the New Clinic Launch Stack on a sample setup:\nwarc.akroslab.com\n\n#DentalClinic #ClinicLaunch #WhatsAppBusiness #OnlineBooking #NoShows",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Opening a clinic is a path, not a pile of tools.",
+          "alt": "Opening a clinic is a path, not a pile of tools.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/01-cover.png"
+        },
+        {
+          "file": "02-mechanism.png",
+          "kind": "mechanism",
+          "headline": "WhatsApp reception — designed for the first reply.",
+          "alt": "WhatsApp reception — designed for the first reply.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/02-mechanism.png"
+        },
+        {
+          "file": "03-benefit.png",
+          "kind": "benefit",
+          "headline": "Online booking when the visitor is ready to choose a slot.",
+          "alt": "Online booking when the visitor is ready to choose a slot.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/03-benefit.png"
+        },
+        {
+          "file": "04-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Text reminders help protect the diary after booking.",
+          "alt": "Text reminders help protect the diary after booking.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/04-mechanism.png"
+        },
+        {
+          "file": "05-mechanism.png",
+          "kind": "mechanism",
+          "headline": "A landing page that routes into WhatsApp and booking.",
+          "alt": "A landing page that routes into WhatsApp and booking.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/05-mechanism.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See the launch stack on a sample setup.",
+          "alt": "See the launch stack on a sample setup.",
+          "path": "new-clinic-carousels/slides/02-one-patient-path-four-pieces/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "slug": "launch-traffic-before-staffing",
+      "number": 3,
+      "title": "Launch traffic before staffing",
+      "folder": "03-launch-traffic-before-staffing",
+      "caption": "Launch week often means more WhatsApp than staffed hours.\n\nMaps, the site, and Instagram can all point to the same clinic number while the desk is still coming online.\n\nWARC is designed to handle those WhatsApp enquiries with your treatments, hours, and booking path — then your team confirms.\n\nSee a sample Maps-to-WhatsApp flow before you scale traffic:\nwarc.akroslab.com\n\n#DentalClinic #GoogleMaps #ClinicAds #ClinicLaunch #WhatsAppBusiness",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Maps and ads can fill WhatsApp before you are staffed.",
+          "alt": "Maps and ads can fill WhatsApp before you are staffed.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Unread queues grow while the team is still hiring.",
+          "alt": "Unread queues grow while the team is still hiring.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed for WhatsApp enquiries with your approved content.",
+          "alt": "Designed for WhatsApp enquiries with your approved content.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team still confirms slots and handles nuance.",
+          "alt": "Your team still confirms slots and handles nuance.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Coverage before volume — not after the inbox piles up.",
+          "alt": "Coverage before volume — not after the inbox piles up.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Walk through a sample Maps-to-WhatsApp enquiry.",
+          "alt": "Walk through a sample Maps-to-WhatsApp enquiry.",
+          "path": "new-clinic-carousels/slides/03-launch-traffic-before-staffing/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "slug": "designed-for-human-handoff",
+      "number": 4,
+      "title": "Designed for human handoff",
+      "folder": "04-designed-for-human-handoff",
+      "caption": "Good clinic automation knows when to step back.\n\nWARC is designed for clinic WhatsApp: share your guidance, offer the booking path, and leave room for your team to confirm and take over.\n\nIt is not a clinician. Urgent and complex cases follow pathways you approve, plus local emergency instructions where needed.\n\nSee a sample handoff:\nwarc.akroslab.com\n\n#DentalClinic #FrontDesk #WhatsAppBusiness #ClinicOps #HealthTech",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Give your team space. Not another system to fight.",
+          "alt": "Give your team space. Not another system to fight.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "A patient messages the clinic WhatsApp.",
+          "alt": "A patient messages the clinic WhatsApp.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed to share guidance and offer the booking link.",
+          "alt": "Designed to share guidance and offer the booking link.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team confirms the slot whenever a human should lead.",
+          "alt": "Your team confirms the slot whenever a human should lead.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "No diagnosis. No prescriptions.",
+          "alt": "No diagnosis. No prescriptions.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample handoff on the walkthrough.",
+          "alt": "See a sample handoff on the walkthrough.",
+          "path": "new-clinic-carousels/slides/04-designed-for-human-handoff/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "slug": "languages-before-the-hire",
+      "number": 5,
+      "title": "Languages before the hire",
+      "folder": "05-languages-before-the-hire",
+      "caption": "You should not have to pause opening until every language is hired.\n\nWARC is designed to help with WhatsApp enquiries in the patient's language using your clinic content — then your team takes the lead when a human should.\n\nThat is access and clarity, not clinical advice.\n\nTry a sample multilingual enquiry:\nwarc.akroslab.com\n\n#DentalClinic #Multilingual #WhatsAppBusiness #ExpatHealth #ClinicLaunch",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Open before every language is hired.",
+          "alt": "Open before every language is hired.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Tourist streets and relocating families still message WhatsApp.",
+          "alt": "Tourist streets and relocating families still message WhatsApp.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed to reply in the patient’s language on WhatsApp.",
+          "alt": "Designed to reply in the patient’s language on WhatsApp.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team still owns confirmation and clinical conversations.",
+          "alt": "Your team still owns confirmation and clinical conversations.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Access and clarity — not a clinical substitute.",
+          "alt": "Access and clarity — not a clinical substitute.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Try a sample multilingual enquiry.",
+          "alt": "Try a sample multilingual enquiry.",
+          "path": "new-clinic-carousels/slides/05-languages-before-the-hire/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "slug": "landing-page-that-routes",
+      "number": 6,
+      "title": "Landing page that routes",
+      "folder": "06-landing-page-that-routes",
+      "caption": "If your new clinic page cannot start a chat or a booking, it is decoration.\n\nTrust. Services. Location. One clear next step into WhatsApp and online booking.\n\nWARC is designed for the WhatsApp side of that path. The landing page and booking tools complete the route.\n\nSee a sample new-clinic page path:\nwarc.akroslab.com\n\n#DentalClinic #ClinicWebsite #LandingPage #WhatsAppBusiness #NewClinic",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "A page with no next step is only a brochure.",
+          "alt": "A page with no next step is only a brochure.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Trust, services, location — then one obvious action.",
+          "alt": "Trust, services, location — then one obvious action.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Start WhatsApp or book online in one tap.",
+          "alt": "Start WhatsApp or book online in one tap.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Hours and treatments on the page match WhatsApp reception.",
+          "alt": "Hours and treatments on the page match WhatsApp reception.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "WARC on WhatsApp. Page and booking beside it.",
+          "alt": "WARC on WhatsApp. Page and booking beside it.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample new-clinic page path.",
+          "alt": "See a sample new-clinic page path.",
+          "path": "new-clinic-carousels/slides/06-landing-page-that-routes/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "slug": "protect-the-diary",
+      "number": 7,
+      "title": "Protect the diary",
+      "folder": "07-protect-the-diary",
+      "caption": "A booked chair that goes empty still costs a new clinic money.\n\nAutomatic text reminders are designed to protect the diary beside your booking tool.\n\nWARC remains the WhatsApp receptionist. Reminders are a separate text/SMS layer — not phone cover, not Instagram DMs.\n\nSee how the pieces fit on a sample setup:\nwarc.akroslab.com\n\n#DentalClinic #NoShows #AppointmentReminders #ClinicOps #WhatsAppBusiness",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Booking the visit is only half the economics.",
+          "alt": "Booking the visit is only half the economics.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/01-cover.png"
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Empty chairs hurt when rent and staff are already live.",
+          "alt": "Empty chairs hurt when rent and staff are already live.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/02-problem.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Text reminders sit beside booking — not inside WhatsApp.",
+          "alt": "Text reminders sit beside booking — not inside WhatsApp.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "WARC for WhatsApp. Reminders for diary nudges.",
+          "alt": "WARC for WhatsApp. Reminders for diary nudges.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Reminder copy stays operational.",
+          "alt": "Reminder copy stays operational.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See booking and reminders beside WhatsApp.",
+          "alt": "See booking and reminders beside WhatsApp.",
+          "path": "new-clinic-carousels/slides/07-protect-the-diary/06-cta.png"
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "slug": "evaluate-with-a-sample-enquiry",
+      "number": 8,
+      "title": "Evaluate with a sample enquiry",
+      "folder": "08-evaluate-with-a-sample-enquiry",
+      "caption": "The clearest way to evaluate WARC is a short walkthrough on a sample enquiry — not another feature list.\n\nSee how WhatsApp reception, booking, and team handoff are designed to work for a new clinic.\n\nUse fictional prompts. Keep real patient details out of the demo.\n\nStart here:\nwarc.akroslab.com\n\n#DentalClinic #BookADemo #WhatsAppBusiness #ClinicLaunch #AkrosLab",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Do not buy clinic software from a slogan.",
+          "alt": "Do not buy clinic software from a slogan.",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/01-cover.png"
+        },
+        {
+          "file": "02-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Watch a sample patient-style enquiry on the walkthrough.",
+          "alt": "Watch a sample patient-style enquiry on the walkthrough.",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/02-mechanism.png"
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "See WhatsApp, booking, and handoff designed together.",
+          "alt": "See WhatsApp, booking, and handoff designed together.",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/03-mechanism.png"
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Try pricing questions, family check-ups, after-hours notes.",
+          "alt": "Try pricing questions, family check-ups, after-hours notes.",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/04-benefit.png"
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "If it is not a fit, you will know in minutes.",
+          "alt": "If it is not a fit, you will know in minutes.",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/05-boundary.png"
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Start at warc.akroslab.com",
+          "alt": "Start at warc.akroslab.com",
+          "path": "new-clinic-carousels/slides/08-evaluate-with-a-sample-enquiry/06-cta.png"
+        }
+      ]
+    }
+  ]
+}

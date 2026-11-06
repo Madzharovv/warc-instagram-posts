@@ -1,0 +1,526 @@
+{
+  "product": "WARC New Clinic Launch Stack \u2014 Instagram carousels",
+  "format": "1080x1350 PNG",
+  "revision": "visual-qa-2-full-canvas",
+  "palette": {
+    "cream": [
+      "#dceed4",
+      "#f0ead9",
+      "#f3e6c4"
+    ],
+    "green": [
+      "#0a5f33",
+      "#073d21"
+    ],
+    "mint": "#bae6bc",
+    "gold": "#e4b859",
+    "ink": "#17170f"
+  },
+  "cta": "https://warc.akroslab.com/",
+  "carousels": [
+    {
+      "id": "c1",
+      "folder": "01-opening-week-empty-desk",
+      "title": "1 \u00b7 Opening week, empty desk",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Your doors are new. WhatsApp is already open."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Nights and weekends arrive before the desk is fully hired."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed as a 24/7 WhatsApp receptionist for dental clinics."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Patients get a clear next step. Your team keeps confirmation."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Clinical judgement stays with your clinicians."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample opening-week enquiry."
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "folder": "02-one-patient-path-four-pieces",
+      "title": "2 \u00b7 One patient path, four pieces",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Opening a clinic is a path, not a pile of tools."
+        },
+        {
+          "file": "02-mechanism.png",
+          "kind": "mechanism",
+          "headline": "WhatsApp reception \u2014 designed for the first reply."
+        },
+        {
+          "file": "03-benefit.png",
+          "kind": "benefit",
+          "headline": "Online booking when the visitor is ready to choose a slot."
+        },
+        {
+          "file": "04-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Text reminders help protect the diary after booking."
+        },
+        {
+          "file": "05-mechanism.png",
+          "kind": "mechanism",
+          "headline": "A landing page that routes into WhatsApp and booking."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See the launch stack on a sample setup."
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "folder": "03-launch-traffic-before-staffing",
+      "title": "3 \u00b7 Launch traffic before staffing",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Maps and ads can fill WhatsApp before you are staffed."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Unread queues grow while the team is still hiring."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed for WhatsApp enquiries with your approved content."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team still confirms slots and handles nuance."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Coverage before volume \u2014 not after the inbox piles up."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Walk through a sample Maps-to-WhatsApp enquiry."
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "folder": "04-designed-for-human-handoff",
+      "title": "4 \u00b7 Designed for human handoff",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Give your team space. Not another system to fight."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "A patient messages the clinic WhatsApp."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed to share guidance and offer the booking link."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team confirms the slot whenever a human should lead."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "No diagnosis. No prescriptions."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample handoff on the walkthrough."
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "folder": "05-languages-before-the-hire",
+      "title": "5 \u00b7 Languages before the hire",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Open before every language is hired."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Tourist streets and relocating families still message WhatsApp."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Designed to reply in the patient\u2019s language on WhatsApp."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Your team still owns confirmation and clinical conversations."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Access and clarity \u2014 not a clinical substitute."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Try a sample multilingual enquiry."
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "folder": "06-landing-page-that-routes",
+      "title": "6 \u00b7 Landing page that routes",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "A page with no next step is only a brochure."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Trust, services, location \u2014 then one obvious action."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Start WhatsApp or book online in one tap."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Hours and treatments on the page match WhatsApp reception."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "WARC on WhatsApp. Page and booking beside it."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See a sample new-clinic page path."
+        }
+      ]
+    },
+    {
+      "id": "c7",
+      "folder": "07-protect-the-diary",
+      "title": "7 \u00b7 Protect the diary",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Booking the visit is only half the economics."
+        },
+        {
+          "file": "02-problem.png",
+          "kind": "problem",
+          "headline": "Empty chairs hurt when rent and staff are already live."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Text reminders sit beside booking \u2014 not inside WhatsApp."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "WARC for WhatsApp. Reminders for diary nudges."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "Reminder copy stays operational."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "See booking and reminders beside WhatsApp."
+        }
+      ]
+    },
+    {
+      "id": "c8",
+      "folder": "08-evaluate-with-a-sample-enquiry",
+      "title": "8 \u00b7 Evaluate with a sample enquiry",
+      "slides": [
+        {
+          "file": "01-cover.png",
+          "kind": "cover",
+          "headline": "Do not buy clinic software from a slogan."
+        },
+        {
+          "file": "02-mechanism.png",
+          "kind": "mechanism",
+          "headline": "Watch a sample patient-style enquiry on the walkthrough."
+        },
+        {
+          "file": "03-mechanism.png",
+          "kind": "mechanism",
+          "headline": "See WhatsApp, booking, and handoff designed together."
+        },
+        {
+          "file": "04-benefit.png",
+          "kind": "benefit",
+          "headline": "Try pricing questions, family check-ups, after-hours notes."
+        },
+        {
+          "file": "05-boundary.png",
+          "kind": "boundary",
+          "headline": "If it is not a fit, you will know in minutes."
+        },
+        {
+          "file": "06-cta.png",
+          "kind": "cta",
+          "headline": "Start at warc.akroslab.com"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "slides/01-opening-week-empty-desk/01-cover.png",
+      "bytes": 70090
+    },
+    {
+      "path": "slides/01-opening-week-empty-desk/02-problem.png",
+      "bytes": 62829
+    },
+    {
+      "path": "slides/01-opening-week-empty-desk/03-mechanism.png",
+      "bytes": 80660
+    },
+    {
+      "path": "slides/01-opening-week-empty-desk/04-benefit.png",
+      "bytes": 65227
+    },
+    {
+      "path": "slides/01-opening-week-empty-desk/05-boundary.png",
+      "bytes": 60373
+    },
+    {
+      "path": "slides/01-opening-week-empty-desk/06-cta.png",
+      "bytes": 66901
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/01-cover.png",
+      "bytes": 77924
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/02-mechanism.png",
+      "bytes": 72805
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/03-benefit.png",
+      "bytes": 68426
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/04-mechanism.png",
+      "bytes": 59738
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/05-mechanism.png",
+      "bytes": 66347
+    },
+    {
+      "path": "slides/02-one-patient-path-four-pieces/06-cta.png",
+      "bytes": 63647
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/01-cover.png",
+      "bytes": 84378
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/02-problem.png",
+      "bytes": 66850
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/03-mechanism.png",
+      "bytes": 80235
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/04-benefit.png",
+      "bytes": 60514
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/05-boundary.png",
+      "bytes": 61861
+    },
+    {
+      "path": "slides/03-launch-traffic-before-staffing/06-cta.png",
+      "bytes": 73439
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/01-cover.png",
+      "bytes": 81691
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/02-problem.png",
+      "bytes": 58702
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/03-mechanism.png",
+      "bytes": 66097
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/04-benefit.png",
+      "bytes": 65349
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/05-boundary.png",
+      "bytes": 53778
+    },
+    {
+      "path": "slides/04-designed-for-human-handoff/06-cta.png",
+      "bytes": 67739
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/01-cover.png",
+      "bytes": 59312
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/02-problem.png",
+      "bytes": 70766
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/03-mechanism.png",
+      "bytes": 64730
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/04-benefit.png",
+      "bytes": 64875
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/05-boundary.png",
+      "bytes": 56715
+    },
+    {
+      "path": "slides/05-languages-before-the-hire/06-cta.png",
+      "bytes": 64197
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/01-cover.png",
+      "bytes": 74527
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/02-problem.png",
+      "bytes": 62047
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/03-mechanism.png",
+      "bytes": 58575
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/04-benefit.png",
+      "bytes": 66165
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/05-boundary.png",
+      "bytes": 60881
+    },
+    {
+      "path": "slides/06-landing-page-that-routes/06-cta.png",
+      "bytes": 63599
+    },
+    {
+      "path": "slides/07-protect-the-diary/01-cover.png",
+      "bytes": 65736
+    },
+    {
+      "path": "slides/07-protect-the-diary/02-problem.png",
+      "bytes": 62387
+    },
+    {
+      "path": "slides/07-protect-the-diary/03-mechanism.png",
+      "bytes": 60525
+    },
+    {
+      "path": "slides/07-protect-the-diary/04-benefit.png",
+      "bytes": 69012
+    },
+    {
+      "path": "slides/07-protect-the-diary/05-boundary.png",
+      "bytes": 57234
+    },
+    {
+      "path": "slides/07-protect-the-diary/06-cta.png",
+      "bytes": 71895
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/01-cover.png",
+      "bytes": 76900
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/02-mechanism.png",
+      "bytes": 75302
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/03-mechanism.png",
+      "bytes": 75226
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/04-benefit.png",
+      "bytes": 67272
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/05-boundary.png",
+      "bytes": 50475
+    },
+    {
+      "path": "slides/08-evaluate-with-a-sample-enquiry/06-cta.png",
+      "bytes": 61328
+    }
+  ],
+  "issues": [],
+  "slide_count": 48,
+  "carousel_count": 8,
+  "contact_sheet": "contact-sheet.png",
+  "covers_preview": "covers-preview.png",
+  "zip": "warc-new-clinic-carousels.zip",
+  "zip_bytes": 4127698,
+  "occupancy_flags": [],
+  "layout_collision": {
+    "slides_with_diagram_bounds": 21,
+    "min_gap_px": 48,
+    "collision_failures_gap_lt_40": 0,
+    "failures": []
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "schemaVersion": "1.1.0",
+  "sourceSha256": "60234846e0d46a1ab92c159f30ae08fd9f09c0406deb421ee72296e1ec6ff677",
+  "asOf": "2026-11-06",
+  "counts": {
+    "confirmedCurrent": 2,
+    "unconfirmedOrPlanned": 3,
+    "historical": 6,
+    "excluded": 2
+  },
+  "prospects": [
+    {
+      "id": "prospect_crewkerne_dental_care",
+      "clinicName": "Crewkerne Dental Care",
+      "location": "22 Market Street, Crewkerne, TA18 7LA, UK",
+      "market": "UK",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2026-05",
+      "listLabel": "historical_opening",
+      "lifecycleLabel": "~6 months as of 2026-11-06",
+      "siteUrl": "https://www.dentistryforyou.co.uk/find-a-practice/crewkerne-dental-care/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "incomplete",
+      "channelEligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2026-06-04",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "NHS Somerset ICB: opened to patients May 2026; 4500+ expressions of interest when portal opened 22 Apr 2026",
+        "url": "https://nhssomerset.nhs.uk/news/opening-of-third-new-dental-practice-brings-nhs-care-to-thousands-more-people-in-somerset/"
+      }
+    },
+    {
+      "id": "prospect_io_palma",
+      "clinicName": "Institutos Odontológicos Palma",
+      "location": "Plaça del Cardenal Reig, 7, 07004 Palma, Spain",
+      "market": "Spain",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2025-12/2026-01",
+      "listLabel": "historical_group_expansion",
+      "lifecycleLabel": "~10–11 months as of 2026-11-06",
+      "siteUrl": "https://ioa.es/clinicas/clinica-dental-palma/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "expansion_ops",
+      "operatorStatus": "corporate_group_named",
+      "channelEligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "evidence": {
+        "publicationDate": "2026-01-07",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "iSanidad: first Balearic IO clinic",
+        "url": "https://isanidad.com/356134/institutos-odontologicos-abre-su-primera-clinica-dental-en-baleares-y-alcanza-los-42-centros-a-nivel-nacional/"
+      }
+    },
+    {
+      "id": "prospect_one_smile_chard",
+      "clinicName": "One Smile Dental — Chard",
+      "location": "21 Leach Road, Chard Business Park, Chard, TA20 1FA, UK",
+      "market": "UK",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2025-12",
+      "listLabel": "historical_opening",
+      "lifecycleLabel": "~11 months as of 2026-11-06",
+      "siteUrl": "https://onesmiledentalchard.co.uk/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "verified",
+      "channelEligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2025-12",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "Local press + NHS Somerset: first patients December 2025; interest portal paused from demand",
+        "url": "https://www.chardandilminsternews.co.uk/news/chard_news/25648146.new-somerset-nhs-dentist-opening-doors-chard/"
+      }
+    },
+    {
+      "id": "prospect_banning_croydon",
+      "clinicName": "Banning Dental — East Croydon",
+      "location": "Ruskin Square / East Croydon, CR0 2WF, UK",
+      "market": "UK",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2025-11-22",
+      "listLabel": "historical_group_expansion",
+      "lifecycleLabel": "~11.5 months as of 2026-11-06",
+      "siteUrl": "https://banningdental.co.uk/locations/croydon/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "expansion_ops",
+      "operatorStatus": "verified",
+      "channelEligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2025-11-22",
+        "eventDate": "2025-11-22",
+        "plannedOpenDate": null,
+        "summary": "Banning Teams news: flagship opened Saturday 22 Nov 2025; described as 13th clinic",
+        "url": "https://www.banningteams.co.uk/news-and-events/new-flagship-clinic-in-east-croydon"
+      }
+    },
+    {
+      "id": "prospect_io_maragall",
+      "clinicName": "IO Maragall",
+      "location": "Passeig de Maragall, 111, Barcelona, Spain",
+      "market": "Spain",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2025-11",
+      "listLabel": "historical_group_expansion",
+      "lifecycleLabel": "~12 months as of 2026-11-06",
+      "siteUrl": "https://ioa.es/clinicas/clinica-dental-maragall/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "expansion_ops",
+      "operatorStatus": "corporate_group_named",
+      "channelEligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "evidence": {
+        "publicationDate": "2025-11",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "Alimarket coverage of November 2025 network expansion with Palma",
+        "url": "https://www.alimarket.es/sanidad/noticia/419038/institutos-odontologicos-pone-en-marcha-su-primera-clinica-en-baleares-y-refuerza-su-red-en-barcelona"
+      }
+    },
+    {
+      "id": "prospect_wellington_dental_care",
+      "clinicName": "Wellington Dental Care",
+      "location": "5D & 5E Lowmoor Estate, Wellington, TA21 0AZ, UK",
+      "market": "UK",
+      "category": "historical",
+      "lifecycle": "historical",
+      "opened": "2025-10",
+      "listLabel": "historical_opening",
+      "lifecycleLabel": "~13 months as of 2026-11-06",
+      "siteUrl": "https://www.dentistryforyou.co.uk/find-a-practice/wellingtondentalcare/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "WhatsApp use unverified; do not assume.",
+      "bookingObservation": null,
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "incomplete",
+      "channelEligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2025-10-14",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "NHS Somerset ICB: treating patients from October 2025; first such Somerset NHS opening in ten years",
+        "url": "https://nhssomerset.nhs.uk/news/first-dentist-in-ten-years-to-offer-nhs-dental-care-in-somerset-opens-its-doors-in-wellington/"
+      }
+    },
+    {
+      "id": "prospect_8to8_elgin",
+      "clinicName": "8to8 Dental Elgin",
+      "location": "8 Victoria Crescent, Elgin, IV30 1RQ, UK",
+      "market": "UK",
+      "category": "launch_watch",
+      "lifecycle": "planned_date_passed_unconfirmed",
+      "opened": "2026-11-02",
+      "listLabel": "launch_watch_sep_nov_2026_window_planned_date_passed_unconfirmed",
+      "lifecycleLabel": "Planned open 2 Nov 2026 per 30 Sep 2026 Northern Scot; as of 6 Nov 2026 no cited source confirms actual opening (forecast only)",
+      "siteUrl": "https://www.8to8dental.co.uk/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "No WhatsApp Business link or number observed on public site HTML as of 2026-11-06",
+      "bookingObservation": "Site FAQ/CTA describes online booking system; Elgin location listed with email [public contact omitted]",
+      "fitClass": "expansion_ops",
+      "operatorStatus": "verified",
+      "channelEligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2026-09-30",
+        "eventDate": null,
+        "plannedOpenDate": "2026-11-02",
+        "summary": "Northern Scot 30 Sep 2026 is forward-looking only: practice \"is set to open\", \"will officially open its doors on Monday, November 2\"; open-day invite \"shortly before it opens\" on 30 Oct. No post-open confirmation cited. Site lists Elgin address/hours but that does not confirm the 2 Nov event occurred.",
+        "url": "https://www.northern-scot.co.uk/news/registration-opening-friday-for-elgins-newest-dental-clinic-446328/"
+      }
+    },
+    {
+      "id": "prospect_one_smile_littlehampton",
+      "clinicName": "One Smile Dental — Littlehampton",
+      "location": "23-25 Beach Road, Littlehampton, BN17 5JA, UK",
+      "market": "UK",
+      "category": "current",
+      "lifecycle": "current_new_practice",
+      "opened": "2026-10-16",
+      "listLabel": "current_new_practice_sep_nov_2026_window",
+      "lifecycleLabel": "opened 16 Oct 2026 (~3 weeks before as_of)",
+      "siteUrl": "https://onesmiledentallittlehampton.co.uk/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "Site HTML includes #whatsapp / #launch-whatsapp theme hooks; no public wa.me number confirmed — treat WhatsApp patient channel as unknown",
+      "bookingObservation": "Homepage states Online Booking is now available; phone [public contact omitted] listed",
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "verified",
+      "channelEligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2026-10-21",
+        "eventDate": "2026-10-16",
+        "plannedOpenDate": null,
+        "summary": "NHS Surrey and Sussex ICB: official opening Friday 16 Oct 2026; online booking via practice website",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/"
+      }
+    },
+    {
+      "id": "prospect_mydentist_hamilton_castle_street",
+      "clinicName": "mydentist — 62 Castle Street, Hamilton",
+      "location": "62 Castle Street, Hamilton, South Lanarkshire, UK",
+      "market": "UK",
+      "category": "current",
+      "lifecycle": "current_relocation_new_location",
+      "opened": "2026-10-28",
+      "listLabel": "current_relocation_new_location_sep_nov_2026_window",
+      "lifecycleLabel": "opened 28 Oct 2026 (~1.5 weeks before as_of); relocation from Hamilton Street",
+      "siteUrl": "https://www.mydentist.co.uk/dentists/practices/scotland/south-lanarkshire/hamilton/62-castle-street",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "No WhatsApp Business channel observed on practice page HTML",
+      "bookingObservation": "Practice page includes Book online CTA; Glasgow Times notes NHS patients subject to capacity and myoptions private",
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "parent_group_named_clinic_operator_incomplete",
+      "channelEligibility": {
+        "email": "blocked_until_clinic_operator_and_mailbox_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception",
+        "note": "Parent-group CH number alone is insufficient for PECR corporate-subscriber classification of a clinic mailbox."
+      },
+      "evidence": {
+        "publicationDate": "2026-11-05",
+        "eventDate": "2026-10-28",
+        "plannedOpenDate": null,
+        "summary": "Glasgow Times: practice manager Gregor Morrison and team officially opened new Castle Street site on 28 Oct 2026 after £1m move from Hamilton Street",
+        "url": "https://www.glasgowtimes.co.uk/news/26702842.hamilton-mydentist-welcomes-new-nhs-patients-1m-move/"
+      }
+    },
+    {
+      "id": "prospect_buttercross_bungay",
+      "clinicName": "Buttercross Dental Practice",
+      "location": "St Mary's Street, Bungay, UK",
+      "market": "UK",
+      "category": "upcoming",
+      "lifecycle": "upcoming_open_not_confirmed",
+      "opened": null,
+      "listLabel": "upcoming_sep_nov_2026_window",
+      "lifecycleLabel": "upcoming as of 2026-11-06 — open date not independently confirmed",
+      "siteUrl": "https://buttercrossdental.uk/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "Only WhatsApp-named image filenames in media assets; not a verified patient WhatsApp channel",
+      "bookingObservation": "Teaser site ('SOMETHING IS HAPPENING!'); no online booking observed. Earlier summer article invited interest via [public contact omitted]",
+      "fitClass": "unknown",
+      "operatorStatus": "named_principals_incomplete_ch",
+      "channelEligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2026-10-13",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "Beccles & Bungay Journal / EADT first-look: hoping to welcome first patients end Oct or early Nov after build delays. Site still teaser as of fetch 2026-11-06 — do not treat as opened.",
+        "url": "https://www.becclesandbungayjournal.co.uk/news/26623889.first-look-inside-bungays-new-buttercross-dental-practice/"
+      }
+    },
+    {
+      "id": "prospect_one_smile_bognor_upcoming",
+      "clinicName": "One Smile Dental — Bognor Regis",
+      "location": "Bognor Regis, UK (address not pinned from ICB note alone)",
+      "market": "UK",
+      "category": "upcoming",
+      "lifecycle": "upcoming_announced_no_firm_open_date",
+      "opened": null,
+      "listLabel": "upcoming_sep_nov_2026_window",
+      "lifecycleLabel": "upcoming as of 2026-11-06 — ICB said expand later this year; no firm open day found",
+      "siteUrl": "https://onesmiledentalbognorregis.co.uk/",
+      "whatsappUseVerified": false,
+      "whatsappObservation": "Same theme #whatsapp hook as Littlehampton; no wa.me number confirmed",
+      "bookingObservation": "ICB note: online booking open via practice website; site HTTP 200",
+      "fitClass": "enquiry_admin_potential",
+      "operatorStatus": "likely_1OSD_Ltd_unconfirmed_for_this_location",
+      "channelEligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "evidence": {
+        "publicationDate": "2026-10-21",
+        "eventDate": null,
+        "plannedOpenDate": null,
+        "summary": "NHS Surrey and Sussex ICB (Littlehampton opening piece): One Smile will expand later this year with another site in Bognor Regis; booking URL published",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/"
+      }
+    }
+  ],
+  "excluded": [
+    {
+      "id": "excluded_sinowei_palma",
+      "clinicName": "Sinowéi Clínica Dental",
+      "location": "Plaça Francesc García i Orell, 6, Palma de Mallorca",
+      "reason": "Opening date not corroborated by fetchable source"
+    },
+    {
+      "id": "excluded_azahar_vinaros",
+      "clinicName": "Clínica Dental Azahar",
+      "location": "Plaza Tres Reyes 22, 12500 Vinaroz",
+      "reason": "Site presents multi-year experience and long review history; not treated as a July 2025 first opening despite Onda Cero inauguration coverage"
+    }
+  ],
+  "note": "Research only; not a send-ready list. Public direct phone/email contact details intentionally omitted. Hamilton is a relocation; MYDENTIST GROUP LIMITED is parent/non-trading context, not a verified practice operator. Verify WhatsApp use, operator, lawful basis and channel eligibility before any outreach."
+}

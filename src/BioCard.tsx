@@ -1,26 +1,12 @@
 import { CopyField } from "@/components/CopyField"
 
-const NAME = "WARC | Patients Recovered"
-const BIO =
-  "🦷 Get the patients your clinic is missing\n📊 32 booked in 13 weeks, real case study\n👇 See how"
-const LINK = "warc.akroslab.com"
-const CATEGORY = "Software company"
+const PROFILE = [
+  ["Name", "WARC | WhatsApp for Clinics", 30],
+  ["Bio", "24/7 WhatsApp receptionist for dental clinics\nEnquiries → clear booking path\nSee WARC on a sample enquiry ↓", 150],
+  ["Website link", "warc.akroslab.com"],
+  ["Category", "Software company"],
+] as const
 
 export function BioCard() {
-  return (
-    <div className="mx-auto mt-8 max-w-[640px] rounded-2xl border border-black/10 bg-white p-6 text-left shadow-sm">
-      <p className="mb-1 text-[13px] font-semibold tracking-wide text-[#0a5f33] uppercase">
-        Instagram profile setup
-      </p>
-      <p className="mb-5 text-[13.5px] leading-relaxed text-black/50">
-        Paste these straight into Edit Profile before your first post goes up.
-      </p>
-      <div className="flex flex-col gap-3">
-        <CopyField label="Name" value={NAME} limit={30} />
-        <CopyField label="Bio" value={BIO} limit={150} />
-        <CopyField label="Website link" value={LINK} />
-        <CopyField label="Category" value={CATEGORY} />
-      </div>
-    </div>
-  )
+  return <div className="mx-auto mt-8 max-w-[640px] rounded-2xl border border-[#17170f]/10 bg-[#fdfbf3] p-5 text-left shadow-sm sm:p-6"><p className="text-[13px] font-semibold tracking-wide text-[#0a5f33] uppercase">WARC profile · product & proof hub</p><p className="mt-2 mb-5 text-[13px] leading-5 text-[#17170f]/60">Suggested profile copy, aligned with the current offer. No unverified patient or revenue metrics.</p><div className="flex flex-col gap-3">{PROFILE.map(([label, value, limit]) => <CopyField key={label} label={label} value={value} limit={limit} />)}</div></div>
 }

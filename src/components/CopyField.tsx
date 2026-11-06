@@ -17,6 +17,8 @@ export function CopyField({
     navigator.clipboard.writeText(value).then(() => {
       setCopied(true)
       setTimeout(() => setCopied(false), 1500)
+    }).catch(() => {
+      window.prompt(`Copy ${label}`, value)
     })
   }
 

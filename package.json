@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "content:generate": "bun scripts/build-content-data.mjs",
+    "test": "bun test tests/content.test.ts",
+    "test:preview": "bun scripts/preview-check.mjs",
+    "test:assets": "bun scripts/check-pages-assets.mjs"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.2.2",

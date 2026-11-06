@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.1.0",
+  "consentGateCommon": {
+    "id": "consent_gate_v1",
+    "label": "ready_to_personalise_not_legally_approved",
+    "silence_is_not_consent": true,
+    "public_listing_is_not_permission": true,
+    "permission_ask_can_be_marketing": true,
+    "warm_intro_alone_is_not_consent": true,
+    "no_unsolicited_public_comment_pitching": true,
+    "required_before_any_send": [
+      "counsel_signoff_or_explicit_founder_legal_acceptance",
+      "operator_entity_recorded",
+      "channel_subscriber_type_recorded",
+      "lawful_basis_recorded",
+      "identity_disclosed",
+      "opt_out_path_present_where_required",
+      "do_not_contact_screened"
+    ],
+    "uk": {
+      "corporate_email": {
+        "allowed_when": [
+          "operator_verified_corporate_body",
+          "mailbox_or_subscriber_independently_verified_corporate",
+          "identity_clear",
+          "valid_opt_out_address",
+          "uk_gdpr_checked_if_named_individual_personal_data"
+        ],
+        "note": "Clinic Ltd status alone does not prove an Instagram account is a corporate subscriber.",
+        "gate_id": "uk_corporate_email_operator_and_subscriber_verified"
+      },
+      "instagram_dm": {
+        "allowed_when": [
+          "explicit_consent",
+          "OR_independently_confirmed_corporate_subscriber"
+        ],
+        "blanket_cold_dm": false,
+        "gdpr_legitimate_interest_alone_not_pecr_gate": true,
+        "gate_id": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+        "note": "Clinic Ltd status alone does not prove an Instagram account is a corporate subscriber."
+      },
+      "sources": [
+        "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/"
+      ]
+    },
+    "spain": {
+      "cold_commercial_email_or_dm": false,
+      "allowed_paths": [
+        "documented_inbound_request",
+        "valid_prior_opt_in",
+        "warm_intro_that_results_in_recipient_request"
+      ],
+      "sl_or_corporate_does_not_unlock_cold_sends": true,
+      "sources": [
+        "https://lssi.digital.gob.es/lssi/la-ley/aspectos-basicos/publicidad-en-internet",
+        "https://www.aepd.es/areas-de-actuacion/publicidad-no-deseada"
+      ],
+      "gate_id": "spain_inbound_or_prior_opt_in_only"
+    }
+  },
+  "templateGateIds": {
+    "ig_en_a": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+    "ig_en_b": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+    "ig_en_c": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+    "es_inbound_reply": "spain_inbound_or_prior_opt_in_only",
+    "email_uk_walkthrough": "uk_corporate_email_operator_and_subscriber_verified",
+    "fu_day4_5": "same_as_opening_still_valid",
+    "fu_day12_14": "same_as_opening_still_valid",
+    "fu_on_engage": "recipient_engaged_in_thread_plus_original_gate"
+  }
+}

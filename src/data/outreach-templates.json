@@ -1,0 +1,130 @@
+{
+  "schemaVersion": "1.1.0",
+  "sourceSha256": "60234846e0d46a1ab92c159f30ae08fd9f09c0406deb421ee72296e1ec6ff677",
+  "asOf": "2026-11-06",
+  "status": "ready_to_personalise_not_legally_approved",
+  "senderStrategy": "Personal founder first; WARC is the product/proof hub; Akros Lab is corporate background.",
+  "booking": {
+    "minutes": 30,
+    "provider": "Google Meet",
+    "requiresConfirmation": true,
+    "url": "https://cal.com/akroslab-uatcyn/whatsapp24-7receptionistmeeting"
+  },
+  "subjects": [
+    {
+      "id": "sub_a",
+      "text": "WhatsApp enquiry → booking path — {{Clinic}}"
+    },
+    {
+      "id": "sub_b",
+      "text": "Following {{OpeningMonthYear}} opening coverage — Akros Lab (WARC)"
+    },
+    {
+      "id": "sub_c",
+      "text": "30-minute WARC walkthrough — optional"
+    }
+  ],
+  "templates": [
+    {
+      "id": "ig_en_a",
+      "title": "New-clinic opener",
+      "channels": [
+        "instagram_dm"
+      ],
+      "language": "en",
+      "group": "Instagram opening",
+      "body": "Hi {{Name}} — I'm {{Sender}} with Akros Lab (WARC). Congrats on {{Clinic}} opening in {{OpeningMonthYear}}. We help clinics map patient WhatsApp enquiries into a clear booking path (not patient-acquisition ads). If WhatsApp is a channel you already use for patients and this is useful, OK if I send three short lines — or would email be better?",
+      "requiresGate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+      "actionType": "message"
+    },
+    {
+      "id": "ig_en_b",
+      "title": "Hand-off question",
+      "channels": [
+        "instagram_dm"
+      ],
+      "language": "en",
+      "group": "Instagram opening",
+      "body": "Hi {{Name}}, I'm {{Sender}} at Akros Lab (product: WARC). {{Clinic}} opened {{OpeningMonthYear}} per {{Source}}. If you already take patient messages on WhatsApp, do you have a set hand-off to a booking link, or is every reply still fully manual? I can share how we set that up — only if useful.",
+      "requiresGate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+      "actionType": "message"
+    },
+    {
+      "id": "ig_en_c",
+      "title": "WhatsApp-use question — start here",
+      "channels": [
+        "instagram_dm"
+      ],
+      "language": "en",
+      "group": "Instagram opening",
+      "body": "{{Name}}, I'm {{Sender}} with Akros Lab (WARC). Saw {{Clinic}} open {{OpeningMonthYear}}. WARC is a WhatsApp receptionist for clinics that already use WhatsApp for patients — mapping enquiries to a booking link, not acquiring patients. Do you use WhatsApp for patient enquiries today? If yes and useful, I can send a one-pager when you ask.",
+      "requiresGate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+      "actionType": "message"
+    },
+    {
+      "id": "es_inbound_reply",
+      "title": "Spanish inbound / opt-in reply",
+      "channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "language": "es",
+      "group": "Inbound reply",
+      "body": "Hola {{Name}}, soy {{Sender}} de Akros Lab (WARC). Gracias por {{RequestContext}}. WARC ayuda a clínicas a convertir consultas de WhatsApp que ya reciben en una vía clara de reserva (no es captación de pacientes). ¿Te envío tres líneas o prefieres una llamada de 30 minutos?",
+      "requiresGate": "spain_inbound_or_prior_opt_in_only",
+      "actionType": "message"
+    },
+    {
+      "id": "email_uk_walkthrough",
+      "title": "UK corporate walkthrough email",
+      "channels": [
+        "email"
+      ],
+      "language": "en",
+      "group": "Email opening",
+      "body": "Hi {{Name}},\n\nI'm {{Sender}} at Akros Lab (WARC). Congrats on {{Clinic}} opening in {{OpeningMonthYear}} ({{Source}}). WARC is a WhatsApp receptionist that helps answer clinic enquiries and send your booking link — it is not a patient-acquisition service.\n\nIf useful, I can show a free 30-minute walkthrough on a sample enquiry on a demo flow (nothing to install to see it). To opt out of further email from me, reply stop.\n\n{{Sender}} · Akros Lab · {{phone}} · warc.akroslab.com",
+      "requiresGate": "uk_corporate_email_operator_and_subscriber_verified",
+      "actionType": "message"
+    },
+    {
+      "id": "fu_day4_5",
+      "title": "Gentle follow-up · days 4–5",
+      "channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "language": "en",
+      "group": "Follow-up",
+      "body": "Hi {{Name}} — {{Sender}} again from Akros Lab (WARC). Happy to close the loop: want the three lines, or shall I leave it? Reply stop if you prefer no further messages.",
+      "requiresGate": "same_as_opening_still_valid",
+      "actionType": "message"
+    },
+    {
+      "id": "fu_day12_14",
+      "title": "Close the loop · days 12–14",
+      "channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "language": "en",
+      "group": "Follow-up",
+      "body": "Last note from me — {{Sender}} at Akros Lab (WARC). Walkthrough is at warc.akroslab.com if useful; otherwise I'll stop. Reply stop to opt out.",
+      "requiresGate": "same_as_opening_still_valid",
+      "actionType": "message"
+    },
+    {
+      "id": "fu_on_engage",
+      "title": "Walkthrough reply after engagement",
+      "channels": [
+        "instagram_dm",
+        "email"
+      ],
+      "language": "en",
+      "group": "Engaged reply",
+      "body": "Thanks {{Name}} — {{Sender}} at Akros Lab (WARC). I can do a free 30-minute walkthrough on a sample enquiry (nothing to install to see it). Prefer a call or email? Reply stop anytime to opt out.",
+      "requiresGate": "recipient_engaged_in_thread_plus_original_gate",
+      "actionType": "workflow"
+    }
+  ],
+  "note": "Public message bodies only. No internal_notes or workflow_instruction are included. Channel eligibility remains locked by default in the UI. Follow-ups require the original channel gate to remain valid and no opt-out."
+}

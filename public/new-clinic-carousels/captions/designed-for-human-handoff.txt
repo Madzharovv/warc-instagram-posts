@@ -1,0 +1,10 @@
+Good clinic automation knows when to step back.
+
+WARC is designed for clinic WhatsApp: share your guidance, offer the booking path, and leave room for your team to confirm and take over.
+
+It is not a clinician. Urgent and complex cases follow pathways you approve, plus local emergency instructions where needed.
+
+See a sample handoff:
+warc.akroslab.com
+
+#DentalClinic #FrontDesk #WhatsAppBusiness #ClinicOps #HealthTech

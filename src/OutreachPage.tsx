@@ -1,410 +1,115 @@
-import { CopyField } from "@/components/CopyField"
-import { Badge } from "@/components/ui/badge"
+import { useMemo, useState } from "react"
+import { ArrowDownToLine, ArrowUpRight, Check, CheckCircle2, ChevronRight, Clipboard, Clock3, ExternalLink, LockKeyhole, ShieldCheck, UserRound } from "lucide-react"
+import { PageShell } from "@/components/PageShell"
+import { assetUrl } from "@/lib/assets"
+import data from "@/data/outreach-templates.json"
+import research from "@/../public/outreach/warc-prospect-research.json"
+import { evaluateEligibility, getEligibilityPlan, getTemplateItems, type Channel, type Region } from "@/lib/outreach-eligibility"
 
-type EmailTemplate = {
-  trigger: string
-  subject: string
-  body: string
+type Tab = "templates" | "research" | "workflow"
+type Prospect = (typeof research.prospects)[number]
+const regions: { id: Region; label: string }[] = [{ id: "uk", label: "United Kingdom" }, { id: "spain", label: "Spain" }]
+const channels: { id: Channel; label: string }[] = [{ id: "instagram_dm", label: "Instagram DM" }, { id: "email", label: "Email" }]
+const fieldLabels: Record<string, string> = { Name: "Recipient name", Clinic: "Clinic name", OpeningMonthYear: "Opening month and year", Source: "Evidence source", Sender: "Your first name", phone: "Sender phone (signature)", RequestContext: "Actual inbound request context" }
+const fieldPlaceholders: Record<string, string> = { Name: "e.g. Alex", Clinic: "Clinic’s exact public name", OpeningMonthYear: "Only a dated confirmed opening", Source: "e.g. NHS board release", Sender: "Your name", phone: "Your approved business number", RequestContext: "e.g. pedir información sobre WARC" }
+
+async function copyText(text: string) {
+  if (navigator.clipboard?.writeText) return navigator.clipboard.writeText(text)
+  const area = document.createElement("textarea")
+  area.value = text
+  area.style.position = "fixed"
+  area.style.opacity = "0"
+  document.body.appendChild(area)
+  area.select()
+  const success = document.execCommand("copy")
+  area.remove()
+  if (!success) throw new Error("Copy unavailable; select and copy the text manually.")
 }
 
-const FORMULA = [
-  { step: "Notice", note: "A real, specific observation about them. Proves this isn't a mass blast before you've said a word about WARC." },
-  { step: "Wonder", note: "A soft question that lets them realize the problem themselves, instead of you pointing it out at them." },
-  { step: "Cost", note: "What that problem actually costs them. The patient who doesn't wait, they just message the next practice." },
-  { step: "Answer", note: "WARC shows up as the answer to a problem they already feel, not as the subject of a pitch." },
-  { step: "Proof", note: "A real result from a real clinic, introduced only after the problem is felt. That order is what makes it land." },
-  { step: "Ask", note: "A low-pressure invitation, not a demand. Easy to say yes to because it costs them almost nothing." },
-]
-
-// Steps 2 to 6 are the same on purpose. Only the opening "Notice" line
-// changes per trigger, that's what keeps this personalized at volume.
-const PROBLEM = `It got me wondering, what happens when someone messages your clinic on WhatsApp after you've closed for the day?
-
-If the patient is still waiting for a reply the next morning, there's a good chance they've already contacted another practice.`
-
-const ANSWER_AND_PROOF = `That's exactly why we built WARC. It answers WhatsApp enquiries within seconds, 24/7, and turns them into booked patients before they ever reach a competitor.
-
-One clinic we work with, D2 Clínica Dental in Mallorca, booked 32 patients in their first 3 months with WARC who would otherwise have been missed entirely, worth over €6,000. Now it's simply part of their front desk.`
-
-const ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp.`
-
-const EMAIL_TEMPLATES: EmailTemplate[] = [
-  {
-    trigger: "Trigger: new location or clinic recently opened",
-    subject: "Quick question about [Clinic Name]'s WhatsApp",
-    body: `Hi [First Name],
-
-I noticed [Clinic Name] recently opened a new location [in City], so I thought I'd reach out.
-
-${PROBLEM}
-
-${ANSWER_AND_PROOF}
-
-${ASK}`,
-  },
-  {
-    trigger: "Trigger: reviews mention slow replies or missed messages",
-    subject: "Noticed something in [Clinic Name]'s reviews",
-    body: `Hi [First Name],
-
-I noticed a few reviews for [Clinic Name] mention it takes a while to hear back after messaging, so I thought I'd reach out.
-
-${PROBLEM}
-
-${ANSWER_AND_PROOF}
-
-${ASK}`,
-  },
-  {
-    trigger: "Trigger: team or practice is growing",
-    subject: "[Clinic Name] is growing, quick question",
-    body: `Hi [First Name],
-
-I noticed [Clinic Name] has been growing the team lately [new dentist, more hours, more chairs], so I thought I'd reach out.
-
-${PROBLEM} With more patients coming through, that gap only gets more expensive.
-
-${ANSWER_AND_PROOF}
-
-${ASK}`,
-  },
-  {
-    trigger: "Trigger: running ads, promotions, or visibly high enquiry volume",
-    subject: "Quick question about [Clinic Name]'s enquiries",
-    body: `Hi [First Name],
-
-I noticed [Clinic Name] has been getting a lot of enquiries lately [saw your promotion, your ads, your social posts], so I thought I'd reach out.
-
-It got me wondering, with that many people messaging in, what happens to the ones who reach out on WhatsApp after you've closed for the day?
-
-If a patient is still waiting for a reply the next morning, there's a good chance they've already booked with another practice, and that ad spend just went to a competitor instead.
-
-${ANSWER_AND_PROOF}
-
-${ASK}`,
-  },
-  {
-    trigger: "Fallback: no specific trigger found, use sparingly",
-    subject: "Quick question for [Clinic Name]",
-    body: `Hi [First Name],
-
-I've been speaking with a few clinics about how they handle WhatsApp messages outside office hours, and it got me thinking about [Clinic Name].
-
-${PROBLEM}
-
-${ANSWER_AND_PROOF}
-
-${ASK}`,
-  },
-]
-
-// Same six-step formula as the email, compressed hard. A DM that reads like
-// an email gets ignored, so only the opener changes and everything else is
-// cut to one line each.
-const DM_PROBLEM = `Quick one: how fast do patients hear back after hours on WhatsApp? If they're still waiting the next morning, they've probably messaged someone else.`
-
-const DM_ANSWER_AND_PROOF = `We built WARC for that. It replies in seconds, 24/7, and gets those patients booked before they message a competitor. One clinic recovered 32 patients in 3 months who would've otherwise been missed, worth over €6,000.`
-
-const DM_ASK = `Would you be open to a quick 5-minute walkthrough? I'll show you exactly how it would work with your existing WhatsApp 👍`
-
-// Sent as the last line of every clinic-facing DM, right before the 6-image
-// bundle carousel gets attached as a follow-up in the same conversation.
-const DM_IMAGES_NOTE = `We're also running a free bundle offer right now, see the post below. Take all of it, or just what's useful, keep whatever's already working (like your booking system) and we'll plug in around it 👇`
-
-// One-off, not part of the 5-trigger system: mutual follow already in place,
-// send from personal account, includes the end-of-July bonus offer.
-const BARLAS_CO_DM = `Hey Dr Abdullah & Dr Shafay 👋 love the before/after transformations you're posting, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-If you sign up before the end of July, we'll also include the booking system and appointment reminder add-ons at no extra cost.
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`
-
-// Bio and content are landing-page style (Same Day Implants/Bonding/Veneers,
-// "Book Now", phone number front and center). Reads as an active,
-// enquiry-driven marketing account, so the ads/high-volume trigger fits.
-const SYNERGY_DENTAL_DM = `Hey [First Name] 👋 saw the same-day implant and veneer content you've been posting, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`
-
-// Not a cold sales DM: he's a verified educator with 177K followers who
-// teaches other dentists (Limitless On Demand), so this is a professional
-// partnership/referral pitch, no emoji, no DM-speak. WARC Instagram gets
-// shared as a separate follow-up message underneath this one.
-const NICK_C_MESSAGE = `Hi Nick,
-
-I'm Valentin, part of the team behind WARC, which gets dental clinics the patients they're currently missing by answering WhatsApp enquiries within seconds, 24/7. One clinic we work with booked 32 patients in their first 3 months with WARC who would otherwise have been missed, worth over €6,000.
-
-Given the platform you've built with Limitless On Demand, I wanted to introduce WARC directly, in case there are a few clinic owners you know personally who'd genuinely benefit and you'd be comfortable mentioning it to them.
-
-As a thank you, we'll offer 20% of the subscription for every clinic that signs up through you, for as long as they stay a customer. We'll also include the booking system and appointment reminder system at no extra cost for each clinic you help sign up, and if you find WARC useful for Limitless Dental, we'd extend the same to you.
-
-Let me know if you have any questions.
-
-Best,
-Valentin`
-
-type ReadyToSend = {
-  label: string
-  handle: string
-  note: string
-  message: string
-  followUpWithImages?: boolean
+function TabButton({ id, label, active, onClick }: { id: string; label: string; active: boolean; onClick: () => void }) {
+  return <button id={id} type="button" role="tab" aria-selected={active} onClick={onClick} className={`min-h-11 flex-1 rounded-lg px-4 py-2.5 text-left text-[13px] font-semibold transition sm:flex-none ${active ? "bg-[#073d21] text-white" : "bg-white text-[#17170f]/65 hover:bg-[#dceed4]"}`}>{label}</button>
 }
 
-const READY_TO_SEND: ReadyToSend[] = [
-  {
-    label: "DM to Dr Abdullah & Dr Shafay Barlas",
-    handle: "@barlasandco.dentistry",
-    note: "Mutual follow already in place, so this'll land straight in their inbox. Includes the end-of-July booking + reminder system bonus.",
-    message: BARLAS_CO_DM,
-    followUpWithImages: true,
-  },
-  {
-    label: "DM to Synergy Dental Clinic Specialist",
-    handle: "@synergydentalspecialist",
-    note: "Bio and content are built around same-day implant/veneer bookings, a high-enquiry-volume marketing angle.",
-    message: SYNERGY_DENTAL_DM,
-    followUpWithImages: true,
-  },
-  {
-    label: "Message to Dr Nick Ciardiello",
-    handle: "@dr.nickc",
-    note: "Partnership/referral pitch, not a cold sales DM. He's a verified educator with 177K followers, and this asks him to mention WARC personally to clinic owners he actually knows, not repost it broadly. 20% referral rate. Follow up underneath with the WARC Instagram profile.",
-    message: NICK_C_MESSAGE,
-  },
-]
-
-const DM_TEMPLATES: EmailTemplate[] = [
-  {
-    trigger: "Trigger: new location or clinic recently opened",
-    subject: "",
-    body: `Hey [First Name] 👋 saw [Clinic Name] just opened a new location, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`,
-  },
-  {
-    trigger: "Trigger: reviews mention slow replies or missed messages",
-    subject: "",
-    body: `Hey [First Name] 👋 noticed a few reviews on [Clinic Name] mention slow replies, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`,
-  },
-  {
-    trigger: "Trigger: team or practice is growing",
-    subject: "",
-    body: `Hey [First Name] 👋 saw [Clinic Name] is growing the team, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`,
-  },
-  {
-    trigger: "Trigger: running ads, promotions, or visibly high enquiry volume",
-    subject: "",
-    body: `Hey [First Name] 👋 saw [Clinic Name] getting a lot of enquiries lately, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`,
-  },
-  {
-    trigger: "Fallback: no specific trigger found, use sparingly",
-    subject: "",
-    body: `Hey [First Name] 👋 came across [Clinic Name]'s page, thought I'd reach out.
-
-${DM_PROBLEM}
-
-${DM_ANSWER_AND_PROOF}
-
-${DM_ASK}
-
-${DM_IMAGES_NOTE}`,
-  },
-]
-
-function EmailCard({ t, index }: { t: EmailTemplate; index: number }) {
-  return (
-    <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <p className="text-[15px] font-semibold text-[#0b0b0f]">Email {index + 1}</p>
-        <Badge className="border-[#0a5f33]/20 bg-[#0a5f33]/8 text-[11px] font-semibold text-[#0a5f33]">
-          {t.trigger}
-        </Badge>
-      </div>
-      <div className="flex flex-col gap-3">
-        <CopyField label="Subject" value={t.subject} />
-        <CopyField label="Body" value={t.body} />
+function TemplateWorkspace() {
+  const [region, setRegion] = useState<Region>("uk")
+  const [channel, setChannel] = useState<Channel>("instagram_dm")
+  const [templateId, setTemplateId] = useState("ig_en_c")
+  const [values, setValues] = useState<Record<string, string>>({})
+  const [fields, setFields] = useState<Record<string, string>>({})
+  const [subjectId, setSubjectId] = useState("sub_a")
+  const [copyState, setCopyState] = useState("")
+  const template = data.templates.find((item) => item.id === templateId) ?? data.templates[0]
+  const available = template.channels.includes(channel)
+  const plan = getEligibilityPlan({ channel, region, templateId })
+  const items = getTemplateItems(templateId, plan)
+  const missing = useMemo(() => available ? evaluateEligibility({ templateId, values, check: plan }) : ["This template is not available for the selected channel"], [available, templateId, values, plan])
+  const eligible = available && missing.length === 0
+  const placeholderSource = template.body + (channel === "email" && templateId !== "es_inbound_reply" ? data.subjects.map((subject) => subject.text).join(" ") : "")
+  const placeholders = Array.from(new Set([...placeholderSource.matchAll(/{{([^{}]+)}}/g)].map((match) => match[1]))).filter((name) => Object.keys(fieldLabels).includes(name))
+  const personalised = template.body.replace(/{{([^{}]+)}}/g, (match, name: string) => fields[name]?.trim() || match)
+  const selectedSubject = data.subjects.find((subject) => subject.id === subjectId) ?? data.subjects[0]
+  const finalSubject = selectedSubject.text.replace(/{{([^{}]+)}}/g, (match, name: string) => fields[name]?.trim() || match)
+  const finalBody = region === "spain" && channel === "email" ? `${personalised}\n\nPara dejar de recibir estos correos, responde baja.` : personalised
+  const setContext = (setter: () => void) => { setter(); setValues({}); setCopyState("") }
+  const selectRegion = (next: Region) => setContext(() => { setRegion(next); if (next === "spain") setTemplateId("es_inbound_reply"); else setTemplateId(channel === "email" ? "email_uk_walkthrough" : "ig_en_c") })
+  const selectChannel = (next: Channel) => setContext(() => { setChannel(next); setTemplateId(region === "spain" ? "es_inbound_reply" : next === "email" ? "email_uk_walkthrough" : "ig_en_c") })
+  const copy = async () => {
+    if (!eligible) return
+    try { await copyText(channel === "email" && templateId !== "es_inbound_reply" ? `Subject: ${finalSubject}\n\n${finalBody}` : finalBody); setCopyState("Copied public message text. No message was sent.") }
+    catch { setCopyState("Clipboard unavailable. Download the message or select it manually instead.") }
+  }
+  const download = () => {
+    if (!eligible) return
+    const blob = new Blob([channel === "email" && templateId !== "es_inbound_reply" ? `Subject: ${finalSubject}\n\n${finalBody}` : finalBody], { type: "text/plain;charset=utf-8" })
+    const url = URL.createObjectURL(blob)
+    const anchor = document.createElement("a")
+    anchor.href = url
+    anchor.download = `warc-${templateId}.txt`
+    anchor.click()
+    setTimeout(() => URL.revokeObjectURL(url), 1000)
+    setCopyState("Downloaded public message text. No message was sent.")
+  }
+  return <>
+    <div className="grid gap-6 lg:grid-cols-[320px_1fr]">
+      <section aria-labelledby="templates-title"><h2 id="templates-title" className="text-[17px] font-semibold">Message library</h2><p className="mt-2 text-[13px] leading-5 text-[#17170f]/55">Choose a real starting point. Personalise the facts, then complete the eligibility record.</p><div className="mt-5 space-y-2">{data.templates.map((item) => <button type="button" key={item.id} onClick={() => setContext(() => setTemplateId(item.id))} aria-pressed={templateId === item.id} className={`w-full rounded-xl border p-4 text-left transition ${templateId === item.id ? "border-[#0a5f33] bg-[#dceed4]" : "border-[#17170f]/10 bg-white hover:border-[#0a5f33]/40"}`}><span className="flex items-start justify-between gap-3"><span><span className="block text-[10px] font-bold tracking-[0.12em] text-[#0a5f33] uppercase">{item.group}</span><span className="mt-1.5 block text-[13px] leading-5 font-semibold">{item.title}</span></span><ChevronRight className="mt-3 size-4 shrink-0 text-[#17170f]/40" /></span><span className="mt-2 flex flex-wrap gap-1">{item.channels.map((itemChannel) => <span key={itemChannel} className="rounded-full bg-[#17170f]/5 px-2 py-0.5 text-[10px] text-[#17170f]/65">{itemChannel === "email" ? "Email" : "Instagram"}</span>)}</span></button>)}</div></section>
+      <div className="min-w-0">
+        <section className="rounded-2xl border border-[#17170f]/10 bg-[#fdfbf3] p-5 sm:p-6" aria-labelledby="composer-title"><div className="flex flex-wrap items-start justify-between gap-3"><div><p className="text-[10px] font-bold tracking-[0.15em] text-[#0a5f33] uppercase">{template.group} · {template.language === "es" ? "Spanish" : "English"}</p><h2 id="composer-title" className="mt-2 text-xl font-semibold tracking-tight">{template.title}</h2></div><span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-[11px] font-semibold ${eligible ? "bg-[#dceed4] text-[#0a5f33]" : "bg-[#f3e6c4] text-[#6c4b12]"}`}>{eligible ? <CheckCircle2 className="size-3.5" /> : <LockKeyhole className="size-3.5" />}{eligible ? "Checks recorded" : "Eligibility blocked"}</span></div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2"><label className="text-[12px] font-semibold">Recipient region<select value={region} onChange={(event) => selectRegion(event.target.value as Region)} className="mt-2 block h-11 w-full rounded-lg border border-[#17170f]/15 bg-white px-3 text-[13px] font-normal">{regions.map((item) => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label><label className="text-[12px] font-semibold">Channel<select value={channel} onChange={(event) => selectChannel(event.target.value as Channel)} className="mt-2 block h-11 w-full rounded-lg border border-[#17170f]/15 bg-white px-3 text-[13px] font-normal">{channels.map((item) => <option value={item.id} key={item.id}>{item.label}</option>)}</select></label></div>
+          {!available && <p role="alert" className="mt-4 rounded-lg bg-[#f3e6c4] p-3 text-[13px] text-[#6c4b12]">Choose a channel shown on this template. Copy and download remain locked until it is available and the checks are complete.</p>}
+          <div className="mt-6 rounded-xl border border-[#17170f]/10 bg-white p-4"><h3 className="flex items-center gap-2 text-[13px] font-semibold"><ShieldCheck className="size-4 text-[#0a5f33]" />{plan.title}</h3><p className="mt-2 text-[12px] leading-5 text-[#17170f]/60">{plan.summary}</p><div className="mt-4 space-y-3">{items.map((item) => <label className="flex items-start gap-3 text-[12px] leading-5" key={item.id}><input type="checkbox" checked={values[item.id] === "yes" || (item.id === "ig_basis" && ["consent", "corporate"].includes(values[item.id]))} onChange={(event) => { setValues({ ...values, [item.id]: event.target.checked ? item.id === "ig_basis" ? "consent" : "yes" : "no" }); setCopyState("") }} className="mt-0.5 size-4 shrink-0 accent-[#0a5f33]" /><span><span className="font-semibold">{item.label}</span>{item.help && <span className="mt-0.5 block text-[#17170f]/55">{item.help}</span>}{item.id === "ig_basis" && <span className="mt-2 inline-flex gap-3 text-[11px] font-normal"><span><input className="mr-1 accent-[#0a5f33]" type="radio" name="ig-basis" checked={values.ig_basis === "consent"} onChange={() => setValues({ ...values, ig_basis: "consent" })} /> Explicit consent</span><span><input className="mr-1 accent-[#0a5f33]" type="radio" name="ig-basis" checked={values.ig_basis === "corporate"} onChange={() => setValues({ ...values, ig_basis: "corporate" })} /> Corporate subscriber verified</span></span>}</span></label>)}</div>{!eligible && <div className="mt-4 rounded-lg bg-[#17170f]/4 p-3"><p className="text-[11px] font-semibold">Before copy or download is unlocked</p><ul className="mt-1.5 space-y-1 text-[11px] leading-4 text-[#17170f]/60">{missing.map((reason) => <li key={reason}>· {reason}</li>)}</ul></div>}</div>
+          {placeholders.length > 0 && <div className="mt-6"><h3 className="text-[13px] font-semibold">Personalise the evidence</h3><p className="mt-1 text-[12px] leading-5 text-[#17170f]/55">Local only: these values are not uploaded or saved. Unfilled placeholders remain visible for review.</p><div className="mt-3 grid gap-3 sm:grid-cols-2">{placeholders.map((field) => <label key={field} className="text-[11px] font-semibold">{fieldLabels[field]}<input value={fields[field] ?? ""} onChange={(event) => setFields({ ...fields, [field]: event.target.value })} placeholder={fieldPlaceholders[field]} className="mt-1.5 block h-11 w-full rounded-lg border border-[#17170f]/15 bg-white px-3 text-[13px] font-normal outline-[#0a5f33]" /></label>)}</div></div>}
+          <div className="mt-6">{channel === "email" && templateId !== "es_inbound_reply" && <label className="mb-4 block text-[11px] font-semibold">Subject line<select className="mt-1.5 block h-11 w-full rounded-lg border border-[#17170f]/15 bg-white px-3 text-[13px] font-normal" value={subjectId} onChange={(event) => setSubjectId(event.target.value)}>{data.subjects.map((subject) => <option key={subject.id} value={subject.id}>{subject.text}</option>)}</select></label>}<div className="flex items-center justify-between gap-3"><label htmlFor="message-preview" className="text-[11px] font-bold tracking-[0.1em] text-[#17170f]/50 uppercase">Recipient-facing message</label><span className="text-[10px] text-[#17170f]/45">No internal notes</span></div>{channel === "email" && templateId !== "es_inbound_reply" && <p className="mt-3 rounded-lg bg-[#dceed4] px-3 py-2 text-[12px]"><strong>Subject:</strong> {finalSubject}</p>}<textarea id="message-preview" readOnly value={finalBody} rows={12} className="mt-3 block w-full resize-y rounded-xl border border-[#17170f]/15 bg-white p-4 font-mono text-[12.5px] leading-6 text-[#17170f]/80" /><div className="mt-4 flex flex-wrap gap-3"><button type="button" disabled={!eligible} onClick={copy} className="inline-flex min-h-11 items-center gap-2 rounded-lg bg-[#0a5f33] px-4 py-2.5 text-[13px] font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"><Clipboard className="size-4" />Copy personalised message</button><button type="button" disabled={!eligible} onClick={download} className="inline-flex min-h-11 items-center gap-2 rounded-lg border border-[#0a5f33]/25 px-4 py-2.5 text-[13px] font-semibold text-[#073d21] disabled:cursor-not-allowed disabled:opacity-40"><ArrowDownToLine className="size-4" />Download message</button></div>{copyState && <p role="status" className="mt-3 text-[12px] text-[#0a5f33]">{copyState}</p>}<p className="mt-3 flex items-start gap-2 text-[11px] leading-4 text-[#17170f]/55"><LockKeyhole className="mt-0.5 size-3.5 shrink-0" />No sending integration. Review the personalised message yourself before using any outside service.</p></div>
+        </section>
+        <section className="mt-5 rounded-xl border border-[#17170f]/10 bg-white p-5"><div className="flex flex-col justify-between gap-3 sm:flex-row"><div><h3 className="text-sm font-semibold">Need the complete library?</h3><p className="mt-1 text-[12px] leading-5 text-[#17170f]/55">Public template bodies, subjects and gate IDs only. Exporting a template does not make a recipient eligible.</p></div><a href={assetUrl("outreach/warc-outreach-templates.json")} download="warc-outreach-templates.json" className="inline-flex h-fit items-center gap-2 rounded-lg bg-[#dceed4] px-3 py-2 text-[12px] font-semibold text-[#073d21]"><ArrowDownToLine className="size-4" />Download JSON</a></div></section>
       </div>
     </div>
-  )
+  </>
 }
 
-function DmCard({ t, index }: { t: EmailTemplate; index: number }) {
-  return (
-    <div className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <p className="text-[15px] font-semibold text-[#0b0b0f]">DM {index + 1}</p>
-        <Badge className="border-[#0a5f33]/20 bg-[#0a5f33]/8 text-[11px] font-semibold text-[#0a5f33]">
-          {t.trigger}
-        </Badge>
-      </div>
-      <CopyField label="Message" value={t.body} />
-    </div>
-  )
+function ProspectCard({ prospect }: { prospect: Prospect }) {
+  const current = prospect.category === "current"
+  return <article className="rounded-xl border border-[#17170f]/10 bg-white p-5"><div className="flex flex-wrap items-start justify-between gap-3"><div><span className={`rounded-full px-2 py-1 text-[10px] font-bold tracking-wide uppercase ${current ? "bg-[#dceed4] text-[#0a5f33]" : "bg-[#f3e6c4] text-[#6c4b12]"}`}>{current ? "Confirmed opening / new site" : "Unconfirmed or planned"}</span><h3 className="mt-3 text-[16px] font-semibold">{prospect.clinicName}</h3><p className="mt-1 text-[12px] text-[#17170f]/55">{prospect.location}</p></div><a href={prospect.siteUrl} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${prospect.clinicName} website`} className="rounded-lg border border-[#17170f]/10 p-2 text-[#0a5f33] hover:bg-[#dceed4]"><ExternalLink className="size-4" /></a></div><p className="mt-4 text-[13px] leading-5 text-[#17170f]/75">{prospect.lifecycleLabel}</p><div className="mt-4 grid gap-3 border-t border-[#17170f]/10 pt-4 text-[12px] leading-5 sm:grid-cols-2"><p><strong className="block text-[#17170f]/50">WhatsApp patient use</strong>{prospect.whatsappUseVerified ? "Verified" : "Unverified — do not assume"}</p><p><strong className="block text-[#17170f]/50">Operator gate</strong><span className="break-words">{prospect.operatorStatus.replaceAll("_", " ")}</span></p></div><div className="mt-4 rounded-lg bg-[#f3f0e6] p-3"><p className="text-[12px] leading-5 text-[#17170f]/70">{prospect.evidence.summary}</p><a className="mt-2 inline-flex items-center gap-1.5 text-[11px] font-semibold break-all text-[#0a5f33] underline underline-offset-2" href={prospect.evidence.url} target="_blank" rel="noopener noreferrer">Public evidence{prospect.evidence.publicationDate ? ` · ${prospect.evidence.publicationDate}` : ""}<ArrowUpRight className="size-3 shrink-0" /></a><div className="mt-2 text-[11px] text-[#17170f]/55">Pitch eligibility: <strong>blocked by default</strong>. Re-check operator, consent/subscriber and lawful basis.</div></div></article>
+}
+
+function ResearchLibrary() {
+  const [filter, setFilter] = useState<"current" | "planned" | "historical" | "all">("current")
+  const prospects = research.prospects.filter((prospect) => filter === "all" || filter === "current" && prospect.category === "current" || filter === "historical" && prospect.category === "historical" || filter === "planned" && ["upcoming", "launch_watch"].includes(prospect.category))
+  return <><section aria-labelledby="research-title"><h2 id="research-title" className="text-2xl font-semibold tracking-tight">Dated research ≠ permission to pitch.</h2><p className="mt-3 max-w-[800px] text-[14px] leading-6 text-[#17170f]/65">Public business openings, sources and product-fit observations only. Direct phone numbers and email addresses are omitted from this app export. Every entry needs a fresh eligibility and WhatsApp-use check before any message.</p><div className="mt-6 flex flex-wrap gap-2" role="group" aria-label="Filter prospects">{([{ id: "current", label: "2 confirmed" }, { id: "planned", label: "3 unconfirmed / planned" }, { id: "historical", label: "6 historical" }, { id: "all", label: "All 11" }] as const).map((item) => <button type="button" aria-pressed={filter === item.id} key={item.id} onClick={() => setFilter(item.id)} className={`rounded-full px-4 py-2 text-[12px] font-semibold ${filter === item.id ? "bg-[#073d21] text-white" : "bg-white text-[#17170f]/65"}`}>{item.label}</button>)}</div><div className="mt-6 grid gap-4 lg:grid-cols-2">{prospects.map((prospect) => <ProspectCard key={prospect.id} prospect={prospect} />)}</div></section><section className="mt-10 rounded-xl border border-[#17170f]/10 bg-[#f3e6c4] p-5"><h3 className="text-sm font-semibold">Accuracy notes</h3><ul className="mt-3 list-disc space-y-2 pl-5 text-[12px] leading-5 text-[#17170f]/70"><li>8to8 Dental Elgin had an announced 2 November date, not post-opening confirmation.</li><li>Buttercross was hoping to open around end October / early November; Bognor was planned for later 2026. Neither is labelled “opened”.</li><li>Hamilton is a relocation to a new location, not a newly-founded practice. The named group company is parent/non-trading context, not the verified practice operator.</li><li>Research timestamp: 6 November 2026 (Europe/London). Recheck before use.</li></ul><div className="mt-5 flex flex-wrap gap-3"><a href={assetUrl("outreach/warc-prospect-research.json")} download="warc-prospect-research.json" className="inline-flex items-center gap-2 rounded-lg bg-[#073d21] px-4 py-2.5 text-[12px] font-semibold text-white"><ArrowDownToLine className="size-4" />Research JSON</a><a href={assetUrl("outreach/warc-prospect-research.csv")} download="warc-prospect-research.csv" className="inline-flex items-center gap-2 rounded-lg border border-[#073d21]/25 px-4 py-2.5 text-[12px] font-semibold text-[#073d21]"><ArrowDownToLine className="size-4" />Research CSV</a></div></section></>
+}
+
+function Workflow() {
+  const steps = [
+    ["1", "Start with the founder", "Use the founder’s personal account for relationship-led outreach where a lawful channel exists. WARC is the product/proof hub; Akros Lab is the corporate background. Name that affiliation in every message."],
+    ["2", "Verify a genuine trigger", "Use public opening evidence and precise dates. Do not turn a planned opening into a confirmed one or assume the clinic uses WhatsApp. When in doubt, choose the WhatsApp-use question."],
+    ["3", "Record channel eligibility", "UK email and Instagram have separate gates. Spanish electronic marketing is inbound / prior opt-in only in this workspace. A personal account, company registration or public listing is not blanket permission."],
+    ["4", "Make one small ask", "Send one short message, not a carousel dump. WARC helps existing WhatsApp enquiries reach a clear booking path; it is not guaranteed patient acquisition. Only share verified posts after engagement."],
+    ["5", "Follow up, then stop", "One gentle follow-up on days 4–5, one close-the-loop note on days 12–14, only if the original lawful basis remains valid and no opt-out exists. Record opt-outs immediately."],
+    ["6", "Show, do not overpromise", "Move engaged clinics into a real 30-minute Google Meet. Bookings require confirmation. Use a sample enquiry with fictional details; never real patient data. Confirm booking/reminder delivery before promising end-to-end automation."],
+  ]
+  return <><section aria-labelledby="sender-title" className="rounded-2xl bg-[#073d21] p-6 text-white sm:p-8"><UserRound className="size-7 text-[#bae6bc]" /><h2 id="sender-title" className="mt-5 text-2xl font-semibold tracking-tight">Founder first. WARC as proof. Akros Lab as background.</h2><p className="mt-3 max-w-[820px] text-[14px] leading-6 text-white/70">The account choice does not replace permission. Keep the human relationship in the sender, use organic content to establish the product, and make a useful, low-pressure invitation.</p></section><div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">{steps.map(([number, title, text]) => <article key={number} className="rounded-xl border border-[#17170f]/10 bg-white p-5"><span className="grid size-7 place-items-center rounded-full bg-[#dceed4] text-[12px] font-bold text-[#0a5f33]">{number}</span><h3 className="mt-4 text-[15px] font-semibold">{title}</h3><p className="mt-2 text-[12px] leading-5 text-[#17170f]/65">{text}</p></article>)}</div><section className="mt-8 grid gap-5 md:grid-cols-2"><article className="rounded-xl border border-[#17170f]/10 bg-white p-6"><Clock3 className="size-5 text-[#0a5f33]" /><h3 className="mt-3 font-semibold">One honest booking path</h3><p className="mt-2 text-[13px] leading-6 text-[#17170f]/65">The live Cal.com event is 30 minutes, not five. Google Meet, 10-minute buffers, four hours’ notice and clinic-qualification questions are configured. Bookings need your confirmation.</p><a href={data.booking.url} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-[13px] font-semibold text-[#0a5f33] underline underline-offset-4">Open the WARC booking page <ArrowUpRight className="size-4" /></a></article><article className="rounded-xl bg-[#f3e6c4] p-6"><Check className="size-5 text-[#0a5f33]" /><h3 className="mt-3 font-semibold">Measure useful conversations</h3><p className="mt-2 text-[13px] leading-6 text-[#17170f]/65">Track eligible touches, explicit yes replies, walkthroughs booked/held and verified product fit—not only contact count. This is a descriptive pilot, not proof of statistically significant conversion.</p></article></section></>
 }
 
 export function OutreachPage() {
-  return (
-    <div className="min-h-screen bg-[#f5f5f4]">
-      <header className="border-b border-black/10 bg-white px-8 py-10 text-center">
-        <p className="mb-2 text-[13px] font-semibold tracking-wide text-[#0a5f33] uppercase">
-          WARC · Outreach templates
-        </p>
-        <h1 className="text-[32px] font-bold tracking-tight text-[#0b0b0f]">
-          One structure. Five openers. Built to scale.
-        </h1>
-        <p className="mx-auto mt-3 max-w-[640px] text-[15px] leading-relaxed text-black/55">
-          Only the first line changes per clinic. Everything after it, the
-          question, the pain point, the product, the proof, the ask, stays the
-          same because the structure is what makes it work, not the specific
-          words. Send enough of these and it still reads personal every time.
-        </p>
-        <div className="mx-auto mt-6 max-w-[640px] rounded-xl border border-amber-200 bg-amber-50 px-5 py-3.5 text-left text-[13.5px] leading-relaxed text-amber-900">
-          <strong>WARC is WhatsApp-only.</strong> Don't imply it covers
-          Instagram DMs, SMS, live chat, or phone calls. Keep every claim
-          scoped to WhatsApp specifically.
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-[760px] px-8 py-14">
-        <section className="mb-14">
-          <h2 className="mb-4 text-[22px] font-bold tracking-tight text-[#0b0b0f]">
-            The formula
-          </h2>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {FORMULA.map((f, i) => (
-              <div key={f.step} className="rounded-xl border border-black/10 bg-white p-4">
-                <p className="text-[12px] font-semibold text-[#0a5f33]">
-                  {i + 1}. {f.step}
-                </p>
-                <p className="mt-1 text-[13px] leading-relaxed text-black/60">{f.note}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section className="mb-16">
-          <h2 className="mb-1 text-[22px] font-bold tracking-tight text-[#0b0b0f]">
-            Cold email
-          </h2>
-          <p className="mb-6 text-[14px] text-black/50">
-            Pick whichever trigger is actually true for the clinic you're
-            emailing. Fill in the brackets. Use the fallback only when none of
-            the other four apply.
-          </p>
-          <div className="flex flex-col gap-5">
-            {EMAIL_TEMPLATES.map((t, i) => (
-              <EmailCard key={i} t={t} index={i} />
-            ))}
-          </div>
-        </section>
-
-        <section>
-          <h2 className="mb-1 text-[22px] font-bold tracking-tight text-[#0b0b0f]">
-            Instagram DM
-          </h2>
-          <p className="mb-6 text-[14px] text-black/50">
-            Same five triggers, same formula, cut down hard. A DM that reads
-            like an email gets ignored, so every line here is shorter than its
-            email equivalent.
-          </p>
-          <a
-            href="/posts#bundle-carousel"
-            className="mb-6 flex items-center justify-between gap-4 rounded-xl border border-[#0a5f33]/20 bg-[#0a5f33]/8 px-5 py-4 text-left transition hover:bg-[#0a5f33]/12"
-          >
-            <span className="text-[13.5px] leading-relaxed text-[#0a5f33]">
-              <strong>Send the 6-image bundle carousel right after this message.</strong>{" "}
-              Every DM below ends with a line that sets it up, download the
-              images and attach them as your next message in the same chat.
-            </span>
-            <span className="shrink-0 text-[13px] font-semibold whitespace-nowrap text-[#0a5f33]">
-              Get images →
-            </span>
-          </a>
-          <div className="flex flex-col gap-5">
-            {DM_TEMPLATES.map((t, i) => (
-              <DmCard key={i} t={t} index={i} />
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-16">
-          <h2 className="mb-1 text-[22px] font-bold tracking-tight text-[#0b0b0f]">
-            Ready to send
-          </h2>
-          <p className="mb-6 text-[14px] text-black/50">
-            One-off, personalized DMs for specific accounts. Send from your personal
-            account, not the WARC page.
-          </p>
-          <div className="flex flex-col gap-5">
-            {READY_TO_SEND.map((r) => (
-              <div key={r.handle} className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm">
-                <div className="mb-4">
-                  <p className="text-[15px] font-semibold text-[#0b0b0f]">{r.handle}</p>
-                  <p className="mt-1 text-[13px] leading-relaxed text-black/55">{r.note}</p>
-                  {r.followUpWithImages && (
-                    <a
-                      href="/posts#bundle-carousel"
-                      className="mt-2 inline-block text-[12.5px] font-semibold text-[#0a5f33] hover:underline"
-                    >
-                      📎 Follow up with the 6-image bundle carousel →
-                    </a>
-                  )}
-                </div>
-                <CopyField label={r.label} value={r.message} />
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
-
-      <footer className="border-t border-black/10 px-8 py-8 text-center text-[12.5px] text-black/40">
-        Every stat here (32 patients recovered, €6,000+ generated, 13s reply
-        time) is real, from the D2 Clínica Dental case study. Edit directly
-        in <code>src/OutreachPage.tsx</code>.
-      </footer>
-    </div>
-  )
+  const [tab, setTab] = useState<Tab>("templates")
+  return <PageShell eyebrow="WARC · Outreach workspace" title={<>Personal outreach.<br className="hidden sm:block" /> Operational control.</>} description="Ready-to-personalise Instagram DM and email drafts for dental clinics, with sender strategy, dated prospect research and deliberate eligibility checks. No automated sending."><div className="-mt-16 mb-10 flex flex-col justify-between gap-4 rounded-2xl border border-[#e4b859]/40 bg-[#fdfbf3] p-5 shadow-[0_14px_40px_rgba(7,61,33,0.12)] sm:flex-row sm:items-center sm:p-6"><div className="flex gap-4"><LockKeyhole className="mt-1 size-5 shrink-0 text-[#0a5f33]" /><div><p className="text-sm font-semibold">Drafts for review, not blanket permission to send.</p><p className="mt-1 text-[12px] leading-5 text-[#17170f]/60">Copy unlocks only after the selected template, channel and region pass their required checks. No credentials, direct contact details or internal notes are stored here. Personalisation stays in this browser tab.</p></div></div><span className="shrink-0 rounded-full bg-[#f3e6c4] px-3 py-1.5 text-center text-[11px] font-bold text-[#6c4b12]">Default: blocked</span></div><div role="tablist" aria-label="Outreach workspace" className="flex flex-col gap-2 rounded-xl bg-[#17170f]/5 p-2 sm:flex-row"><TabButton id="tab-templates" label="DM & email templates" active={tab === "templates"} onClick={() => setTab("templates")} /><TabButton id="tab-research" label="Prospect research" active={tab === "research"} onClick={() => setTab("research")} /><TabButton id="tab-workflow" label="Sender & workflow" active={tab === "workflow"} onClick={() => setTab("workflow")} /></div><div className="mt-8">{tab === "templates" ? <TemplateWorkspace /> : tab === "research" ? <ResearchLibrary /> : <Workflow />}</div></PageShell>
 }

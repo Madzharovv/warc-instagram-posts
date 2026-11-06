@@ -1,0 +1,17 @@
+1. 01-cover.png
+Opening a clinic is a path, not a pile of tools.
+
+2. 02-mechanism.png
+WhatsApp reception — designed for the first reply.
+
+3. 03-benefit.png
+Online booking when the visitor is ready to choose a slot.
+
+4. 04-mechanism.png
+Text reminders help protect the diary after booking.
+
+5. 05-mechanism.png
+A landing page that routes into WhatsApp and booking.
+
+6. 06-cta.png
+See the launch stack on a sample setup.

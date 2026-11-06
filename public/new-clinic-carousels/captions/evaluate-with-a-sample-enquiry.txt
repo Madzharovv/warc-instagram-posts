@@ -1,0 +1,10 @@
+The clearest way to evaluate WARC is a short walkthrough on a sample enquiry — not another feature list.
+
+See how WhatsApp reception, booking, and team handoff are designed to work for a new clinic.
+
+Use fictional prompts. Keep real patient details out of the demo.
+
+Start here:
+warc.akroslab.com
+
+#DentalClinic #BookADemo #WhatsAppBusiness #ClinicLaunch #AkrosLab

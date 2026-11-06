@@ -1,0 +1,1508 @@
+{
+  "meta": {
+    "id": "warc-outreach-library-v1",
+    "title": "WARC outreach library",
+    "as_of": "2026-11-06",
+    "timezone_label": "Europe/London",
+    "status": "ready_to_personalise_not_legally_approved",
+    "proof_hub_url": "https://warc.akroslab.com/",
+    "content_pack_url": "https://madzharovv.github.io/warc-instagram-posts/",
+    "corporate_background": {
+      "org": "Akros Lab",
+      "product": "WARC",
+      "note": "Akros Lab is corporate background; WARC is the WhatsApp receptionist product. Outreach affiliation must name Akros Lab (WARC)."
+    },
+    "positioning": {
+      "working": "Help clinics turn WhatsApp enquiries they already receive into a clear booking path.",
+      "not": "Patient acquisition / lead generation / guaranteed bookings or revenue",
+      "founder_approved": false,
+      "hormozi_principles": {
+        "desired_outcome": "Existing enquiry → clear booking path",
+        "demonstrable_process": "5-minute walkthrough on demo flow (nothing to install to see it)",
+        "reduced_setup_effort": "Show before install; team stays in control of confirmation",
+        "forbidden": [
+          "guarantees",
+          "scarcity",
+          "fake social proof",
+          "unverified D2 metrics in public copy",
+          "clinical advice/triage/emergency availability"
+        ]
+      }
+    },
+    "proof_hygiene": {
+      "d2_coded_site_metrics": {
+        "status": "published_on_warc_site_but_unverified_for_outreach",
+        "examples": [
+          "32 patients",
+          "135 messaged",
+          "61% conversion",
+          "60% after-hours",
+          "~13s reply",
+          "1678 messages",
+          "€6000+"
+        ],
+        "rule": "Omit from public outreach copy until dated evidence and permission exist"
+      },
+      "d2_founder_reported_10k": {
+        "status": "founder_reported_unverified",
+        "rule": "Never publish in outreach or list validation"
+      }
+    },
+    "list_nature": "historical_plus_current_sep_nov_2026_and_upcoming",
+    "list_nature_note": "Historical openings remain in prospects[] with prospect_category=historical. Current = verified UK opens/new locations with event dates in Sep–Nov 2026 (publication date ≤ as_of; no future-dated sources). Upcoming = announced without confirmed open as of as_of. Templates not modified in this revision.",
+    "page_url": "https://cursor.com/canvas/store-f11c07de-1e24-438c-b3be-553dfa9e02f6/10651254-bda7-4398-94c6-bd5de2a36b79",
+    "tracker_xlsx": {
+      "path_hint": "public/warc-outreach-tracker.xlsx",
+      "inspected": false,
+      "rule": "Do not reuse contacts until inspected and deduped"
+    },
+    "template_rendering": {
+      "public_fields": [
+        "body",
+        "body_paragraphs",
+        "optional_ack_message.body"
+      ],
+      "internal_fields": [
+        "internal_notes",
+        "workflow_instruction",
+        "channel_eligibility",
+        "requires_gate",
+        "action_type"
+      ],
+      "ui_default": "Show public body only. Block send when channel_eligibility fails or action_type is workflow without an optional message body.",
+      "blocked_when": [
+        "channel_eligibility fails for selected channel",
+        "action_type is workflow and no optional public message selected",
+        "spain cold path",
+        "whatsapp_use_verified is false and template assumes WhatsApp without a question hedge — prefer ig_en_c"
+      ]
+    },
+    "fresh_launch_search": {
+      "window": "2026-09 to 2026-11",
+      "as_of": "2026-11-06",
+      "verified_current": 2,
+      "upcoming": 2,
+      "templates_modified": false,
+      "launch_watch": 1,
+      "elgin_note": "Moved from verified current to launch_watch: Northern Scot 30 Sep 2026 is schedule/forecast only"
+    },
+    "schema_version": "1.1.0",
+    "schema_id": "warc-outreach-library",
+    "integration": {
+      "canonical_array": "prospects",
+      "category_field": "prospect_category",
+      "category_values": [
+        "historical",
+        "current",
+        "upcoming",
+        "launch_watch"
+      ],
+      "category_index": "prospect_ids_by_category",
+      "filtered_views": [
+        "prospects_historical",
+        "prospects_current",
+        "prospects_upcoming",
+        "prospects_launch_watch"
+      ],
+      "templates_path": "templates",
+      "templates_modified_in_fresh_launch": false,
+      "elgin_correction": "forecast_only_moved_to_launch_watch_planned_date_passed_unconfirmed"
+    }
+  },
+  "bundle": {
+    "id": "warc-new-clinic-bundle",
+    "pieces": [
+      {
+        "id": "warc_core",
+        "name": "24/7 WhatsApp receptionist (WARC)",
+        "status": "verified_live_product_page",
+        "published_price_eur_mo": 199.99,
+        "source_url": "https://warc.akroslab.com/",
+        "copy_safe": true
+      },
+      {
+        "id": "online_booking",
+        "name": "Online booking",
+        "status": "requested_integration_unconfirmed",
+        "framed_price_eur_mo_hypothesis": 50,
+        "copy_safe": false,
+        "note": "Do not promise named PMS until confirmed"
+      },
+      {
+        "id": "sms_reminders",
+        "name": "Automatic text reminders",
+        "status": "requested_integration_unconfirmed",
+        "framed_price_eur_mo_hypothesis": 60,
+        "copy_safe": false
+      },
+      {
+        "id": "landing_page",
+        "name": "New-clinic landing page",
+        "status": "requested_delivery_unconfirmed",
+        "framed_price_eur_one_off_hypothesis": 400,
+        "copy_safe": false
+      }
+    ],
+    "expired_promo": {
+      "description": "€0 for 3 months before 31 Aug",
+      "status": "expired",
+      "use_in_copy": false
+    },
+    "totals_and_guarantees": "unapproved_hypotheses_do_not_publish"
+  },
+  "sender": {
+    "recommendation": "founder_personal_first",
+    "options": [
+      {
+        "id": "founder_personal",
+        "when": "Default for first outreach where a lawful basis exists",
+        "profiles_inspected": false
+      },
+      {
+        "id": "warc_brand",
+        "when": "After documented opt-in, content follow, or inbound request"
+      },
+      {
+        "id": "akros_lab_brand",
+        "when": "Only for partners who already know the lab"
+      }
+    ],
+    "affiliation_required_in_every_message": "Akros Lab (WARC)",
+    "profiles_inspected_in_app": false
+  },
+  "consent_gate_common": {
+    "id": "consent_gate_v1",
+    "label": "ready_to_personalise_not_legally_approved",
+    "silence_is_not_consent": true,
+    "public_listing_is_not_permission": true,
+    "permission_ask_can_be_marketing": true,
+    "warm_intro_alone_is_not_consent": true,
+    "no_unsolicited_public_comment_pitching": true,
+    "required_before_any_send": [
+      "counsel_signoff_or_explicit_founder_legal_acceptance",
+      "operator_entity_recorded",
+      "channel_subscriber_type_recorded",
+      "lawful_basis_recorded",
+      "identity_disclosed",
+      "opt_out_path_present_where_required",
+      "do_not_contact_screened"
+    ],
+    "uk": {
+      "corporate_email": {
+        "allowed_when": [
+          "operator_verified_corporate_body",
+          "mailbox_or_subscriber_independently_verified_corporate",
+          "identity_clear",
+          "valid_opt_out_address",
+          "uk_gdpr_checked_if_named_individual_personal_data"
+        ],
+        "note": "Clinic Ltd status alone does not prove an Instagram account is a corporate subscriber.",
+        "gate_id": "uk_corporate_email_operator_and_subscriber_verified"
+      },
+      "instagram_dm": {
+        "allowed_when": [
+          "explicit_consent",
+          "OR_independently_confirmed_corporate_subscriber"
+        ],
+        "blanket_cold_dm": false,
+        "gdpr_legitimate_interest_alone_not_pecr_gate": true,
+        "gate_id": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+        "note": "Clinic Ltd status alone does not prove an Instagram account is a corporate subscriber."
+      },
+      "sources": [
+        "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/electronic-and-telephone-marketing/electronic-mail-marketing/"
+      ]
+    },
+    "spain": {
+      "cold_commercial_email_or_dm": false,
+      "allowed_paths": [
+        "documented_inbound_request",
+        "valid_prior_opt_in",
+        "warm_intro_that_results_in_recipient_request"
+      ],
+      "sl_or_corporate_does_not_unlock_cold_sends": true,
+      "sources": [
+        "https://lssi.digital.gob.es/lssi/la-ley/aspectos-basicos/publicidad-en-internet",
+        "https://www.aepd.es/areas-de-actuacion/publicidad-no-deseada"
+      ],
+      "gate_id": "spain_inbound_or_prior_opt_in_only"
+    }
+  },
+  "personalisation_fields": [
+    {
+      "id": "Name",
+      "description": "Recipient display name if known and lawful to use"
+    },
+    {
+      "id": "Clinic",
+      "description": "Clinic or practice name from evidence"
+    },
+    {
+      "id": "OpeningMonthYear",
+      "description": "Plain dated open from evidence, e.g. May 2026 — no relative just/new phrasing"
+    },
+    {
+      "id": "OpeningDetail",
+      "description": "One factual clause from evidence (location or source hook)"
+    },
+    {
+      "id": "Source",
+      "description": "Short source label for the opening fact"
+    },
+    {
+      "id": "Sender",
+      "description": "Founder or authorised sender given name"
+    },
+    {
+      "id": "phone",
+      "description": "Sender phone if approved for signature"
+    },
+    {
+      "id": "ChannelEligibility",
+      "description": "Pass/fail from consent_gate for email vs IG"
+    },
+    {
+      "id": "FitClass",
+      "description": "enquiry_admin_potential | expansion_ops | unknown — never invent WhatsApp use"
+    },
+    {
+      "id": "RequestContext",
+      "description": "Spain/inbound only: the recipient's actual prior request phrasing, e.g. 'pedir información sobre WARC'. Never an opening date or clinic launch detail."
+    }
+  ],
+  "triggers": [
+    {
+      "id": "historical_opening_coverage",
+      "description": "Dated public opening or expansion coverage exists",
+      "personalisation": [
+        "OpeningMonthYear",
+        "Source",
+        "OpeningDetail"
+      ]
+    },
+    {
+      "id": "documented_inbound_or_opt_in",
+      "description": "Recipient requested info or prior opt-in on file",
+      "personalisation": [
+        "Name",
+        "Clinic"
+      ]
+    },
+    {
+      "id": "verified_whatsapp_patient_channel",
+      "description": "Public or confirmed evidence clinic uses WhatsApp for patients — do not assume",
+      "personalisation": [
+        "Clinic",
+        "FitClass"
+      ]
+    },
+    {
+      "id": "group_expansion_site",
+      "description": "New site inside an existing group — process standardisation angle only",
+      "personalisation": [
+        "Clinic",
+        "OpeningMonthYear"
+      ]
+    },
+    {
+      "id": "nhs_high_demand_registration",
+      "description": "Public ICB/press demand for NHS registration — classify enquiry_admin_potential only, not acquisition",
+      "personalisation": [
+        "Clinic",
+        "FitClass"
+      ]
+    }
+  ],
+  "templates": {
+    "instagram_openings_en": [
+      {
+        "id": "ig_en_a",
+        "channel": "instagram_dm",
+        "language": "en",
+        "action_type": "message",
+        "channel_eligibility": {
+          "instagram_dm": "requires_explicit_consent_or_independently_confirmed_corporate_subscriber",
+          "email": "not_applicable",
+          "gdpr_legitimate_interest_alone": false,
+          "note": "PECR electronic-mail rules for IG DM; UK GDPR interest alone is not an alternative PECR gate."
+        },
+        "requires_gate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+        "body": "Hi {{Name}} — I'm {{Sender}} with Akros Lab (WARC). Congrats on {{Clinic}} opening in {{OpeningMonthYear}}. We help clinics map patient WhatsApp enquiries into a clear booking path (not patient-acquisition ads). If WhatsApp is a channel you already use for patients and this is useful, OK if I send three short lines — or would email be better?",
+        "internal_notes": [
+          "Send only if IG channel eligibility passes (explicit consent OR independently confirmed corporate subscriber).",
+          "Do not send if WhatsApp patient use is unverified and the question would assume it — prefer ig_en_c.",
+          "Silence is not consent."
+        ]
+      },
+      {
+        "id": "ig_en_b",
+        "channel": "instagram_dm",
+        "language": "en",
+        "action_type": "message",
+        "channel_eligibility": {
+          "instagram_dm": "requires_explicit_consent_or_independently_confirmed_corporate_subscriber",
+          "email": "not_applicable",
+          "gdpr_legitimate_interest_alone": false,
+          "note": "PECR electronic-mail rules for IG DM; UK GDPR interest alone is not an alternative PECR gate."
+        },
+        "requires_gate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+        "body": "Hi {{Name}}, I'm {{Sender}} at Akros Lab (product: WARC). {{Clinic}} opened {{OpeningMonthYear}} per {{Source}}. If you already take patient messages on WhatsApp, do you have a set hand-off to a booking link, or is every reply still fully manual? I can share how we set that up — only if useful.",
+        "internal_notes": [
+          "Conditional clause already hedges WhatsApp use; still do not send if product is WhatsApp-only and you have zero signal they use it — use ig_en_c.",
+          "Send only if IG eligibility passes.",
+          "Silence is not consent."
+        ]
+      },
+      {
+        "id": "ig_en_c",
+        "channel": "instagram_dm",
+        "language": "en",
+        "action_type": "message",
+        "channel_eligibility": {
+          "instagram_dm": "requires_explicit_consent_or_independently_confirmed_corporate_subscriber",
+          "email": "not_applicable",
+          "gdpr_legitimate_interest_alone": false,
+          "note": "PECR electronic-mail rules for IG DM; UK GDPR interest alone is not an alternative PECR gate."
+        },
+        "requires_gate": "uk_ig_explicit_consent_or_independently_confirmed_corporate_subscriber",
+        "body": "{{Name}}, I'm {{Sender}} with Akros Lab (WARC). Saw {{Clinic}} open {{OpeningMonthYear}}. WARC is a WhatsApp receptionist for clinics that already use WhatsApp for patients — mapping enquiries to a booking link, not acquiring patients. Do you use WhatsApp for patient enquiries today? If yes and useful, I can send a one-pager when you ask.",
+        "internal_notes": [
+          "Preferred opener when WhatsApp use is unverified — asks rather than assumes.",
+          "Send only if IG eligibility passes.",
+          "Silence is not consent."
+        ]
+      }
+    ],
+    "instagram_or_email_es_inbound_only": [
+      {
+        "id": "es_inbound_reply",
+        "channel": "instagram_dm_or_email",
+        "language": "es",
+        "action_type": "message",
+        "channel_eligibility": {
+          "instagram_dm": "spain_inbound_request_or_valid_prior_opt_in_only",
+          "email": "spain_inbound_request_or_valid_prior_opt_in_only",
+          "cold_commercial": false,
+          "gdpr_legitimate_interest_alone": false,
+          "note": "LSSI: SL/corporate status does not unlock cold sends. Warm intro alone is not consent."
+        },
+        "requires_gate": "spain_inbound_or_prior_opt_in_only",
+        "cold_allowed": false,
+        "body": "Hola {{Name}}, soy {{Sender}} de Akros Lab (WARC). Gracias por {{RequestContext}}. WARC ayuda a clínicas a convertir consultas de WhatsApp que ya reciben en una vía clara de reserva (no es captación de pacientes). ¿Te envío tres líneas o prefieres una llamada de 5 minutos?",
+        "internal_notes": [
+          "RequestContext must be the actual prior request (e.g. pedir información sobre WARC), never OpeningDetail or opening date.",
+          "Cold Spanish electronic marketing out of scope.",
+          "Offer opt-out on email: reply baja."
+        ]
+      }
+    ],
+    "follow_ups": [
+      {
+        "id": "fu_day0",
+        "action_type": "workflow",
+        "offset_days": 0,
+        "body": null,
+        "workflow_instruction": "Send exactly one opening message template (ig_en_a/b/c or eligible email). Include Akros Lab (WARC) affiliation. No carousel dump. No second channel yet.",
+        "internal_notes": [
+          "Not a send body — orchestrator step only.",
+          "Channel eligibility must already pass for the chosen template."
+        ]
+      },
+      {
+        "id": "fu_day4_5",
+        "action_type": "message",
+        "offset_days": 4,
+        "offset_days_max": 5,
+        "channel": "same_as_opening",
+        "channel_eligibility": {
+          "instagram_dm": "same_gate_as_opening_still_valid_and_no_opt_out",
+          "email": "same_gate_as_opening_still_valid_and_no_opt_out",
+          "gdpr_legitimate_interest_alone": false
+        },
+        "requires_gate": "same_as_opening_still_valid",
+        "body": "Hi {{Name}} — {{Sender}} again from Akros Lab (WARC). Happy to close the loop: want the three lines, or shall I leave it? Reply stop if you prefer no further messages.",
+        "internal_notes": [
+          "Only if no opt-out and lawful basis / eligibility still valid.",
+          "No response is not consent; do not escalate pressure.",
+          "On email keep explicit opt-out; on IG use stop language appropriate to the thread."
+        ]
+      },
+      {
+        "id": "fu_day12_14",
+        "action_type": "message",
+        "offset_days": 12,
+        "offset_days_max": 14,
+        "channel": "same_as_opening",
+        "channel_eligibility": {
+          "instagram_dm": "same_gate_as_opening_still_valid_and_no_opt_out",
+          "email": "same_gate_as_opening_still_valid_and_no_opt_out",
+          "gdpr_legitimate_interest_alone": false
+        },
+        "requires_gate": "same_as_opening_still_valid",
+        "body": "Last note from me — {{Sender}} at Akros Lab (WARC). Walkthrough is at warc.akroslab.com if useful; otherwise I'll stop. Reply stop to opt out.",
+        "internal_notes": [
+          "Record opt-out promptly.",
+          "Do not keep monthly circling without consent.",
+          "Only if eligibility still valid and no prior opt-out."
+        ]
+      },
+      {
+        "id": "fu_on_engage",
+        "action_type": "workflow",
+        "offset_days": null,
+        "body": null,
+        "workflow_instruction": "When they engage: move to email or call for the 5-minute walkthrough. Marketing may share verified carousels only after engagement. No guaranteed-bookings copy. Confirm booking/SMS integrations before any end-to-end automation promise.",
+        "optional_ack_message": {
+          "action_type": "message",
+          "channel_eligibility": {
+            "instagram_dm": "recipient_engaged_in_thread",
+            "email": "recipient_engaged_in_thread",
+            "gdpr_legitimate_interest_alone": false
+          },
+          "body": "Thanks {{Name}} — {{Sender}} at Akros Lab (WARC). I can do a free 5-minute walkthrough (demo flow, nothing to install to see it). Prefer a call or email? Reply stop anytime to opt out.",
+          "internal_notes": [
+            "Integrations beyond WhatsApp reply + booking-link hand-off are unconfirmed — keep that caveat internal; do not put in public body unless product confirms.",
+            "Use only after clear engagement."
+          ]
+        },
+        "internal_notes": [
+          "Not a cold send body — orchestrator step; optional_ack_message is the public-ready short ack if needed."
+        ]
+      }
+    ],
+    "email_subjects_en": [
+      {
+        "id": "sub_a",
+        "text": "WhatsApp enquiry → booking path — {{Clinic}}",
+        "action_type": "subject_line",
+        "channel": "email",
+        "channel_eligibility": {
+          "email": "uk_corporate_operator_and_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+          "instagram_dm": "not_applicable",
+          "gdpr_legitimate_interest_alone": false
+        }
+      },
+      {
+        "id": "sub_b",
+        "text": "Following {{OpeningMonthYear}} opening coverage — Akros Lab (WARC)",
+        "action_type": "subject_line",
+        "channel": "email",
+        "channel_eligibility": {
+          "email": "uk_corporate_operator_and_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+          "instagram_dm": "not_applicable",
+          "gdpr_legitimate_interest_alone": false
+        }
+      },
+      {
+        "id": "sub_c",
+        "text": "5-minute WARC walkthrough — optional",
+        "action_type": "subject_line",
+        "channel": "email",
+        "channel_eligibility": {
+          "email": "uk_corporate_operator_and_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+          "instagram_dm": "not_applicable",
+          "gdpr_legitimate_interest_alone": false
+        }
+      }
+    ],
+    "email_bodies_en": [
+      {
+        "id": "email_uk_walkthrough",
+        "channel": "email",
+        "language": "en",
+        "action_type": "message",
+        "channel_eligibility": {
+          "email": "uk_corporate_operator_and_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+          "instagram_dm": "not_applicable",
+          "gdpr_legitimate_interest_alone": false,
+          "note": "Operator verification and mailbox/subscriber verification are separate. Named individuals still need UK GDPR assessment."
+        },
+        "requires_gate": "uk_corporate_email_operator_and_subscriber_verified",
+        "body_paragraphs": [
+          "Hi {{Name}},",
+          "I'm {{Sender}} at Akros Lab (WARC). Congrats on {{Clinic}} opening in {{OpeningMonthYear}} ({{Source}}). WARC is a WhatsApp receptionist that helps answer clinic enquiries and send your booking link — it is not a patient-acquisition service.",
+          "If useful, I can show a free 5-minute walkthrough on a demo flow (nothing to install to see it). To opt out of further email from me, reply stop.",
+          "{{Sender}} · Akros Lab · {{phone}} · warc.akroslab.com"
+        ],
+        "internal_notes": [
+          "Integrations beyond WhatsApp reply + booking-link hand-off should be confirmed before any automation promise — keep internal until product confirms.",
+          "Send only when operator and corporate mailbox/subscriber are both verified; identity + opt-out required.",
+          "UK GDPR still applies when using named individual personal data."
+        ]
+      }
+    ],
+    "removed": [
+      {
+        "id": "spain_cold_permission_ask",
+        "reason": "Commercial consent solicitation is not safe merely labelled permission; removed from pack"
+      }
+    ]
+  },
+  "measurement": {
+    "design": "descriptive_pilot",
+    "significance_testing": false,
+    "note": "Small historical n cannot cleanly target 20 touches; replenish list or use calendar window.",
+    "metrics": [
+      {
+        "id": "lawful_touches",
+        "definition": "Outbound DM/email only after operator + channel eligibility recorded"
+      },
+      {
+        "id": "permission_yes",
+        "definition": "Explicit yes to more info or walkthrough; silence ≠ yes"
+      },
+      {
+        "id": "walkthrough_booked",
+        "definition": "Calendar invite or agreed slot created"
+      },
+      {
+        "id": "walkthrough_held",
+        "definition": "Call/demo actually completed (≥5 minutes)"
+      },
+      {
+        "id": "qualified_fit",
+        "definition": "Verified WhatsApp (or stated equivalent) for patients + booking-link interest; NHS high-demand ≠ acquisition"
+      },
+      {
+        "id": "pilot_start",
+        "definition": "WARC live on clinic WhatsApp"
+      },
+      {
+        "id": "opt_out_rate",
+        "definition": "Stop/unsubscribe/block per channel"
+      }
+    ]
+  },
+  "prospects": [
+    {
+      "id": "prospect_crewkerne_dental_care",
+      "rank": 1,
+      "clinic_name": "Crewkerne Dental Care",
+      "location": "22 Market Street, Crewkerne, TA18 7LA, UK",
+      "market": "UK",
+      "opened": "2026-05",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~6 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://www.dentistryforyou.co.uk/find-a-practice/crewkerne-dental-care/",
+      "instagram_handle": null,
+      "instagram_note": "Not invented; unknown",
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2026-06-04",
+        "summary": "NHS Somerset ICB: opened to patients May 2026; 4500+ expressions of interest when portal opened 22 Apr 2026",
+        "url": "https://nhssomerset.nhs.uk/news/opening-of-third-new-dental-practice-brings-nhs-care-to-thousands-more-people-in-somerset/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "incomplete",
+        "note": "Dentistry For You / Harunani group context; exact Companies House entity for this site not pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Saw NHS Somerset's June 2026 note that Crewkerne Dental Care opened to patients in May 2026 after thousands of portal registrations. If you already take patient messages on WhatsApp, happy to share how clinics map those enquiries to a clear booking link — only if useful.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_io_palma",
+      "rank": 2,
+      "clinic_name": "Institutos Odontológicos Palma",
+      "location": "Plaça del Cardenal Reig, 7, 07004 Palma, Spain",
+      "market": "Spain",
+      "opened": "2025-12/2026-01",
+      "opened_precision": "month_range",
+      "lifecycle_age_label": "~10–11 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://ioa.es/clinicas/clinica-dental-palma/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2026-01-07",
+        "summary": "iSanidad: first Balearic IO clinic",
+        "url": "https://isanidad.com/356134/institutos-odontologicos-abre-su-primera-clinica-dental-en-baleares-y-alcanza-los-42-centros-a-nivel-nacional/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "corporate_group_named",
+        "note": "Institutos Odontológicos — confirm local SL; Spain SL does not unlock cold LSSI sends"
+      },
+      "channel_eligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). iSanidad's 7 Jan 2026 piece covered IO's Palma clinic on Cardenal Reig as the group's first in the Balearics. If you already handle patient enquiries on WhatsApp, I can share how WARC maps those threads to a booking link — say if you want that.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_one_smile_chard",
+      "rank": 3,
+      "clinic_name": "One Smile Dental — Chard",
+      "location": "21 Leach Road, Chard Business Park, Chard, TA20 1FA, UK",
+      "market": "UK",
+      "opened": "2025-12",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~11 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://onesmiledentalchard.co.uk/",
+      "instagram_handle": "onesmiledentalchard",
+      "instagram_note": "Named in Chard & Ilminster News; not audited in-app; subscriber type unknown",
+      "instagram_source_url": "https://www.chardandilminsternews.co.uk/news/chard_news/25648146.new-somerset-nhs-dentist-opening-doors-chard/",
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2025-12",
+        "summary": "Local press + NHS Somerset: first patients December 2025; interest portal paused from demand",
+        "url": "https://www.chardandilminsternews.co.uk/news/chard_news/25648146.new-somerset-nhs-dentist-opening-doors-chard/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "1OSD Ltd",
+        "companies_house": "13451803",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/13451803",
+        "operator_evidence": "CQC location page: One Smile Dental Chard provided and run by 1OSD Ltd; registered 28 Nov 2025",
+        "operator_evidence_url": "https://www.cqc.org.uk/location/1-25395092219",
+        "note": "1OSD Ltd existence alone was insufficient; CQC states location is provided and run by 1OSD Ltd"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Local coverage and NHS Somerset noted One Smile Dental Chard seeing first patients in December 2025 after interest paused from demand. If the practice already takes patient messages on WhatsApp, I can outline how we turn those into a clear booking path — happy to stop if not relevant.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_banning_croydon",
+      "rank": 4,
+      "clinic_name": "Banning Dental — East Croydon",
+      "location": "Ruskin Square / East Croydon, CR0 2WF, UK",
+      "market": "UK",
+      "opened": "2025-11-22",
+      "opened_precision": "day",
+      "lifecycle_age_label": "~11.5 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://banningdental.co.uk/locations/croydon/",
+      "instagram_handle": "banningdental",
+      "instagram_note": "Brand handle listed publicly; not audited; subscriber type unknown",
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2025-11-22",
+        "summary": "Banning Teams news: flagship opened Saturday 22 Nov 2025; described as 13th clinic",
+        "url": "https://www.banningteams.co.uk/news-and-events/new-flagship-clinic-in-east-croydon",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "BANNING DENTAL GROUP LTD",
+        "companies_house": "11387751",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/11387751"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Your team's note on the East Croydon flagship opening on 22 Nov 2025 (13th clinic) stood out. If Banning sites already take patient WhatsApp enquiries, I can share how WARC maps them to a booking link across locations — only if that is on your radar.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_io_maragall",
+      "rank": 5,
+      "clinic_name": "IO Maragall",
+      "location": "Passeig de Maragall, 111, Barcelona, Spain",
+      "market": "Spain",
+      "opened": "2025-11",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~12 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://ioa.es/clinicas/clinica-dental-maragall/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2025-11",
+        "summary": "Alimarket coverage of November 2025 network expansion with Palma",
+        "url": "https://www.alimarket.es/sanidad/noticia/419038/institutos-odontologicos-pone-en-marcha-su-primera-clinica-en-baleares-y-refuerza-su-red-en-barcelona",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "corporate_group_named",
+        "note": "Institutos Odontológicos; LSSI still blocks cold commercial electronic mail"
+      },
+      "channel_eligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Alimarket covered IO Maragall opening on Passeig de Maragall in November 2025. If your sites already receive patient WhatsApp enquiries, I can explain how WARC maps those to a booking link — reply only if you want that detail.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_wellington_dental_care",
+      "rank": 6,
+      "clinic_name": "Wellington Dental Care",
+      "location": "5D & 5E Lowmoor Estate, Wellington, TA21 0AZ, UK",
+      "market": "UK",
+      "opened": "2025-10",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~13 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://www.dentistryforyou.co.uk/find-a-practice/wellingtondentalcare/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2025-10-14",
+        "summary": "NHS Somerset ICB: treating patients from October 2025; first such Somerset NHS opening in ten years",
+        "url": "https://nhssomerset.nhs.uk/news/first-dentist-in-ten-years-to-offer-nhs-dental-care-in-somerset-opens-its-doors-in-wellington/",
+        "http_status_checked": "intermittent_200_or_403"
+      },
+      "operator": {
+        "status": "incomplete",
+        "note": "Dentistry For You / Harunani group context; exact CH entity not pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Somerset's 14 Oct 2025 release covered Wellington Dental Care opening for NHS patients in October 2025. If you already manage patient messages on WhatsApp, I can share how clinics turn those threads into a clear booking path — happy to leave it if not useful.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_8to8_elgin",
+      "prospect_category": "launch_watch",
+      "lifecycle": "planned_date_passed_unconfirmed",
+      "rank_current": 1,
+      "clinic_name": "8to8 Dental Elgin",
+      "location": "8 Victoria Crescent, Elgin, IV30 1RQ, UK",
+      "market": "UK",
+      "opened": "2026-11-02",
+      "opened_precision": "day",
+      "lifecycle_age_label": "Planned open 2 Nov 2026 per 30 Sep 2026 Northern Scot; as of 6 Nov 2026 no cited source confirms actual opening (forecast only)",
+      "list_label": "launch_watch_sep_nov_2026_window_planned_date_passed_unconfirmed",
+      "site_url": "https://www.8to8dental.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "No WhatsApp Business link or number observed on public site HTML as of 2026-11-06",
+      "booking_observation": "Site FAQ/CTA describes online booking system; Elgin location listed with email elgin@8to8dental.co.uk",
+      "public_business_contact": {
+        "email": "elgin@8to8dental.co.uk",
+        "source": "https://www.8to8dental.co.uk/"
+      },
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "event_date": null,
+        "publication_date": "2026-09-30",
+        "summary": "Northern Scot 30 Sep 2026 is forward-looking only: practice \"is set to open\", \"will officially open its doors on Monday, November 2\"; open-day invite \"shortly before it opens\" on 30 Oct. No post-open confirmation cited. Site lists Elgin address/hours but that does not confirm the 2 Nov event occurred.",
+        "url": "https://www.northern-scot.co.uk/news/registration-opening-friday-for-elgins-newest-dental-clinic-446328/",
+        "http_status_checked": 200,
+        "planned_open_date": "2026-11-02",
+        "event_state": "planned_date_passed_unconfirmed"
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "8TO8 DENTAL SCOTLAND LTD",
+        "companies_house": "SC523933",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/SC523933",
+        "operator_evidence": "Companies House private limited company, SIC 86230; Northern Scot names founders Hiranya Fadia and Dorothy Sinclair; CH director Hiranya Fadia",
+        "note": "Fourth location after Buckie, Keith, Forres"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Northern Scot reported on 30 Sep 2026 that 8to8 Dental's Elgin clinic on Victoria Crescent was scheduled to open on Monday 2 Nov 2026. If that site is open and already takes patient messages on WhatsApp, I can share how clinics map those enquiries to a clear booking link — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_launch_watch_count": true
+    },
+    {
+      "id": "prospect_one_smile_littlehampton",
+      "prospect_category": "current",
+      "lifecycle": "current_new_practice",
+      "rank_current": 2,
+      "clinic_name": "One Smile Dental — Littlehampton",
+      "location": "23-25 Beach Road, Littlehampton, BN17 5JA, UK",
+      "market": "UK",
+      "opened": "2026-10-16",
+      "opened_precision": "day",
+      "lifecycle_age_label": "opened 16 Oct 2026 (~3 weeks before as_of)",
+      "list_label": "current_new_practice_sep_nov_2026_window",
+      "site_url": "https://onesmiledentallittlehampton.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Site HTML includes #whatsapp / #launch-whatsapp theme hooks; no public wa.me number confirmed — treat WhatsApp patient channel as unknown",
+      "booking_observation": "Homepage states Online Booking is now available; phone 01903 323669 listed",
+      "public_business_contact": {
+        "phone": "01903 323669",
+        "source": "https://onesmiledentallittlehampton.co.uk/ and CQC location page"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": "2026-10-16",
+        "publication_date": "2026-10-21",
+        "summary": "NHS Surrey and Sussex ICB: official opening Friday 16 Oct 2026; online booking via practice website",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "1OSD Ltd",
+        "companies_house": "13451803",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/13451803",
+        "operator_evidence": "CQC location 1-29742577915: provided and run by 1OSD Ltd; registered 24 Sep 2026",
+        "operator_evidence_url": "https://www.cqc.org.uk/location/1-29742577915"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Surrey and Sussex reported on 21 Oct 2026 that One Smile Dental Littlehampton marked its official opening on Friday 16 Oct 2026 on Beach Road. If the practice already takes patient messages on WhatsApp, I can outline how those become a clear booking path — happy to stop if not relevant.",
+      "verified_for_count": true,
+      "verified_for_current_count": true
+    },
+    {
+      "id": "prospect_mydentist_hamilton_castle_street",
+      "prospect_category": "current",
+      "lifecycle": "current_relocation_new_location",
+      "rank_current": 3,
+      "clinic_name": "mydentist — 62 Castle Street, Hamilton",
+      "location": "62 Castle Street, Hamilton, South Lanarkshire, UK",
+      "market": "UK",
+      "opened": "2026-10-28",
+      "opened_precision": "day",
+      "lifecycle_age_label": "opened 28 Oct 2026 (~1.5 weeks before as_of); relocation from Hamilton Street",
+      "list_label": "current_relocation_new_location_sep_nov_2026_window",
+      "site_url": "https://www.mydentist.co.uk/dentists/practices/scotland/south-lanarkshire/hamilton/62-castle-street",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "No WhatsApp Business channel observed on practice page HTML",
+      "booking_observation": "Practice page includes Book online CTA; Glasgow Times notes NHS patients subject to capacity and myoptions private",
+      "public_business_contact": {
+        "site": "https://www.mydentist.co.uk/dentists/practices/scotland/south-lanarkshire/hamilton/62-castle-street",
+        "source": "clinic-owned mydentist practice page + Glasgow Times"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": "2026-10-28",
+        "publication_date": "2026-11-05",
+        "summary": "Glasgow Times: practice manager Gregor Morrison and team officially opened new Castle Street site on 28 Oct 2026 after £1m move from Hamilton Street",
+        "url": "https://www.glasgowtimes.co.uk/news/26702842.hamilton-mydentist-welcomes-new-nhs-patients-1m-move/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "parent_group_named_clinic_operator_incomplete",
+        "brand": "mydentist",
+        "parent_group_legal_name": "MYDENTIST GROUP LIMITED",
+        "companies_house": "05657369",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/05657369",
+        "parent_group_evidence": "Practice-page footer: \"mydentist is a trading style of mydentist Group Limited\" Registered No 05657369, member of the mydentist group. Companies House exact name MYDENTIST GROUP LIMITED; SIC 74990 Non-trading company; registered office Europa House, Europa Trading Estate, Stoneclough Road, Kearsley, Manchester, M26 1GG.",
+        "note": "Do not treat MYDENTIST GROUP LIMITED as the verified clinic operating entity — it is a non-trading parent/group company. Site-level CQC registered provider / operating Ltd for 62 Castle Street not pinned this pass."
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_clinic_operator_and_mailbox_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception",
+        "note": "Parent-group CH number alone is insufficient for PECR corporate-subscriber classification of a clinic mailbox."
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Glasgow Times reported on 5 Nov 2026 that mydentist opened its new 62 Castle Street Hamilton site on 28 Oct 2026 after the move from Hamilton Street. If that site already takes patient messages on WhatsApp, I can share how clinics map those enquiries to a booking link — only if useful.",
+      "verified_for_count": true,
+      "verified_for_current_count": true
+    },
+    {
+      "id": "prospect_buttercross_bungay",
+      "prospect_category": "upcoming",
+      "lifecycle": "upcoming_open_not_confirmed",
+      "rank_upcoming": 1,
+      "clinic_name": "Buttercross Dental Practice",
+      "location": "St Mary's Street, Bungay, UK",
+      "market": "UK",
+      "opened": null,
+      "opened_precision": "hoped_end_oct_or_early_nov_2026_unconfirmed",
+      "lifecycle_age_label": "upcoming as of 2026-11-06 — open date not independently confirmed",
+      "list_label": "upcoming_sep_nov_2026_window",
+      "site_url": "https://buttercrossdental.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Only WhatsApp-named image filenames in media assets; not a verified patient WhatsApp channel",
+      "booking_observation": "Teaser site ('SOMETHING IS HAPPENING!'); no online booking observed. Earlier summer article invited interest via info@buttercrossdental.uk",
+      "public_business_contact": {
+        "email": "info@buttercrossdental.uk",
+        "source": "https://www.becclesandbungayjournal.co.uk/news/26181037.new-dental-surgery-open-doors-bungay-summer/ (earlier interest invite); confirm still valid before use"
+      },
+      "fit_class": "unknown",
+      "opening_evidence": {
+        "event_date": null,
+        "hoped_window": "end of October or early November 2026",
+        "publication_date": "2026-10-13",
+        "summary": "Beccles & Bungay Journal / EADT first-look: hoping to welcome first patients end Oct or early Nov after build delays. Site still teaser as of fetch 2026-11-06 — do not treat as opened.",
+        "url": "https://www.becclesandbungayjournal.co.uk/news/26623889.first-look-inside-bungays-new-buttercross-dental-practice/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "named_principals_incomplete_ch",
+        "note": "Press names Dr Carmen Pop and Dr Agis Patsourakos; Companies House entity not pinned this pass"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). The Beccles & Bungay Journal's 13 Oct 2026 first look said Buttercross Dental Practice on St Mary's Street hoped to welcome first patients towards the end of October or early November 2026. If you are open and already take patient WhatsApp messages, I can share how clinics map those to a booking link — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_upcoming_count": true
+    },
+    {
+      "id": "prospect_one_smile_bognor_upcoming",
+      "prospect_category": "upcoming",
+      "lifecycle": "upcoming_announced_no_firm_open_date",
+      "rank_upcoming": 2,
+      "clinic_name": "One Smile Dental — Bognor Regis",
+      "location": "Bognor Regis, UK (address not pinned from ICB note alone)",
+      "market": "UK",
+      "opened": null,
+      "opened_precision": "later_2026_per_icb_no_day",
+      "lifecycle_age_label": "upcoming as of 2026-11-06 — ICB said expand later this year; no firm open day found",
+      "list_label": "upcoming_sep_nov_2026_window",
+      "site_url": "https://onesmiledentalbognorregis.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Same theme #whatsapp hook as Littlehampton; no wa.me number confirmed",
+      "booking_observation": "ICB note: online booking open via practice website; site HTTP 200",
+      "public_business_contact": {
+        "site": "https://onesmiledentalbognorregis.co.uk/",
+        "source": "ICB Littlehampton release naming Bognor site URL"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": null,
+        "publication_date": "2026-10-21",
+        "summary": "NHS Surrey and Sussex ICB (Littlehampton opening piece): One Smile will expand later this year with another site in Bognor Regis; booking URL published",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "likely_1OSD_Ltd_unconfirmed_for_this_location",
+        "note": "Same brand as Littlehampton/1OSD; CQC location for Bognor not fetched this pass — mark operator incomplete until CQC/CH pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Surrey and Sussex's 21 Oct 2026 note on the Littlehampton opening also said One Smile would add a Bognor Regis site later in 2026, with online booking via onesmiledentalbognorregis.co.uk. If that site is live and already takes patient WhatsApp messages, I can share how those map to a booking path — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_upcoming_count": true
+    }
+  ],
+  "prospects_excluded": [
+    {
+      "id": "excluded_sinowei_palma",
+      "clinic_name": "Sinowéi Clínica Dental",
+      "location": "Plaça Francesc García i Orell, 6, Palma de Mallorca",
+      "site_url": "https://sinoweidental.com/",
+      "site_http_status_checked": 200,
+      "reason": "Opening date not corroborated by fetchable source",
+      "opening_cite_url": "https://www.diariodemallorca.es/mallorca/2025/08/02/primera-clinica-dental-china-mallorca-120279400.html",
+      "opening_cite_http_status_checked": 406,
+      "verified_for_count": false
+    },
+    {
+      "id": "excluded_azahar_vinaros",
+      "clinic_name": "Clínica Dental Azahar",
+      "location": "Plaza Tres Reyes 22, 12500 Vinaroz",
+      "site_url": "https://azahardental.com/",
+      "site_matches_press_address": true,
+      "reason": "Site presents multi-year experience and long review history; not treated as a July 2025 first opening despite Onda Cero inauguration coverage",
+      "inauguration_press_url": "https://www.ondacero.es/emisoras/comunidad-valenciana/castellon/noticias/vinaros-inaugura-clinica-dental-azahar-nuevo-centro-odontologia-avanzada-cercana_20250721687de8a2ffbf4a1a673d8e73.html",
+      "verified_for_count": false
+    }
+  ],
+  "counts": {
+    "verified_historical_prospects": 6,
+    "verified_current_prospects": 2,
+    "upcoming_prospects": 2,
+    "launch_watch_prospects": 1,
+    "excluded": 2,
+    "invented_handles": 0,
+    "invented_metrics": 0,
+    "note": "verified_current = confirmed actual opens in Sep–Nov 2026. launch_watch includes planned_date_passed_unconfirmed (8to8 Elgin). Templates unchanged."
+  },
+  "prospects_historical": [
+    {
+      "id": "prospect_crewkerne_dental_care",
+      "rank": 1,
+      "clinic_name": "Crewkerne Dental Care",
+      "location": "22 Market Street, Crewkerne, TA18 7LA, UK",
+      "market": "UK",
+      "opened": "2026-05",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~6 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://www.dentistryforyou.co.uk/find-a-practice/crewkerne-dental-care/",
+      "instagram_handle": null,
+      "instagram_note": "Not invented; unknown",
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2026-06-04",
+        "summary": "NHS Somerset ICB: opened to patients May 2026; 4500+ expressions of interest when portal opened 22 Apr 2026",
+        "url": "https://nhssomerset.nhs.uk/news/opening-of-third-new-dental-practice-brings-nhs-care-to-thousands-more-people-in-somerset/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "incomplete",
+        "note": "Dentistry For You / Harunani group context; exact Companies House entity for this site not pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Saw NHS Somerset's June 2026 note that Crewkerne Dental Care opened to patients in May 2026 after thousands of portal registrations. If you already take patient messages on WhatsApp, happy to share how clinics map those enquiries to a clear booking link — only if useful.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_io_palma",
+      "rank": 2,
+      "clinic_name": "Institutos Odontológicos Palma",
+      "location": "Plaça del Cardenal Reig, 7, 07004 Palma, Spain",
+      "market": "Spain",
+      "opened": "2025-12/2026-01",
+      "opened_precision": "month_range",
+      "lifecycle_age_label": "~10–11 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://ioa.es/clinicas/clinica-dental-palma/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2026-01-07",
+        "summary": "iSanidad: first Balearic IO clinic",
+        "url": "https://isanidad.com/356134/institutos-odontologicos-abre-su-primera-clinica-dental-en-baleares-y-alcanza-los-42-centros-a-nivel-nacional/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "corporate_group_named",
+        "note": "Institutos Odontológicos — confirm local SL; Spain SL does not unlock cold LSSI sends"
+      },
+      "channel_eligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). iSanidad's 7 Jan 2026 piece covered IO's Palma clinic on Cardenal Reig as the group's first in the Balearics. If you already handle patient enquiries on WhatsApp, I can share how WARC maps those threads to a booking link — say if you want that.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_one_smile_chard",
+      "rank": 3,
+      "clinic_name": "One Smile Dental — Chard",
+      "location": "21 Leach Road, Chard Business Park, Chard, TA20 1FA, UK",
+      "market": "UK",
+      "opened": "2025-12",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~11 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://onesmiledentalchard.co.uk/",
+      "instagram_handle": "onesmiledentalchard",
+      "instagram_note": "Named in Chard & Ilminster News; not audited in-app; subscriber type unknown",
+      "instagram_source_url": "https://www.chardandilminsternews.co.uk/news/chard_news/25648146.new-somerset-nhs-dentist-opening-doors-chard/",
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2025-12",
+        "summary": "Local press + NHS Somerset: first patients December 2025; interest portal paused from demand",
+        "url": "https://www.chardandilminsternews.co.uk/news/chard_news/25648146.new-somerset-nhs-dentist-opening-doors-chard/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "1OSD Ltd",
+        "companies_house": "13451803",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/13451803",
+        "operator_evidence": "CQC location page: One Smile Dental Chard provided and run by 1OSD Ltd; registered 28 Nov 2025",
+        "operator_evidence_url": "https://www.cqc.org.uk/location/1-25395092219",
+        "note": "1OSD Ltd existence alone was insufficient; CQC states location is provided and run by 1OSD Ltd"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Local coverage and NHS Somerset noted One Smile Dental Chard seeing first patients in December 2025 after interest paused from demand. If the practice already takes patient messages on WhatsApp, I can outline how we turn those into a clear booking path — happy to stop if not relevant.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_banning_croydon",
+      "rank": 4,
+      "clinic_name": "Banning Dental — East Croydon",
+      "location": "Ruskin Square / East Croydon, CR0 2WF, UK",
+      "market": "UK",
+      "opened": "2025-11-22",
+      "opened_precision": "day",
+      "lifecycle_age_label": "~11.5 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://banningdental.co.uk/locations/croydon/",
+      "instagram_handle": "banningdental",
+      "instagram_note": "Brand handle listed publicly; not audited; subscriber type unknown",
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2025-11-22",
+        "summary": "Banning Teams news: flagship opened Saturday 22 Nov 2025; described as 13th clinic",
+        "url": "https://www.banningteams.co.uk/news-and-events/new-flagship-clinic-in-east-croydon",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "BANNING DENTAL GROUP LTD",
+        "companies_house": "11387751",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/11387751"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Your team's note on the East Croydon flagship opening on 22 Nov 2025 (13th clinic) stood out. If Banning sites already take patient WhatsApp enquiries, I can share how WARC maps them to a booking link across locations — only if that is on your radar.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_io_maragall",
+      "rank": 5,
+      "clinic_name": "IO Maragall",
+      "location": "Passeig de Maragall, 111, Barcelona, Spain",
+      "market": "Spain",
+      "opened": "2025-11",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~12 months as of 2026-11-06",
+      "list_label": "historical_group_expansion",
+      "site_url": "https://ioa.es/clinicas/clinica-dental-maragall/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "date": "2025-11",
+        "summary": "Alimarket coverage of November 2025 network expansion with Palma",
+        "url": "https://www.alimarket.es/sanidad/noticia/419038/institutos-odontologicos-pone-en-marcha-su-primera-clinica-en-baleares-y-refuerza-su-red-en-barcelona",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "corporate_group_named",
+        "note": "Institutos Odontológicos; LSSI still blocks cold commercial electronic mail"
+      },
+      "channel_eligibility": {
+        "email": "spain_cold_blocked_use_inbound_or_opt_in_only",
+        "instagram_dm": "spain_cold_blocked_use_inbound_or_opt_in_only"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Alimarket covered IO Maragall opening on Passeig de Maragall in November 2025. If your sites already receive patient WhatsApp enquiries, I can explain how WARC maps those to a booking link — reply only if you want that detail.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    },
+    {
+      "id": "prospect_wellington_dental_care",
+      "rank": 6,
+      "clinic_name": "Wellington Dental Care",
+      "location": "5D & 5E Lowmoor Estate, Wellington, TA21 0AZ, UK",
+      "market": "UK",
+      "opened": "2025-10",
+      "opened_precision": "month",
+      "lifecycle_age_label": "~13 months as of 2026-11-06",
+      "list_label": "historical_opening",
+      "site_url": "https://www.dentistryforyou.co.uk/find-a-practice/wellingtondentalcare/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "date": "2025-10-14",
+        "summary": "NHS Somerset ICB: treating patients from October 2025; first such Somerset NHS opening in ten years",
+        "url": "https://nhssomerset.nhs.uk/news/first-dentist-in-ten-years-to-offer-nhs-dental-care-in-somerset-opens-its-doors-in-wellington/",
+        "http_status_checked": "intermittent_200_or_403"
+      },
+      "operator": {
+        "status": "incomplete",
+        "note": "Dentistry For You / Harunani group context; exact CH entity not pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Somerset's 14 Oct 2025 release covered Wellington Dental Care opening for NHS patients in October 2025. If you already manage patient messages on WhatsApp, I can share how clinics turn those threads into a clear booking path — happy to leave it if not useful.",
+      "verified_for_count": true,
+      "prospect_category": "historical",
+      "lifecycle": "historical"
+    }
+  ],
+  "prospects_current": [
+    {
+      "id": "prospect_one_smile_littlehampton",
+      "prospect_category": "current",
+      "lifecycle": "current_new_practice",
+      "rank_current": 2,
+      "clinic_name": "One Smile Dental — Littlehampton",
+      "location": "23-25 Beach Road, Littlehampton, BN17 5JA, UK",
+      "market": "UK",
+      "opened": "2026-10-16",
+      "opened_precision": "day",
+      "lifecycle_age_label": "opened 16 Oct 2026 (~3 weeks before as_of)",
+      "list_label": "current_new_practice_sep_nov_2026_window",
+      "site_url": "https://onesmiledentallittlehampton.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Site HTML includes #whatsapp / #launch-whatsapp theme hooks; no public wa.me number confirmed — treat WhatsApp patient channel as unknown",
+      "booking_observation": "Homepage states Online Booking is now available; phone 01903 323669 listed",
+      "public_business_contact": {
+        "phone": "01903 323669",
+        "source": "https://onesmiledentallittlehampton.co.uk/ and CQC location page"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": "2026-10-16",
+        "publication_date": "2026-10-21",
+        "summary": "NHS Surrey and Sussex ICB: official opening Friday 16 Oct 2026; online booking via practice website",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "1OSD Ltd",
+        "companies_house": "13451803",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/13451803",
+        "operator_evidence": "CQC location 1-29742577915: provided and run by 1OSD Ltd; registered 24 Sep 2026",
+        "operator_evidence_url": "https://www.cqc.org.uk/location/1-29742577915"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Surrey and Sussex reported on 21 Oct 2026 that One Smile Dental Littlehampton marked its official opening on Friday 16 Oct 2026 on Beach Road. If the practice already takes patient messages on WhatsApp, I can outline how those become a clear booking path — happy to stop if not relevant.",
+      "verified_for_count": true,
+      "verified_for_current_count": true
+    },
+    {
+      "id": "prospect_mydentist_hamilton_castle_street",
+      "prospect_category": "current",
+      "lifecycle": "current_relocation_new_location",
+      "rank_current": 3,
+      "clinic_name": "mydentist — 62 Castle Street, Hamilton",
+      "location": "62 Castle Street, Hamilton, South Lanarkshire, UK",
+      "market": "UK",
+      "opened": "2026-10-28",
+      "opened_precision": "day",
+      "lifecycle_age_label": "opened 28 Oct 2026 (~1.5 weeks before as_of); relocation from Hamilton Street",
+      "list_label": "current_relocation_new_location_sep_nov_2026_window",
+      "site_url": "https://www.mydentist.co.uk/dentists/practices/scotland/south-lanarkshire/hamilton/62-castle-street",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "No WhatsApp Business channel observed on practice page HTML",
+      "booking_observation": "Practice page includes Book online CTA; Glasgow Times notes NHS patients subject to capacity and myoptions private",
+      "public_business_contact": {
+        "site": "https://www.mydentist.co.uk/dentists/practices/scotland/south-lanarkshire/hamilton/62-castle-street",
+        "source": "clinic-owned mydentist practice page + Glasgow Times"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": "2026-10-28",
+        "publication_date": "2026-11-05",
+        "summary": "Glasgow Times: practice manager Gregor Morrison and team officially opened new Castle Street site on 28 Oct 2026 after £1m move from Hamilton Street",
+        "url": "https://www.glasgowtimes.co.uk/news/26702842.hamilton-mydentist-welcomes-new-nhs-patients-1m-move/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "parent_group_named_clinic_operator_incomplete",
+        "brand": "mydentist",
+        "parent_group_legal_name": "MYDENTIST GROUP LIMITED",
+        "companies_house": "05657369",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/05657369",
+        "parent_group_evidence": "Practice-page footer: \"mydentist is a trading style of mydentist Group Limited\" Registered No 05657369, member of the mydentist group. Companies House exact name MYDENTIST GROUP LIMITED; SIC 74990 Non-trading company; registered office Europa House, Europa Trading Estate, Stoneclough Road, Kearsley, Manchester, M26 1GG.",
+        "note": "Do not treat MYDENTIST GROUP LIMITED as the verified clinic operating entity — it is a non-trading parent/group company. Site-level CQC registered provider / operating Ltd for 62 Castle Street not pinned this pass."
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_clinic_operator_and_mailbox_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception",
+        "note": "Parent-group CH number alone is insufficient for PECR corporate-subscriber classification of a clinic mailbox."
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Glasgow Times reported on 5 Nov 2026 that mydentist opened its new 62 Castle Street Hamilton site on 28 Oct 2026 after the move from Hamilton Street. If that site already takes patient messages on WhatsApp, I can share how clinics map those enquiries to a booking link — only if useful.",
+      "verified_for_count": true,
+      "verified_for_current_count": true
+    }
+  ],
+  "prospects_upcoming": [
+    {
+      "id": "prospect_buttercross_bungay",
+      "prospect_category": "upcoming",
+      "lifecycle": "upcoming_open_not_confirmed",
+      "rank_upcoming": 1,
+      "clinic_name": "Buttercross Dental Practice",
+      "location": "St Mary's Street, Bungay, UK",
+      "market": "UK",
+      "opened": null,
+      "opened_precision": "hoped_end_oct_or_early_nov_2026_unconfirmed",
+      "lifecycle_age_label": "upcoming as of 2026-11-06 — open date not independently confirmed",
+      "list_label": "upcoming_sep_nov_2026_window",
+      "site_url": "https://buttercrossdental.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Only WhatsApp-named image filenames in media assets; not a verified patient WhatsApp channel",
+      "booking_observation": "Teaser site ('SOMETHING IS HAPPENING!'); no online booking observed. Earlier summer article invited interest via info@buttercrossdental.uk",
+      "public_business_contact": {
+        "email": "info@buttercrossdental.uk",
+        "source": "https://www.becclesandbungayjournal.co.uk/news/26181037.new-dental-surgery-open-doors-bungay-summer/ (earlier interest invite); confirm still valid before use"
+      },
+      "fit_class": "unknown",
+      "opening_evidence": {
+        "event_date": null,
+        "hoped_window": "end of October or early November 2026",
+        "publication_date": "2026-10-13",
+        "summary": "Beccles & Bungay Journal / EADT first-look: hoping to welcome first patients end Oct or early Nov after build delays. Site still teaser as of fetch 2026-11-06 — do not treat as opened.",
+        "url": "https://www.becclesandbungayjournal.co.uk/news/26623889.first-look-inside-bungays-new-buttercross-dental-practice/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "named_principals_incomplete_ch",
+        "note": "Press names Dr Carmen Pop and Dr Agis Patsourakos; Companies House entity not pinned this pass"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). The Beccles & Bungay Journal's 13 Oct 2026 first look said Buttercross Dental Practice on St Mary's Street hoped to welcome first patients towards the end of October or early November 2026. If you are open and already take patient WhatsApp messages, I can share how clinics map those to a booking link — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_upcoming_count": true
+    },
+    {
+      "id": "prospect_one_smile_bognor_upcoming",
+      "prospect_category": "upcoming",
+      "lifecycle": "upcoming_announced_no_firm_open_date",
+      "rank_upcoming": 2,
+      "clinic_name": "One Smile Dental — Bognor Regis",
+      "location": "Bognor Regis, UK (address not pinned from ICB note alone)",
+      "market": "UK",
+      "opened": null,
+      "opened_precision": "later_2026_per_icb_no_day",
+      "lifecycle_age_label": "upcoming as of 2026-11-06 — ICB said expand later this year; no firm open day found",
+      "list_label": "upcoming_sep_nov_2026_window",
+      "site_url": "https://onesmiledentalbognorregis.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "Same theme #whatsapp hook as Littlehampton; no wa.me number confirmed",
+      "booking_observation": "ICB note: online booking open via practice website; site HTTP 200",
+      "public_business_contact": {
+        "site": "https://onesmiledentalbognorregis.co.uk/",
+        "source": "ICB Littlehampton release naming Bognor site URL"
+      },
+      "fit_class": "enquiry_admin_potential",
+      "opening_evidence": {
+        "event_date": null,
+        "publication_date": "2026-10-21",
+        "summary": "NHS Surrey and Sussex ICB (Littlehampton opening piece): One Smile will expand later this year with another site in Bognor Regis; booking URL published",
+        "url": "https://www.surreysussex.icb.nhs.uk/news-centre/new-nhs-dental-practice-opens-in-littlehampton-as-efforts-continue-to-increase-nhs-access-4524/",
+        "http_status_checked": 200
+      },
+      "operator": {
+        "status": "likely_1OSD_Ltd_unconfirmed_for_this_location",
+        "note": "Same brand as Littlehampton/1OSD; CQC location for Bognor not fetched this pass — mark operator incomplete until CQC/CH pinned"
+      },
+      "channel_eligibility": {
+        "email": "blocked_until_operator_and_subscriber_verified",
+        "instagram_dm": "blocked_until_consent_or_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). NHS Surrey and Sussex's 21 Oct 2026 note on the Littlehampton opening also said One Smile would add a Bognor Regis site later in 2026, with online booking via onesmiledentalbognorregis.co.uk. If that site is live and already takes patient WhatsApp messages, I can share how those map to a booking path — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_upcoming_count": true
+    }
+  ],
+  "prospect_ids_by_category": {
+    "historical": [
+      "prospect_crewkerne_dental_care",
+      "prospect_io_palma",
+      "prospect_one_smile_chard",
+      "prospect_banning_croydon",
+      "prospect_io_maragall",
+      "prospect_wellington_dental_care"
+    ],
+    "current": [
+      "prospect_one_smile_littlehampton",
+      "prospect_mydentist_hamilton_castle_street"
+    ],
+    "upcoming": [
+      "prospect_buttercross_bungay",
+      "prospect_one_smile_bognor_upcoming"
+    ],
+    "launch_watch": [
+      "prospect_8to8_elgin"
+    ]
+  },
+  "prospects_launch_watch": [
+    {
+      "id": "prospect_8to8_elgin",
+      "prospect_category": "launch_watch",
+      "lifecycle": "planned_date_passed_unconfirmed",
+      "rank_current": 1,
+      "clinic_name": "8to8 Dental Elgin",
+      "location": "8 Victoria Crescent, Elgin, IV30 1RQ, UK",
+      "market": "UK",
+      "opened": "2026-11-02",
+      "opened_precision": "day",
+      "lifecycle_age_label": "Planned open 2 Nov 2026 per 30 Sep 2026 Northern Scot; as of 6 Nov 2026 no cited source confirms actual opening (forecast only)",
+      "list_label": "launch_watch_sep_nov_2026_window_planned_date_passed_unconfirmed",
+      "site_url": "https://www.8to8dental.co.uk/",
+      "instagram_handle": null,
+      "whatsapp_use_verified": false,
+      "whatsapp_observation": "No WhatsApp Business link or number observed on public site HTML as of 2026-11-06",
+      "booking_observation": "Site FAQ/CTA describes online booking system; Elgin location listed with email elgin@8to8dental.co.uk",
+      "public_business_contact": {
+        "email": "elgin@8to8dental.co.uk",
+        "source": "https://www.8to8dental.co.uk/"
+      },
+      "fit_class": "expansion_ops",
+      "opening_evidence": {
+        "event_date": null,
+        "publication_date": "2026-09-30",
+        "summary": "Northern Scot 30 Sep 2026 is forward-looking only: practice \"is set to open\", \"will officially open its doors on Monday, November 2\"; open-day invite \"shortly before it opens\" on 30 Oct. No post-open confirmation cited. Site lists Elgin address/hours but that does not confirm the 2 Nov event occurred.",
+        "url": "https://www.northern-scot.co.uk/news/registration-opening-friday-for-elgins-newest-dental-clinic-446328/",
+        "http_status_checked": 200,
+        "planned_open_date": "2026-11-02",
+        "event_state": "planned_date_passed_unconfirmed"
+      },
+      "operator": {
+        "status": "verified",
+        "legal_name": "8TO8 DENTAL SCOTLAND LTD",
+        "companies_house": "SC523933",
+        "companies_house_url": "https://find-and-update.company-information.service.gov.uk/company/SC523933",
+        "operator_evidence": "Companies House private limited company, SIC 86230; Northern Scot names founders Hiranya Fadia and Dorothy Sinclair; CH director Hiranya Fadia",
+        "note": "Fourth location after Buckie, Keith, Forres"
+      },
+      "channel_eligibility": {
+        "email": "conditional_corporate_if_mailbox_subscriber_verified_plus_identity_optout_gdpr",
+        "instagram_dm": "blocked_until_consent_or_independently_checked_subscriber_exception"
+      },
+      "personalised_first_line_en": "I'm {{Sender}} with Akros Lab (WARC). Northern Scot reported on 30 Sep 2026 that 8to8 Dental's Elgin clinic on Victoria Crescent was scheduled to open on Monday 2 Nov 2026. If that site is open and already takes patient messages on WhatsApp, I can share how clinics map those enquiries to a clear booking link — only if useful.",
+      "verified_for_count": false,
+      "verified_for_current_count": false,
+      "verified_for_launch_watch_count": true
+    }
+  ]
+}
